@@ -1,0 +1,13 @@
+[user]
+	name = ngenisis
+	email = ngenisis@gmail.com
+[fetch]
+	prune = true
+[push]
+	default = simple
+[pull]
+	rebase = true
+[diff]
+	tool = kdiff3
+[merge]
+	tool = kdiff3
