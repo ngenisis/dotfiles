@@ -73,7 +73,6 @@ NONE="\[\033[00m\]"
 # Configure git prompt
 GIT_PS1_SHOWDIRTYSTATE=yes
 GIT_PS1_SHOWUPSTREAM=auto
-GIT_PS1_STATESEPARATOR=
 GIT_PS1_HIDE_IF_PWD_IGNORED=yes
 source ~/.git-prompt.sh
 
