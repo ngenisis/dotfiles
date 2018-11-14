@@ -68,17 +68,12 @@ GREEN="\[\033[01;32m\]"
 BLUE="\[\033[01;34m\]"
 MAGENTA="\[\033[01;35m\]"
 NONE="\[\033[00m\]"
-
-#function git-branch {
-#    GIT_BRANCH=git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /
-#}
-
-#export PROMPT_COMMAND=git-branch
+source ~/.git-prompt.sh
 
 if [ "$color_prompt" = yes ]; then
-    PS1="${debian_chroot:+($debian_chroot)}$GREEN\u@\h$NONE:$BLUE\w$NONE\n\$ "
+    PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}$GREEN\u@\h$NONE:$BLUE\w$MAGENTA" "$NONE\n\$ "'
 else
-    PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ "
+    PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\u@\h:\w" "\n\$"'
 fi
 unset color_prompt force_color_prompt
 
