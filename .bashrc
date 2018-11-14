@@ -64,10 +64,20 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# Define colors
 GREEN="\[\033[01;32m\]"
 BLUE="\[\033[01;34m\]"
 MAGENTA="\[\033[01;35m\]"
 NONE="\[\033[00m\]"
+
+# Configure git prompt
+GIT_PS1_SHOWDIRTYSTATE=yes
+GIT_PS1_SHOWSTASHSTATE=yes
+GIT_PS1_SHOWUNTRACKEDFILES=yes
+GIT_PS1_SHOWUPSTREAM=verbose
+GIT_PS1_DESRIBE_STYLE=branch
+GIT_PS1_SHOWCOLORHINTS=yes
+GIT_PS1_HIDE_IF_PWD_IGNORED=yes
 source ~/.git-prompt.sh
 
 if [ "$color_prompt" = yes ]; then
