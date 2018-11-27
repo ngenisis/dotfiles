@@ -5,4 +5,5 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-# User specific environment and startup programs
+# Add existing ssh keys to ssh-agent
+ssh-add
