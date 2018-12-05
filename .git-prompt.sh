@@ -208,13 +208,13 @@ __git_ps1_show_upstream ()
 		"") # no upstream
 			p="" ;;
 		"0	0") # equal to upstream
-			p=" u=" ;;
+			p=" =" ;;
 		"0	"*) # ahead of upstream
-			p=" u+${count#0	}" ;;
+			p=" ↑${count#0	}" ;;
 		*"	0") # behind upstream
-			p=" u-${count%	0}" ;;
+			p=" ↓${count%	0}" ;;
 		*)	    # diverged from upstream
-			p=" u+${count#*	}-${count%	*}" ;;
+			p=" ↑${count#*	}↓${count%	*}" ;;
 		esac
 		if [[ -n "$count" && -n "$name" ]]; then
 			__git_ps1_upstream_name=$(git rev-parse \
@@ -489,7 +489,7 @@ __git_ps1 ()
 		if [ -n "${GIT_PS1_SHOWSTASHSTATE-}" ] &&
 		   git rev-parse --verify --quiet refs/stash >/dev/null
 		then
-			s="$"
+			s="⚑"
 		fi
 
 		if [ -n "${GIT_PS1_SHOWUNTRACKEDFILES-}" ] &&
@@ -517,8 +517,18 @@ __git_ps1 ()
 		b="\${__git_ps1_branch_name}"
 	fi
 
+        # b     branch name (e.g. "master")
+        # c     bare status (set to "BARE:" if in a bare git repository)
+        # i     staged changes (set to "+" if there are staged changes)
+        # p     upstream status (e.g. " ↑3↓2")
+        # r     rebase status (e.g. "|REBASE")
+        # s     stashed changes (set to "⚑" if there are stashed changes)
+        # u     untracked files (set to "%" if there are untracked files)
+        # w     unstaged changes (set to "*" if there are unstaged changes)
+        # z     GIT_PS1_STATESEPARATOR (defaults to " " if unset)
+
 	local f="$w$i$s$u"
-	local gitstring="$c$b${f:+$z$f}$r$p"
+	local gitstring="$c$b$p${f:+$z$f}$r"
 
 	if [ $pcmode = yes ]; then
 		if [ "${__git_printf_supports_v-}" != yes ]; then
