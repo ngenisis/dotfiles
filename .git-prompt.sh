@@ -208,7 +208,7 @@ __git_ps1_show_upstream ()
 		"") # no upstream
 			p="" ;;
 		"0	0") # equal to upstream
-			p=" =" ;;
+			p="" ;;
 		"0	"*) # ahead of upstream
 			p=" ↑${count#0	}" ;;
 		*"	0") # behind upstream
