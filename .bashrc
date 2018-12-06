@@ -38,11 +38,6 @@ shopt -s autocd
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
@@ -79,16 +74,16 @@ GIT_PS1_HIDE_IF_PWD_IGNORED=yes
 source ~/.git-prompt.sh
 
 if [ "$color_prompt" = yes ]; then
-    PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}$GREEN\u@\h$NONE:$BLUE\w$MAGENTA" "$NONE\n\$ "'
+    PROMPT_COMMAND='__git_ps1 "$GREEN\u@\h$NONE:$BLUE\w$MAGENTA" "$NONE\n\$ "'
 else
-    PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\u@\h:\w" "\n\$"'
+    PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\n\$"'
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;\u@\h: \w\a\]$PS1"
     ;;
 *)
     ;;
