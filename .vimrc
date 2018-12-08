@@ -21,3 +21,15 @@ inoremap	<Right>	<Nop>
 
 " Remap S to replace all in normal mode
 nnoremap	S	:%s//g<Left><Left>
+
+" Split to the bottom and the right
+set splitbelow splitright
+
+" Shortcuts for switching between splits
+map	<C-h>	<C-w>h
+map	<C-j>	<C-w>j
+map	<C-k>	<C-w>k
+map	<C-l>	<C-w>l
+
+" Disable automatic comments on newlines
+autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
