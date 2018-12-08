@@ -1,3 +1,14 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+call vundle#end()
+filetype plugin indent on
+
 " display line number of current line and relative line numbers
 set number relativenumber
 
