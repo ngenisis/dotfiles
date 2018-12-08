@@ -14,3 +14,6 @@ noremap		<Left>	<Nop>
 inoremap	<Left>	<Nop>
 noremap		<Right>	<Nop>
 inoremap	<Right>	<Nop>
+
+" Remap S to replace all in normal mode
+nnoremap	S	:%s//g<Left><Left>
