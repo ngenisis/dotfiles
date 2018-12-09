@@ -9,10 +9,13 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tmhedberg/matchit'
 Plugin 'ZoomWin'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
+
+" Populate airline fonts
+let g:airline_powerline_fonts = 1
 
 " display line number of current line and relative line numbers
 set number relativenumber
