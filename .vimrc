@@ -8,6 +8,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tmhedberg/matchit'
+Plugin 'ZoomWin'
 
 call vundle#end()
 filetype plugin indent on
@@ -44,6 +45,7 @@ map	<C-h>	<C-w>h
 map	<C-j>	<C-w>j
 map	<C-k>	<C-w>k
 map	<C-l>	<C-w>l
+map	<C-o>	<C-w>o
 
 " Disable automatic comments on newlines
 autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
