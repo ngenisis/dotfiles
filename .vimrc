@@ -9,6 +9,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tmhedberg/matchit'
 Plugin 'ZoomWin'
+Plugin 'Lokaltog/vim-powerline'
 
 call vundle#end()
 filetype plugin indent on
@@ -49,3 +50,6 @@ map	<C-o>	<C-w>o
 
 " Disable automatic comments on newlines
 autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Always display status line
+set laststatus=2
