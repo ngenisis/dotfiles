@@ -8,7 +8,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tmhedberg/matchit'
-Plugin 'ervandew/supertab'
 
 call vundle#end()
 filetype plugin indent on
