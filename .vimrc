@@ -12,6 +12,8 @@ Plugin 'ZoomWin'
 Plugin 'vim-airline/vim-airline'
 Plugin 'othree/xml.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 call vundle#end()
 filetype plugin indent on
@@ -52,6 +54,9 @@ map	<C-j>	<C-w>j
 map	<C-k>	<C-w>k
 map	<C-l>	<C-w>l
 map	<C-o>	<C-w>o
+
+" NERDTree keybinds
+map <C-n> :NERDTreeToggle<CR>
 
 " Disable automatic comments on newlines
 autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
