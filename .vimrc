@@ -10,6 +10,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tmhedberg/matchit'
 Plugin 'ZoomWin'
 Plugin 'vim-airline/vim-airline'
+Plugin 'othree/xml.vim'
 
 call vundle#end()
 filetype plugin indent on
