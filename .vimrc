@@ -11,6 +11,7 @@ Plugin 'tmhedberg/matchit'
 Plugin 'ZoomWin'
 Plugin 'vim-airline/vim-airline'
 Plugin 'othree/xml.vim'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 filetype plugin indent on
