@@ -15,6 +15,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'rsmenon/vim-mathematica'
 
 call vundle#end()
 filetype plugin indent on
@@ -64,3 +65,6 @@ autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Always display status line
 set laststatus=2
+
+" Ensure .wl files are read with the mma filetype for the vim-mathematica syntax highlighting
+autocmd BufRead,BufNewFile *.wl set filetype=mma
