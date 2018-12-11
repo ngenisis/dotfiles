@@ -15,6 +15,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'rsmenon/vim-mathematica'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -67,3 +68,9 @@ set laststatus=2
 
 " Ensure .wl files are read with the mma filetype for the vim-mathematica syntax highlighting
 autocmd BufRead,BufNewFile *.wl set filetype=mma
+
+" CtrlP settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_show_hidden = 1
