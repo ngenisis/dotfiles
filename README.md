@@ -25,6 +25,8 @@ git-gui
 kaccounts-providers
 kate
 keepass
+lm_sensors
+lm_sensors-sensord
 neovim
 nextcloud-client
 pv
