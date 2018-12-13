@@ -58,6 +58,10 @@ map	<C-k>	<C-w>k
 map	<C-l>	<C-w>l
 map	<C-o>	<C-w>o
 
+" Shortcuts for tabs
+nnoremap	tn	:tabnew<Enter>
+nnoremap	tc	:tabclose<Enter>
+
 " Bind <Caps> to <Esc>
 " I usually do this at the OS level, but just in case
 noremap		<Caps>	<Esc>
