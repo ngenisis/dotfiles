@@ -127,3 +127,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Use custom ranger config file ~/.config/ranger/rc.conf
+export RANGER_LOAD_DEFAULT_RC=FALSE
