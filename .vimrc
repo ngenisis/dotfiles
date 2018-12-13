@@ -35,6 +35,7 @@ set softtabstop=4
 set shiftwidth=4
 
 " Hard mode
+" Arrow keys still work in command mode
 noremap		<Up>	<Nop>
 inoremap	<Up>	<Nop>
 noremap		<Down>	<Nop>
