@@ -57,6 +57,11 @@ map	<C-k>	<C-w>k
 map	<C-l>	<C-w>l
 map	<C-o>	<C-w>o
 
+" Bind <Caps> to <Esc>
+" I usually do this at the OS level, but just in case
+noremap		<Caps>	<Esc>
+noremap!	<Caps>	<Esc>
+
 " NERDTree keybinds
 map <C-n> :NERDTreeToggle<CR>
 
