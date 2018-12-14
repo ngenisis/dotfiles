@@ -130,3 +130,6 @@ fi
 
 # Use custom ranger config file ~/.config/ranger/rc.conf
 export RANGER_LOAD_DEFAULT_RC=FALSE
+
+# Use the_silver_searcher with fzf
+export FZF_DEFAULT_COMMAND='ag -f -l --hidden --ignore .git'
