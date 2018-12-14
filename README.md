@@ -3,6 +3,7 @@ My dotfiles for [Fedora KDE 29](https://spins.fedoraproject.org/kde/).
 Needed packages:
 
 ```
+fzf
 git
 kdiff3
 powerline-fonts
