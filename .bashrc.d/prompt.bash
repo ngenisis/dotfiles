@@ -31,7 +31,6 @@ GIT_PS1_SHOWSTASHSTATE=yes
 GIT_PS1_SHOWUNTRACKEDFILES=yes
 GIT_PS1_SHOWUPSTREAM=verbose
 GIT_PS1_HIDE_IF_PWD_IGNORED=yes
-source ~/.git-prompt.sh
 
 if [ "$color_prompt" = yes ]; then
     PROMPT_COMMAND='__git_ps1 "$GREEN\u@\h$NONE:$BLUE\w$MAGENTA" "$NONE\n\$ "'
