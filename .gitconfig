@@ -11,3 +11,5 @@
 	tool = kdiff3
 [merge]
 	tool = kdiff3
+[core]
+	excludesfile = ~/.gitignore
