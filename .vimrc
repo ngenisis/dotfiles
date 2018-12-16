@@ -32,6 +32,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'rsmenon/vim-mathematica'
 " Fuzzy file, buffer, mru, tag, etc finder.
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-indent'
+Plugin 'kana/vim-textobj-entire'
+Plugin 'kana/vim-textobj-line'
+Plugin 'glts/vim-textobj-comment'
 
 call vundle#end()
 filetype plugin indent on
