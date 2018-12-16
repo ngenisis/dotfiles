@@ -28,7 +28,6 @@ if [ -f /usr/share/doc/ranger/examples/bash_automatic_cd.sh ]; then
 fi
 
 # don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
 HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
@@ -49,9 +48,6 @@ shopt -s checkwinsize
 # If set, a command name that is the name of a directory is executed
 # as if it were the argument to the cd command. This option is only used by interactive shells.
 shopt -s autocd
-
-# make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
