@@ -18,5 +18,12 @@ alias sr='sudo ranger'
 alias sa='sudo apt'
 alias sag='sudo apt-get'
 alias sdnf='sudo dnf'
-alias v='vim'
-alias sdv='sudo vim'
+
+# Vim alias. Tries to use neovim, vim, and then vi, in that order
+if [ -x /usr/bin/nvim ]; then
+	alias v='nvim'
+elif [ -x /usr/bin/vim ]; then
+	alias v='vim'
+else
+	alias v='vi'
+fi
