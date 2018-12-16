@@ -43,7 +43,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # If set, a command name that is the name of a directory is executed
 # as if it were the argument to the cd command. This option is only used by interactive shells.
