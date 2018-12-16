@@ -21,6 +21,12 @@ unset -v config
 [ -x /usr/bin/vim ] && export EDITOR="/usr/bin/vim"
 set -o vi
 
+# ranger settings
+export RANGER_LOAD_DEFAULT_RC=FALSE
+if [ -f /usr/share/doc/ranger/examples/bash_automatic_cd.sh ]; then
+	. /usr/share/doc/ranger/examples/bash_automatic_cd.sh
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -50,10 +56,6 @@ shopt -s autocd
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-if [ -f /usr/share/doc/ranger/examples/bash_automatic_cd.sh ]; then
-	. /usr/share/doc/ranger/examples/bash_automatic_cd.sh
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -64,9 +66,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# Use custom ranger config file ~/.config/ranger/rc.conf
-export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Use the_silver_searcher with fzf
 export FZF_DEFAULT_COMMAND='ag -f -l --hidden --ignore .git'
