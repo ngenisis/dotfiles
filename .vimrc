@@ -41,6 +41,8 @@ Plugin 'glts/vim-textobj-comment'
 call vundle#end()
 filetype plugin indent on
 
+" Set background to dark
+set background=dark
 " Populate airline fonts
 let g:airline_powerline_fonts = 1
 
