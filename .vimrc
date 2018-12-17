@@ -41,6 +41,9 @@ Plugin 'glts/vim-textobj-comment'
 call vundle#end()
 filetype plugin indent on
 
+" Change <Leader> to <Space>
+let mapleader = " "
+
 " Set background to dark
 set background=dark
 " Populate airline fonts
@@ -56,6 +59,12 @@ set autoindent smartindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" System clipboard mappings
+noremap	<Leader>y	"+y
+noremap	<Leader>p	"+p
+noremap	<Leader>Y	"*y
+noremap	<Leader>P	"*p
 
 " Hard mode
 " Arrow keys still work in command mode
