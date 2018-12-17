@@ -26,8 +26,6 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'ZoomWin'
 " lean & mean status/tabline for vim that's light as air
 Plugin 'vim-airline/vim-airline'
-" A tree explorer plugin for vim.
-Plugin 'scrooloose/nerdtree'
 " Mathematica syntax highlighting (and more) for vim
 Plugin 'rsmenon/vim-mathematica'
 " Fuzzy file, buffer, mru, tag, etc finder.
@@ -37,6 +35,9 @@ Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-line'
 Plugin 'glts/vim-textobj-comment'
+" Plugin 'airodactyl/neovim-ranger'
+" Plugin 'Mizuchi/vim-ranger'
+" Plugin 'kassio/neoterm'
 
 call vundle#end()
 filetype plugin indent on
@@ -98,9 +99,6 @@ nnoremap	tc	:tabclose<Enter>
 " I usually do this at the OS level, but just in case
 noremap		<Caps>	<Esc>
 noremap!	<Caps>	<Esc>
-
-" NERDTree keybinds
-map <C-n> :NERDTreeToggle<CR>
 
 " Disable automatic comments on newlines
 autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
