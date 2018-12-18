@@ -12,12 +12,6 @@ else
 	color_prompt=
 fi
 
-# Define colors
-GREEN="\[\033[01;32m\]"
-BLUE="\[\033[01;34m\]"
-MAGENTA="\[\033[01;35m\]"
-NONE="\[\033[00m\]"
-
 # Configure git prompt
 GIT_PS1_SHOWDIRTYSTATE=yes
 GIT_PS1_SHOWSTASHSTATE=yes
@@ -25,12 +19,33 @@ GIT_PS1_SHOWUNTRACKEDFILES=yes
 GIT_PS1_SHOWUPSTREAM=verbose
 GIT_PS1_HIDE_IF_PWD_IGNORED=yes
 
-if [ "$color_prompt" = yes ]; then
-    PROMPT_COMMAND='__git_ps1 "$GREEN\u@\h$NONE:$BLUE\w$MAGENTA" "$NONE\n\$ "'
-else
-    PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\n\$"'
-fi
-unset color_prompt force_color_prompt
+export PROMPT_COMMAND=__prompt_command
+
+function __prompt_command() {
+	local EXIT=$?
+	local RED='\[\033[01;31m\]'
+	local GREEN='\[\033[01;32m\]'
+	local BLUE='\[\033[01;34m\]'
+	local MAGENTA='\[\033[01;35m\]'
+	local NONE='\[\033[00m\]'
+	local EXIT_PRE=
+
+	if [ "$color_prompt" = yes ]; then
+		PS1="$GREEN\u@\h$NONE:$BLUE\w$MAGENTA"
+		EXIT_PRE="$RED[$EXIT] "
+	else
+		PS1="\u@\h:\w"
+		EXIT_PRE="[$EXIT] "
+	fi
+
+	if [ $EXIT != 0 ] ; then
+		PS1="$EXIT_PRE$PS1"
+	fi
+
+	__git_ps1 "$PS1" "$NONE\n\$ "
+
+	return $EXIT
+}
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
