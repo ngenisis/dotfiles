@@ -101,11 +101,6 @@ noremap	<C-n>	<C-\><C-n>:vnew<Enter>
 nnoremap	tn	:tabnew<Enter>
 nnoremap	tc	:tabclose<Enter>
 
-" Bind <Caps> to <Esc>
-" I usually do this at the OS level, but just in case
-noremap		<Caps>	<Esc>
-noremap!	<Caps>	<Esc>
-
 " Disable automatic comments on newlines
 autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
 
