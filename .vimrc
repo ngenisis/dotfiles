@@ -84,12 +84,16 @@ nnoremap	S	:%s//g<Left><Left>
 " Split to the bottom and the right
 set splitbelow splitright
 
-" Shortcuts for switching between splits
-map	<C-h>	<C-w>h
-map	<C-j>	<C-w>j
-map	<C-k>	<C-w>k
-map	<C-l>	<C-w>l
-map	<C-o>	<C-w>o
+" Custom window mappings
+noremap	<C-h>	<C-w>h
+noremap	<C-j>	<C-w>j
+noremap	<C-k>	<C-w>k
+noremap	<C-l>	<C-w>l
+noremap	<C-w>v	:vnew<Enter>
+	" This opens a new window, but split vertically
+noremap	<C-o>	<C-w>o
+	" This toggles the current window fullscreen
+	" because of the ZoomWin plugin
 
 " Shortcuts for tabs
 nnoremap	tn	:tabnew<Enter>
