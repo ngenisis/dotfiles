@@ -22,8 +22,6 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-eunuch'
 " Highlights trailing whitespace in read and provides :FixWhitespace to fix it.
 Plugin 'bronson/vim-trailing-whitespace'
-" Zoom in/out of windows (toggle between one window and multi-window)
-Plugin 'ZoomWin'
 " lean & mean status/tabline for vim that's light as air
 Plugin 'vim-airline/vim-airline'
 " Mathematica syntax highlighting (and more) for vim
@@ -85,15 +83,19 @@ nnoremap	S	:%s//g<Left><Left>
 set splitbelow splitright
 
 " Custom window mappings
+
+" <C-h>, <C-j>, <C-k>, and <C-l> move windows
 noremap	<C-h>	<C-w>h
 noremap	<C-j>	<C-w>j
 noremap	<C-k>	<C-w>k
 noremap	<C-l>	<C-w>l
-noremap	<C-w>v	:vnew<Enter>
-	" This opens a new window, but split vertically
-noremap	<C-o>	<C-w>o
-	" This toggles the current window fullscreen
-	" because of the ZoomWin plugin
+
+" <C-q> to close a window
+noremap	<C-q>	<C-w>q
+
+" <C-w>n opens a new window
+" <C-n> opens a new window, but split vertically
+noremap	<C-n>	<C-\><C-n>:vnew<Enter>
 
 " Shortcuts for tabs
 nnoremap	tn	:tabnew<Enter>
