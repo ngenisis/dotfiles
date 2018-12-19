@@ -8,7 +8,7 @@ git
 powerline-fonts
 ranger
 the_silver_searcher
-vim
+neovim
 ```
 
 Also need [Vundle](https://github.com/VundleVim/Vundle.vim) to manage Vim plugins:
@@ -29,7 +29,7 @@ kate
 keepass
 lm_sensors
 lm_sensors-sensord
-neovim
+vim
 nextcloud-client
 pv
 qemu
