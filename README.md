@@ -5,7 +5,6 @@ Needed packages:
 ```
 fzf
 git
-kdiff3
 powerline-fonts
 ranger
 the_silver_searcher
