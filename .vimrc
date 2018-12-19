@@ -42,6 +42,7 @@ filetype plugin indent on
 
 " Change <Leader> to <Space>
 let mapleader = " "
+nnoremap <Space> <Nop>
 
 " Set background to dark
 set background=dark
