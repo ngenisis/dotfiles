@@ -14,7 +14,13 @@ done
 unset -v config
 
 # Use Vim
-[ -x /usr/bin/vim ] && export EDITOR="/usr/bin/vim"
+if [ -x /usr/bin/nvim ] ; then
+	export EDITOR=/usr/bin/nvim
+elif [ -x /usr/bin/vim ] ; then
+	export EDITOR=/usr/bin/vim
+else
+	export EDITOR=/usr/bin/vi
+fi
 set -o vi
 
 # ranger settings

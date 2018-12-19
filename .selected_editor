@@ -1,1 +1,8 @@
-SELECTED_EDITOR="/usr/bin/vim"
+#!/usr/bin/env sh
+if [ -x /usr/bin/nvim ] ; then
+	export SELECTED_EDITOR=/usr/bin/nvim
+elif [ -x /usr/bin/vim ] ; then
+	export SELECTED_EDITOR=/usr/bin/vim
+else
+	export SELECTED_EDITOR=/usr/bin/vi
+fi
