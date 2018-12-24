@@ -7,3 +7,6 @@ fi
 
 # Add existing ssh keys to ssh-agent
 ssh-add
+
+# Enable Num lock on login
+setleds +num
