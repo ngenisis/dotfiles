@@ -14,9 +14,16 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias o='xdg-open'
-alias sa='sudo apt'
-alias sag='sudo apt-get'
-alias sdnf='sudo dnf'
+
+# Package manager aliases
+if [ -x /usr/bin/apt ] ; then
+	alias a='sudo apt'
+elif [ -x /usr/bin/dnf ] ; then
+	alias d='sudo dnf'
+elif [ -x /usr/bin/pacman ] ; then
+	alias p='sudo pacman'
+fi
+
 alias r='ranger-cd'
 
 # Vim alias. Tries to use neovim, vim, and then vi, in that order
