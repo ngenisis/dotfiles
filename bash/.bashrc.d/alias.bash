@@ -15,13 +15,13 @@ alias la='ls -A'
 alias l='ls -CF'
 alias o='xdg-open'
 
-# Package manager aliases
-if [ -x /usr/bin/apt ] ; then
-	alias a='sudo apt'
-elif [ -x /usr/bin/dnf ] ; then
-	alias d='sudo dnf'
-elif [ -x /usr/bin/pacman ] ; then
+# Package manager alias
+if [ -x /usr/bin/pacman ] ; then
 	alias p='sudo pacman'
+elif [ -x /usr/bin/dnf ] ; then
+	alias p='sudo dnf'
+elif [ -x /usr/bin/apt ] ; then
+	alias p='sudo apt'
 fi
 
 alias r='ranger-cd'
