@@ -1,4 +1,4 @@
-# My dotfiles for [Fedora KDE 29](https://spins.fedoraproject.org/kde/).
+# My dotfiles for GNU/Linux
 
 Each application's dotfiles are kept in a folder of the same name. For example, all of my bash configuration files are kept in the folder called `bash`. Each application's folder has the same tree structure as a user's `$HOME` directory, so to use my dotfiles for that application just copy them to the corresponding location in `$HOME` or create links in the corresponding locations. I prefer to use the latter approach and use [GNU Stow](https://www.gnu.org/software/stow/) to manage the symlinks. A typical usage would look something like this:
 
