@@ -26,11 +26,4 @@ fi
 
 alias r='ranger-cd'
 
-# Vim alias. Tries to use neovim, vim, and then vi, in that order
-if [ -x /usr/bin/nvim ]; then
-	alias v='nvim'
-elif [ -x /usr/bin/vim ]; then
-	alias v='vim'
-else
-	alias v='vi'
-fi
+alias e=$EDITOR
