@@ -12,6 +12,11 @@ exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 # Disable title bars
 for_window [class="^.*"] border pixel 0
 
+# Start compositor and set background image
+exec --no-startup-id compton
+exec --no-startup-id ~/.fehbg
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
