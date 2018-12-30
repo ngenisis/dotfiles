@@ -22,7 +22,7 @@ gaps inner 5
 exec_always --no-startup-id compton
 
 # Set background image
-exec _always --no-startup-id ~/.fehbg
+exec_always --no-startup-id feh --bg-scale --no-fehbg "$HOME/Pictures/wallpaper.jpg"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
