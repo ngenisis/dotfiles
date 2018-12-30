@@ -23,6 +23,16 @@ else
 fi
 set -o vi
 
+# User termite
+if [ -x /usr/bin/termite ] ; then
+	export TERMINAL=/usr/bin/termite
+fi
+
+# Use Firefox
+if [ -x /usr/bin/firefox ] ; then
+	export BROWSER=/usr/bin/firefox
+fi
+
 # ranger settings
 export RANGER_LOAD_DEFAULT_RC=FALSE
 if [ -f /usr/share/doc/ranger/examples/bash_automatic_cd.sh ]; then
