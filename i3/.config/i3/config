@@ -15,8 +15,10 @@ for_window [class="^.*"] border pixel 2
 # gaps
 gaps inner 5
 
-# Start compositor and set background image
+# Start compositor
 exec --no-startup-id compton
+
+# Set background image
 exec --no-startup-id ~/.fehbg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
