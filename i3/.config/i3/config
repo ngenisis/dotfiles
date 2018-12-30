@@ -138,6 +138,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 		font pango:mono 5
-        status_command i3status
+        status_command i3blocks
 		position top
 }
