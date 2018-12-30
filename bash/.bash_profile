@@ -6,6 +6,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # Add existing ssh keys to ssh-agent
+eval "$(ssh-agent)"
 ssh-add
 
 # Enable Num lock on login
