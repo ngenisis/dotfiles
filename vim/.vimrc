@@ -1,29 +1,31 @@
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Download vim-plug if not present
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
 
-Plugin 'VundleVim/Vundle.vim' " Vundle, the plug-in manager for Vim
-Plugin 'tpope/vim-fugitive' " A Git wrapper so awesome, it should be illegal
-Plugin 'tpope/vim-repeat' " enable repeating supported plugin maps with .
-Plugin 'tpope/vim-commentary' " comment stuff out
-Plugin 'tpope/vim-surround' " quoting/parenthesizing made simple
-Plugin 'tpope/vim-unimpaired' " Pairs of handy bracket mappings
-Plugin 'tpope/vim-sensible' " Defaults everyone can agree on
-Plugin 'tpope/vim-eunuch' " Helpers for UNIX
-Plugin 'bronson/vim-trailing-whitespace' " Highlights trailing whitespace in read and provides :FixWhitespace to fix it.
-Plugin 'vim-airline/vim-airline' " lean & mean status/tabline for vim that's light as air
-Plugin 'rsmenon/vim-mathematica' " Mathematica syntax highlighting (and more) for vim
-Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy file, buffer, mru, tag, etc finder.
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'kana/vim-textobj-entire'
-Plugin 'kana/vim-textobj-line'
-Plugin 'glts/vim-textobj-comment'
+call plug#begin()
 
-call vundle#end()
-filetype plugin indent on
+Plug 'VundleVim/Vundle.vim' " Vundle, the plug-in manager for Vim
+Plug 'tpope/vim-fugitive' " A Git wrapper so awesome, it should be illegal
+Plug 'tpope/vim-repeat' " enable repeating supported plugin maps with .
+Plug 'tpope/vim-commentary' " comment stuff out
+Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
+Plug 'tpope/vim-unimpaired' " Pairs of handy bracket mappings
+Plug 'tpope/vim-sensible' " Defaults everyone can agree on
+Plug 'tpope/vim-eunuch' " Helpers for UNIX
+Plug 'bronson/vim-trailing-whitespace' " Highlights trailing whitespace in read and provides :FixWhitespace to fix it.
+Plug 'vim-airline/vim-airline' " lean & mean status/tabline for vim that's light as air
+Plug 'rsmenon/vim-mathematica' " Mathematica syntax highlighting (and more) for vim
+Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file, buffer, mru, tag, etc finder.
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-line'
+Plug 'glts/vim-textobj-comment'
+
+call plug#end()
 
 " Change <Leader> to <Space>
 let mapleader = " "
@@ -31,6 +33,7 @@ nnoremap <Space> <Nop>
 
 " Set background to dark
 set background=dark
+
 " Populate airline fonts
 let g:airline_powerline_fonts = 1
 
