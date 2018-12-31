@@ -21,8 +21,8 @@ call plug#begin()
 	Plug 'tpope/vim-sensible'
 " Helpers for UNIX
 	Plug 'tpope/vim-eunuch'
-" Highlights trailing whitespace in read and provides :FixWhitespace to fix it.
-	Plug 'bronson/vim-trailing-whitespace'
+" Better whitespace highlighting for Vim
+	Plug 'ntpeters/vim-better-whitespace'
 " lean & mean status/tabline for vim that's light as air
 	Plug 'vim-airline/vim-airline'
 " Mathematica syntax highlighting (and more) for vim
@@ -72,6 +72,10 @@ call plug#end()
 
 " Ensure .wl files are read with the mma filetype for the vim-mathematica syntax highlighting
 	autocmd BufRead,BufNewFile *.wl set filetype=mma
+
+" vim_better_whitespace settings
+	let g:strip_whitelines_at_eof=1
+	let g:show_spaces_that_precede_tabs=1
 
 " Change <Leader> to <Space>
 	let mapleader = " "
