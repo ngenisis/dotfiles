@@ -7,7 +7,6 @@ endif
 
 call plug#begin()
 
-Plug 'VundleVim/Vundle.vim' " Vundle, the plug-in manager for Vim
 Plug 'tpope/vim-fugitive' " A Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-repeat' " enable repeating supported plugin maps with .
 Plug 'tpope/vim-commentary' " comment stuff out
