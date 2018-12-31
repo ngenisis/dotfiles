@@ -33,6 +33,12 @@ bindsym $mod+Return exec $TERMINAL
 # start Firefox
 bindsym $mod+Shift+Return exec --no-startup-id $BROWSER
 
+# open nmtui
+bindsym $mod+n exec --no-startup-id $TERMINAL -e nmtui
+
+# open pulsemixer
+bindsym $mod+s exec --no-startup-id $TERMINAL -e pulsemixer
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -61,7 +67,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
