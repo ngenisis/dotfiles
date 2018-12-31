@@ -4,30 +4,18 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Vundle, the plug-in manager for Vim
-Plugin 'VundleVim/Vundle.vim'
-" A Git wrapper so awesome, it should be illegal
-Plugin 'tpope/vim-fugitive'
-" enable repeating supported plugin maps with .
-Plugin 'tpope/vim-repeat'
-" comment stuff out
-Plugin 'tpope/vim-commentary'
-" quoting/parenthesizing made simple
-Plugin 'tpope/vim-surround'
-" Pairs of handy bracket mappings
-Plugin 'tpope/vim-unimpaired'
-" Defaults everyone can agree on
-Plugin 'tpope/vim-sensible'
-" Helpers for UNIX
-Plugin 'tpope/vim-eunuch'
-" Highlights trailing whitespace in read and provides :FixWhitespace to fix it.
-Plugin 'bronson/vim-trailing-whitespace'
-" lean & mean status/tabline for vim that's light as air
-Plugin 'vim-airline/vim-airline'
-" Mathematica syntax highlighting (and more) for vim
-Plugin 'rsmenon/vim-mathematica'
-" Fuzzy file, buffer, mru, tag, etc finder.
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'VundleVim/Vundle.vim' " Vundle, the plug-in manager for Vim
+Plugin 'tpope/vim-fugitive' " A Git wrapper so awesome, it should be illegal
+Plugin 'tpope/vim-repeat' " enable repeating supported plugin maps with .
+Plugin 'tpope/vim-commentary' " comment stuff out
+Plugin 'tpope/vim-surround' " quoting/parenthesizing made simple
+Plugin 'tpope/vim-unimpaired' " Pairs of handy bracket mappings
+Plugin 'tpope/vim-sensible' " Defaults everyone can agree on
+Plugin 'tpope/vim-eunuch' " Helpers for UNIX
+Plugin 'bronson/vim-trailing-whitespace' " Highlights trailing whitespace in read and provides :FixWhitespace to fix it.
+Plugin 'vim-airline/vim-airline' " lean & mean status/tabline for vim that's light as air
+Plugin 'rsmenon/vim-mathematica' " Mathematica syntax highlighting (and more) for vim
+Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy file, buffer, mru, tag, etc finder.
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-entire'
