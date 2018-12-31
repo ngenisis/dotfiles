@@ -16,7 +16,7 @@ Plug 'tpope/vim-sensible' " Defaults everyone can agree on
 Plug 'tpope/vim-eunuch' " Helpers for UNIX
 Plug 'bronson/vim-trailing-whitespace' " Highlights trailing whitespace in read and provides :FixWhitespace to fix it.
 Plug 'vim-airline/vim-airline' " lean & mean status/tabline for vim that's light as air
-Plug 'rsmenon/vim-mathematica' " Mathematica syntax highlighting (and more) for vim
+Plug 'rsmenon/vim-mathematica', { 'for': 'mma' } " Mathematica syntax highlighting (and more) for vim
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file, buffer, mru, tag, etc finder.
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
