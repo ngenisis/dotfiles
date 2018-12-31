@@ -44,10 +44,6 @@ call plug#begin()
 
 call plug#end()
 
-" Change <Leader> to <Space>
-	let mapleader = " "
-	nnoremap <Space> <Nop>
-
 " Set background to dark
 	set background=dark
 
@@ -65,15 +61,6 @@ call plug#end()
 	set softtabstop=4
 	set shiftwidth=4
 
-" System clipboard mappings
-	noremap	<Leader>y	"+y
-	noremap	<Leader>p	"+p
-	noremap	<Leader>Y	"*y
-	noremap	<Leader>P	"*p
-
-" Remap S to replace all in normal mode
-	nnoremap	S	:%s//g<Left><Left>
-
 " Split to the bottom and the right
 	set splitbelow splitright
 
@@ -85,3 +72,21 @@ call plug#end()
 
 " Ensure .wl files are read with the mma filetype for the vim-mathematica syntax highlighting
 	autocmd BufRead,BufNewFile *.wl set filetype=mma
+
+" Change <Leader> to <Space>
+	let mapleader = " "
+	nnoremap <Space> <Nop>
+
+" System clipboard mappings
+	nnoremap	<Leader>y	"+y
+	nnoremap	<Leader>p	"+p
+	nnoremap	<Leader>Y	"*y
+	nnoremap	<Leader>P	"*p
+
+" Replace all mapping
+	nnoremap	<Leader>r	:%s//g<Left><Left>
+
+" Fuzzy finder mappings
+	nnoremap	<Leader>f	:Files<Enter>
+	nnoremap	<Leader>l	:Lines<Enter>
+	nnoremap	<leader>b	:Buffers<Enter>
