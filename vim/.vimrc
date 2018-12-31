@@ -33,9 +33,6 @@ Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-line'
 Plugin 'glts/vim-textobj-comment'
-" Plugin 'airodactyl/neovim-ranger'
-" Plugin 'Mizuchi/vim-ranger'
-" Plugin 'kassio/neoterm'
 
 call vundle#end()
 filetype plugin indent on
