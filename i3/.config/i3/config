@@ -9,6 +9,9 @@ set $mod Mod4
 exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
+# Disable system beep
+exec_always --no-startup-id xset b off
+
 # Enable tapping on TouchPad
 exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
 
