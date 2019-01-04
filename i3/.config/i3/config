@@ -42,6 +42,9 @@ bindsym $mod+n exec --no-startup-id $TERMINAL -e nmtui
 # open pulsemixer
 bindsym $mod+s exec --no-startup-id $TERMINAL -e pulsemixer
 
+# toggle mute
+bindsym $mod+m exec --no-startup-id amixer -q -D pulse sset Master toggle
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
