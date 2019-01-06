@@ -67,6 +67,9 @@ call plug#end()
 " Disable automatic comments on newlines
 	autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Update diff when a buffer is written
+	autocmd BufWritePost * if &diff == 1 | diffupdate | endif
+
 " Always display status line
 	set laststatus=2
 
