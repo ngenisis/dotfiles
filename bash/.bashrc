@@ -23,7 +23,7 @@ else
 fi
 set -o vi
 
-# User termite
+# Use termite
 if [ -x /usr/bin/termite ] ; then
 	export TERMINAL=/usr/bin/termite
 fi
