@@ -15,5 +15,3 @@
 	tool = vimdiff3
 [mergetool]
 	path = nvim
-[core]
-	excludesfile = ~/.gitignore
