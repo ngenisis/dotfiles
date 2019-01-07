@@ -31,12 +31,6 @@ if [ -x /usr/bin/firefox ] ; then
 	export BROWSER=/usr/bin/firefox
 fi
 
-# ranger settings
-export RANGER_LOAD_DEFAULT_RC=FALSE
-if [ -f /usr/share/doc/ranger/examples/bash_automatic_cd.sh ]; then
-	. /usr/share/doc/ranger/examples/bash_automatic_cd.sh
-fi
-
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
 

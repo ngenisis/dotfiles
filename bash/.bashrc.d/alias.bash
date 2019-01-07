@@ -24,6 +24,8 @@ elif [ -x /usr/bin/apt ] ; then
 	alias p='sudo apt'
 fi
 
-alias r='ranger-cd'
+if [ -x /usr/bin/bat ] ; then
+	alias cat=bat
+fi
 
 alias e=$EDITOR
