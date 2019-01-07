@@ -10,8 +10,8 @@
 [diff]
 	tool = vimdiff3
 [difftool]
-	path = nvim
+	path = vim
 [merge]
 	tool = vimdiff3
 [mergetool]
-	path = nvim
+	path = vim
