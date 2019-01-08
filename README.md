@@ -49,7 +49,7 @@ I use [`vim-plug`](https://github.com/junegunn/vim-plug) to manage Vim plugins f
 
 Dependencies:
 
-+ [Git](https://git-scm.com/)
++ [`vim` or `gvim`](https://github.com/vim/vim)
 
 It is probably best to just use my `.gitconfig` as a starting point for your own configs unless you intend to impersonate me.
 
