@@ -45,10 +45,11 @@ Optional dependencies:
 
 I use [`vim-plug`](https://github.com/junegunn/vim-plug) to manage Vim plugins from my `.vimrc`. If `plug.vim` is not present in `~/.vim/autoload` on startup, it will be downloaded automatically.
 
-# [Git](https://git-scm.com/)
+# [`git`](https://git-scm.com/)
 
 Dependencies:
 
++ [`git`](https://git-scm.com/)
 + [`vim` or `gvim`](https://github.com/vim/vim)
 
 It is probably best to just use my `.gitconfig` as a starting point for your own configs unless you intend to impersonate me.
