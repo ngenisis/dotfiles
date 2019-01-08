@@ -56,7 +56,15 @@ shopt -s autocd
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Use ripgrep with fzf
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*"'
+if [ -x /usr/bin/fzf ] ; then
+
+	[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+	[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
+
+	if [ -x /usr/bin/rg ] ; then
+		export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*"'
+	fi
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
