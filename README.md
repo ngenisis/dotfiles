@@ -67,15 +67,15 @@ Dependencies:
 
 + [`i3`](https://i3wm.org/)
 + [`xorg`](https://www.x.org/wiki/)
-+ [`compton`]
-+ [`feh`]
++ [`compton`](https://github.com/chjj/compton)
++ [`feh`](https://feh.finalrewind.org/)
 
 Optional dependencies:
 
-+ [`networkmanager`]
-+ [`pulsemixer`]
-+ [`dmenu`]
-+ [`acpi`]
++ [`networkmanager`](https://gitlab.freedesktop.org/NetworkManager/NetworkManager)
++ [`pulsemixer`](https://github.com/GeorgeFilipkin/pulsemixer)
++ [`dmenu`](http://tools.suckless.org/dmenu/)
++ [`acpi`](https://sourceforge.net/projects/acpiclient/)
 
 # [`termite`](https://github.com/thestinger/termite/)
 
