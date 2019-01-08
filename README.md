@@ -53,14 +53,6 @@ Dependencies:
 
 It is probably best to just use my `.gitconfig` as a starting point for your own configs unless you intend to impersonate me.
 
-# [ranger](https://github.com/ranger/ranger)
-
-Dependencies:
-
-+ [ranger](https://github.com/ranger/ranger)
-+ [fzf](https://github.com/junegunn/fzf)
-+ [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
-
 ## Miscellaneous
 
 Other packages I like to have:
