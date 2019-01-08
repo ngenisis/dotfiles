@@ -58,7 +58,24 @@ It is probably best to just use my `.gitconfig` as a starting point for your own
 
 Dependencies:
 
++ [`xorg`](https://www.x.org/wiki/)
 + [`i3`](https://i3wm.org/)
+
+# [`i3`](https://i3wm.org/)
+
+Dependencies:
+
++ [`i3`](https://i3wm.org/)
++ [`xorg`](https://www.x.org/wiki/)
++ [`compton`]
++ [`feh`]
+
+Optional dependencies:
+
++ [`networkmanager`]
++ [`pulsemixer`]
++ [`dmenu`]
++ [`acpi`]
 
 ## Miscellaneous
 
