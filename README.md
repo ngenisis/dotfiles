@@ -53,6 +53,12 @@ Dependencies:
 
 It is probably best to just use my `.gitconfig` as a starting point for your own configs unless you intend to impersonate me.
 
+# [`xorg`](https://www.x.org/wiki/)
+
+Dependencies:
+
++ [`i3`](https://i3wm.org/)
+
 ## Miscellaneous
 
 Other packages I like to have:
