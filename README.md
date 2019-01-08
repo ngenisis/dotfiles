@@ -14,13 +14,23 @@ I've attempted to document any dependencies that are not present on a minimal [A
 
 # Application-specific notes
 
-## [Bash](https://www.gnu.org/software/bash/)
+## [`bash`](https://www.gnu.org/software/bash/)
 
 Dependencies:
++ `openssh` (for `ssh-add` on login)
++ `xorg-xinit` and a working [Xorg](https://wiki.archlinux.org/index.php/Xorg) installation (for `startx` on login)
 
-+ [Vim](https://www.vim.org/) or [Neovim](https://neovim.io/)
-+ [Git](https://git-scm.com/)
-+ [ranger](https://github.com/ranger/ranger)
+Optional dependencies:
++ [`vim` or `gvim`](https://github.com/vim/vim)
++ [`termite`](https://github.com/thestinger/termite/)
++ [`firefox`](https://www.mozilla.org/en-US/firefox/)
++ [`git`](https://github.com/git/git)
++ [`lf`](https://github.com/gokcehan/lf)<sup>[AUR](https://aur.archlinux.org/packages/lf/)</sup>
++ [`fzf`](https://github.com/junegunn/fzf)
++ [`the_silver_searcher`](https://github.com/ggreer/the_silver_searcher)
++ [`bash-completion`](https://github.com/scop/bash-completion)
++ [`xdg-utils`](https://www.freedesktop.org/wiki/Software/xdg-utils/)
++ [`bat`](https://github.com/sharkdp/bat)
 
 There is a known issue on Ubuntu where the prompt will not use my patched version of `git-prompt.sh`. I think this has to do with the order in which `bash_completion` and the patched `git-prompt.sh` get sourced in `.bashrc`, but I haven't had time to figure out why.
 
