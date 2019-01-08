@@ -33,17 +33,17 @@ Optional dependencies:
 
 There is a known issue on Ubuntu where the prompt will not use my patched version of `git-prompt.sh`. I think this has to do with the order in which `bash_completion` and the patched `git-prompt.sh` get sourced in `.bashrc`, but I haven't had time to figure out why.
 
-## [Vim](https://www.vim.org/) / [Neovim](https://neovim.io/)
+## [`vim`](https://github.com/vim/vim)
 
-Dependencies:
+Optional dependencies:
 
-+ [Vim](https://www.vim.org/) or [Neovim](https://neovim.io/)
-+ [Git](https://git-scm.com/)
-+ [Vundle](https://github.com/VundleVim/Vundle.vim)
-+ [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
-+ [Powerline fonts](https://github.com/powerline/fonts)
++ [`gvim`](https://github.com/vim/vim) (or `vim` compiled with `+clipboard`)
++ [`git`](https://git-scm.com/)
++ [`fzf`](https://github.com/junegunn/fzf)
++ [`powerline-fonts`](https://github.com/powerline/fonts)
++ [`lf`](https://github.com/gokcehan/lf)<sup>[AUR](https://aur.archlinux.org/packages/lf/)</sup>
 
-I use [Vundle](https://github.com/VundleVim/Vundle.vim) to manage Vim plugins from my `.vimrc`. In order to use my [CtrlP](https://github.com/ctrlpvim/ctrlp.vim) configs, you will need to have [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) installed. Also, the [vim-airline](https://github.com/vim-airline/vim-airline) statusline will look terrible unless you install the [Powerline fonts](https://github.com/powerline/fonts). Some configs are Neovim-specific, but they are kept separate from the regular Vim configs, so you should be able to use whichever you prefer (for now).
+I use [`vim-plug`](https://github.com/junegunn/vim-plug) to manage Vim plugins from my `.vimrc`. If `plug.vim` is not present in `~/.vim/autoload` on startup, it will be downloaded automatically.
 
 # [Git](https://git-scm.com/)
 
