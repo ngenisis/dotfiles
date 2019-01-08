@@ -77,6 +77,12 @@ Optional dependencies:
 + [`dmenu`]
 + [`acpi`]
 
+# [`termite`](https://github.com/thestinger/termite/)
+
+Dependencies:
+
++ [`ttf-hack`](https://github.com/source-foundry/Hack)
+
 ## Miscellaneous
 
 Other packages I like to have:
