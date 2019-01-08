@@ -47,6 +47,9 @@ call plug#end()
 " Set background to dark
 	set background=dark
 
+" Enable line wrapping
+	set wrap
+
 " Populate airline fonts
 	let g:airline_powerline_fonts = 1
 
