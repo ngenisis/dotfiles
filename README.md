@@ -10,6 +10,8 @@ stow -t ~ bash
 
 See the `stow` man page for more details.
 
+I've attempted to document any dependencies that are not present on a minimal [Arch Linux](https://wiki.archlinux.org/index.php/Arch_Linux) installation. If you experience issues with other distros or operating systems, let me know, as I would like these to be platform-agnostic as much as possible.
+
 # Application-specific notes
 
 ## [Bash](https://www.gnu.org/software/bash/)
