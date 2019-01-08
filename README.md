@@ -69,6 +69,7 @@ Dependencies:
 + [`xorg`](https://www.x.org/wiki/)
 + [`compton`](https://github.com/chjj/compton)
 + [`feh`](https://feh.finalrewind.org/)
++ [`unclutter`](https://github.com/Airblader/unclutter-xfixes)
 
 Optional dependencies:
 

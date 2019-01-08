@@ -15,6 +15,9 @@ exec_always --no-startup-id xset b off
 # Enable tapping on TouchPad
 exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
 
+# Autohide mouse
+exec_always --no-startup-id unclutter
+
 # Disable title bars
 for_window [class="^.*"] border pixel 2
 
