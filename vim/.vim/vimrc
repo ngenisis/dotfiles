@@ -96,7 +96,7 @@ call plug#end()
 " Replace all mapping
 	nnoremap	<Leader>r	:%s//g<Left><Left>
 
-" Fuzzy finder mappings
+" fzf mappings
 	nnoremap	<Leader>f	:Files<Enter>
 	nnoremap	<Leader>l	:Lines<Enter>
 	nnoremap	<leader>b	:Buffers<Enter>
