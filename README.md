@@ -45,7 +45,7 @@ Optional dependencies:
 
 I use [`vim-plug`](https://github.com/junegunn/vim-plug) to manage Vim plugins from my `.vimrc`. If `plug.vim` is not present in `~/.vim/autoload` on startup, it will be downloaded automatically.
 
-# [`git`](https://git-scm.com/)
+## [`git`](https://git-scm.com/)
 
 Dependencies:
 
@@ -54,14 +54,14 @@ Dependencies:
 
 It is probably best to just use my `.gitconfig` as a starting point for your own configs unless you intend to impersonate me.
 
-# [`xorg`](https://www.x.org/wiki/)
+## [`xorg`](https://www.x.org/wiki/)
 
 Dependencies:
 
 + [`xorg`](https://www.x.org/wiki/)
 + [`i3`](https://i3wm.org/)
 
-# [`i3`](https://i3wm.org/)
+## [`i3`](https://i3wm.org/)
 
 Dependencies:
 
@@ -77,13 +77,13 @@ Optional dependencies:
 + [`dmenu`](http://tools.suckless.org/dmenu/)
 + [`acpi`](https://sourceforge.net/projects/acpiclient/)
 
-# [`termite`](https://github.com/thestinger/termite/)
+## [`termite`](https://github.com/thestinger/termite/)
 
 Dependencies:
 
 + [`ttf-hack`](https://github.com/source-foundry/Hack)
 
-## Miscellaneous
+# Miscellaneous
 
 Other packages I like to have:
 
