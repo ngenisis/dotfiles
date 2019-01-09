@@ -28,4 +28,8 @@ if [ -x /usr/bin/bat ] ; then
 	alias cat=bat
 fi
 
+if [ -x /usr/bin/mutt ] ; then
+	alias m=mutt
+fi
+
 alias e=$EDITOR
