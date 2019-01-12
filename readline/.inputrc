@@ -8,6 +8,16 @@
 # Use blinking pipe cursor in insert mode and blinking block otherwise
 	set vi-ins-mode-string \1\e[5 q\2
 	set vi-cmd-mode-string \1\e[1 q\2
+
 # Use up and down arrow keys to search through history
+set keymap vi-command
+# these are for vi-command mode
+	"\e[A": history-search-backward
+	"\e[B": history-search-forward
+	j: history-search-forward
+	k: history-search-backward
+
+set keymap vi-insert
+# these are for vi-insert mode
 	"\e[A": history-search-backward
 	"\e[B": history-search-forward
