@@ -1,5 +1,7 @@
-TAB: menu-complete
-set editing-mode vi
+# Cycle through completions with Tab
+	TAB: menu-complete
+# Enable vi-style editing mode
+	set editing-mode vi
 # Use up and down arrow keys to search through history
 	"\e[A": history-search-backward
 	"\e[B": history-search-forward
