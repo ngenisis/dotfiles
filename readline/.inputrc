@@ -2,6 +2,12 @@
 	TAB: menu-complete
 # Enable vi-style editing mode
 	set editing-mode vi
+# Enable mode prompt
+# Necessary to set mode-specific cursor shapes
+	set show-mode-in-prompt on
+# Use blinking pipe cursor in insert mode and blinking block otherwise
+	set vi-ins-mode-string \1\e[5 q\2
+	set vi-cmd-mode-string \1\e[1 q\2
 # Use up and down arrow keys to search through history
 	"\e[A": history-search-backward
 	"\e[B": history-search-forward
