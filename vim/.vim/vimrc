@@ -106,5 +106,6 @@ call plug#end()
 	nnoremap	<leader>b	:Buffers<Enter>
 
 " Use blinking pipe cursor in insert mode and blinking block otherwise
-	au InsertEnter * silent execute "!echo -en \<esc>[5 q"
-	au InsertLeave * silent execute "!echo -en \<esc>[1 q"
+	silent execute "!echo -en \<esc>[1 q"
+	autocmd InsertEnter * silent execute "!echo -en \<esc>[5 q"
+	autocmd InsertLeave * silent execute "!echo -en \<esc>[1 q"
