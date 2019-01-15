@@ -26,7 +26,8 @@
 	set markers=no
 # show two lines of context
 	set pager_context=2
-# automatically view html attachments (in w3m, see ~/.mailcap)
+# automatically view html attachments
+	set mailcap_path = ~/.mutt/mailcap
 	auto_view text/html
 # delete messages marked for deletion when closing or synchronizing a mailbox
 	set delete=yes
