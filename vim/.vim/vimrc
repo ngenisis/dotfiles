@@ -80,8 +80,8 @@ call plug#end()
 	autocmd BufRead,BufNewFile *.wl set filetype=mma
 	autocmd BufRead,BufNewFile ~/.mutt/* set filetype=muttrc
 
-" Unlimited text width in emails
-	autocmd FileType mail set tw=0
+" Set text width to 80 in emails
+	autocmd FileType mail set textwidth=80
 
 " vim_better_whitespace settings
 	let g:strip_whitelines_at_eof=1
