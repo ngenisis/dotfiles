@@ -8,10 +8,10 @@
 [pull]
 	rebase = true
 [diff]
-	tool = vimdiff3
+	tool = vimdiff
 [difftool]
 	path = vim
 [merge]
-	tool = vimdiff3
+	tool = vimdiff
 [mergetool]
 	path = vim
