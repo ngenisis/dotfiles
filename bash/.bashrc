@@ -83,3 +83,8 @@ fi
 if [ -f /usr/share/doc/pkgfile/command-not-found.bash ] ; then
 	. /usr/share/doc/pkgfile/command-not-found.bash
 fi
+
+# Use qt5ct for Qt5 settings
+if [ -x /usr/bin/qt5ct ] ; then
+	export QT_QPA_PLATFORMTHEME="qt5ct"
+fi
