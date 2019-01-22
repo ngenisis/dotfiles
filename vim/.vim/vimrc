@@ -41,7 +41,8 @@ call plug#begin()
 	Plug 'kana/vim-textobj-line'
 " Vim text objects for comments
 	Plug 'glts/vim-textobj-comment'
-
+" Syntastic
+	Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 " Set background to dark
@@ -109,3 +110,12 @@ call plug#end()
 	silent execute "!echo -en \<esc>[1 q"
 	autocmd InsertEnter * silent execute "!echo -en \<esc>[5 q"
 	autocmd InsertLeave * silent execute "!echo -en \<esc>[1 q"
+
+" Recommended Syntastic settings
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
