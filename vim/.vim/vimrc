@@ -77,7 +77,7 @@ call plug#end()
 " Always display status line
 	set laststatus=2
 
-" Ensure .wl files are read with the correct filetypes
+" Ensure files are read with the correct filetypes
 	autocmd BufRead,BufNewFile *.wl set filetype=mma
 	autocmd BufRead,BufNewFile ~/.mutt/* set filetype=muttrc
 
