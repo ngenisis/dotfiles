@@ -116,3 +116,5 @@ call plug#end()
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_wq = 0
 	let g:syntastic_quiet_messages = { "regex":	".*HTML5.*"	}
+	nnoremap	<Leader>s	:SyntasticCheck<Enter>
+	nnoremap	<Leader>S	:SyntasticToggleMode<Enter>
