@@ -40,6 +40,9 @@ shopt -s histappend
 # Infinite history.
 HISTSIZE= HISTFILESIZE=
 
+# Disable less history
+export LESSHISTFILE=/dev/null
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
