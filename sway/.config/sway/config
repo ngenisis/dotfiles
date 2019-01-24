@@ -1,5 +1,9 @@
-# HiDPI
-output * scale 2
+output * {
+	# HiDpi support
+	scale 2
+	# Set wallpaper
+	background "$HOME/Pictures/wallpaper.jpg" stretch
+}
 
 # Set $mod to the Super (Windows) key
 set $mod Mod4
@@ -23,12 +27,6 @@ for_window [class="^.*"] border pixel 2
 
 # gaps
 gaps inner 5
-
-# Start compositor
-exec_always --no-startup-id compton -f
-
-# Set background image
-exec_always --no-startup-id feh --bg-scale --no-fehbg "$HOME/Pictures/wallpaper.jpg"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
