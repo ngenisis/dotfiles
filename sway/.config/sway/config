@@ -8,14 +8,12 @@ output * {
 input * {
 	# Enable tapping on touchpad
 	tap enabled
+	# Make Caps lock work as escape
+	xkb_options caps:escape
 }
 
 # Set $mod to the Super (Windows) key
 set $mod Mod4
-
-# swap caps lock and escape
-exec_always --no-startup-id xmodmap -e "clear lock"
-exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 # Disable system beep
 exec_always --no-startup-id xset b off
