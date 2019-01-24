@@ -5,6 +5,11 @@ output * {
 	background "$HOME/Pictures/wallpaper.jpg" stretch
 }
 
+input * {
+	# Enable tapping on touchpad
+	tap enabled
+}
+
 # Set $mod to the Super (Windows) key
 set $mod Mod4
 
@@ -14,10 +19,6 @@ exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 # Disable system beep
 exec_always --no-startup-id xset b off
-
-# Enable tapping on TouchPad
-exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
-exec_always --no-startup-id xinput set-prop 'ALP0012:00 044E:120C' 'libinput Tapping Enabled' 1
 
 # Autohide mouse
 exec_always --no-startup-id unclutter
