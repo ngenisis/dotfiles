@@ -1,3 +1,4 @@
+# Output device settings
 output * {
 	# HiDpi support
 	scale 2
@@ -5,6 +6,7 @@ output * {
 	background "$HOME/Pictures/wallpaper.jpg" stretch
 }
 
+# Input device settings
 input * {
 	# Enable tapping on touchpad
 	tap enabled
