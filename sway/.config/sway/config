@@ -23,9 +23,6 @@ set $mod Mod4
 # Disable system beep
 exec_always --no-startup-id xset b off
 
-# Autohide mouse
-exec_always --no-startup-id unclutter
-
 # gaps
 gaps inner 5
 
