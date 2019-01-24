@@ -1,6 +1,5 @@
-# i3 config file (v4)
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+# HiDPI
+output * scale 2
 
 # Set $mod to the Super (Windows) key
 set $mod Mod4
