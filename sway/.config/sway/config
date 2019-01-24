@@ -12,6 +12,9 @@ input * {
 	xkb_options caps:escape
 }
 
+# Disable title bars for tiled windows
+default_border pixel 2
+
 # Set $mod to the Super (Windows) key
 set $mod Mod4
 
@@ -20,9 +23,6 @@ exec_always --no-startup-id xset b off
 
 # Autohide mouse
 exec_always --no-startup-id unclutter
-
-# Disable title bars
-for_window [class="^.*"] border pixel 2
 
 # gaps
 gaps inner 5
