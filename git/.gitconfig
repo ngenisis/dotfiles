@@ -15,3 +15,5 @@
 	tool = vimdiff
 [mergetool]
 	path = vim
+[url "https://aur.archlinux.org/"]
+	insteadOf = "aur:"
