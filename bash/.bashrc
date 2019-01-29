@@ -91,3 +91,6 @@ fi
 if [ -x /usr/bin/qt5ct ] ; then
 	export QT_QPA_PLATFORMTHEME="qt5ct"
 fi
+
+# HiDPI support for Qt apps
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
