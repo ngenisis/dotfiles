@@ -115,9 +115,10 @@ call plug#end()
 	autocmd InsertLeave * silent execute "!echo -en \<esc>[1 q"
 
 " Syntastic settings
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_wq = 0
+	let g:syntastic_mode_map = {"mode": "passive"}
+	let g:syntastic_always_populate_loc_list = 1
+	let g:syntastic_auto_loc_list = 1
+	let g:syntastic_check_on_wq = 0
 	let g:syntastic_quiet_messages = { "regex":	".*HTML5.*"	}
 	nnoremap	<Leader>s	:SyntasticCheck<Enter>
 	nnoremap	<Leader>S	:SyntasticToggleMode<Enter>
