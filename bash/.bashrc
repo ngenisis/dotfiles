@@ -5,13 +5,9 @@ case $- in
 esac
 
 # Load additional configuration files
-for config in $HOME/.bashrc.d/*.bash ; do
+for config in $HOME/.config/bash/*.{sh,bash} ; do
 	source $config
 done
-for config in $HOME/.bashrc.d/*.sh ; do
-	source $config
-done
-unset -v config
 
 # Use Vim
 if [ -x /usr/bin/vim ] ; then
