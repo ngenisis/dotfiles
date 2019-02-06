@@ -26,6 +26,7 @@ map gD cd ~/Downloads
 map gw cd ~/Workspace
 map g/ cd /
 map g. cd ~/Workspace/dotfiles
+map gA cd ~/Workspace/AUR
 
 # Draw boxes
 set drawbox
