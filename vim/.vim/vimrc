@@ -79,6 +79,8 @@ call plug#end()
 
 " Ensure files are read with the correct filetypes
 	autocmd BufRead,BufNewFile *.wl set filetype=mma
+	autocmd BufRead,BufNewFile *.m set filetype=mma
+	autocmd BufRead,BufNewFile *.rdf set filetype=xml
 	autocmd BufRead,BufNewFile ~/.mutt/* set filetype=muttrc
 
 " Change commentstring for mma files
