@@ -16,6 +16,7 @@ exec_always --no-startup-id xset b off
 exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
 exec_always --no-startup-id xinput set-prop 'ALP0012:00 044E:120C' 'libinput Tapping Enabled' 1
 exec_always --no-startup-id xinput set-prop 'AlpsPS/2 ALPS DualPoint TouchPad' 'libinput Tapping Enabled' 1
+exec_always --no-startup-id xinput set-prop 'AlpsPS/2 ALPS GlidePoint' 'libinput Tapping Enabled' 1
 
 # Autohide mouse
 exec_always --no-startup-id unclutter
