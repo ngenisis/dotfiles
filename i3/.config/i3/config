@@ -57,11 +57,17 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# copy selection to file
-bindsym $mod+Print exec --no-startup-id maim --hidecursor --select ~/Pictures/Screenshots/$(date +%s).png
-
 # copy selection to clipboard
-bindsym $mod+Shift+Print exec --no-startup-id maim --hidecursor --select | xclip -selection clipboard -t image/png
+bindsym $mod+Print exec --no-startup-id maim --hidecursor --select | xclip -selection clipboard -t image/png
+
+# copy screen to clipboard
+bindsym $mod+Control+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+
+# copy selection to file
+bindsym $mod+Shift+Print exec --no-startup-id maim --hidecursor --select ~/Pictures/Screenshots/$(date +%s).png
+
+# copy screen to file
+bindsym $mod+Control+Shift+Print exec --no-startup-id maim ~/Pictures/Screenshots/$(date +%s).png
 
 # change focus
 bindsym $mod+h focus left
