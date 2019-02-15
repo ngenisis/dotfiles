@@ -6,7 +6,8 @@ elif [ -n "`xdpyinfo | grep 3840x2160`" ] ; then
 	export GDK_SCALE=2
 fi
 
+setxkbmap -option "caps:swapescape"
+numlockx &
 exec i3
-/usr/bin/setxkbmap -option "caps:swapescape"
 
 # vim: set filetype=sh :
