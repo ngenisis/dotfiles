@@ -33,6 +33,7 @@ bind index,pager	o	change-folder
 bind index			zo	collapse-thread
 bind index			zc	collapse-thread
 bind index			s	sync-mailbox
+bind index			S	save-message
 
 # Mutt keybinds
 bind index			h	help
