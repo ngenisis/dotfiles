@@ -65,6 +65,10 @@ call plug#end()
 	set softtabstop=4
 	set shiftwidth=4
 
+" Ignore case in lowercase searches
+	set ignorecase
+	set smartcase
+
 " Split to the bottom and the right
 	set splitbelow splitright
 
