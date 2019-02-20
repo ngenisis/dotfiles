@@ -54,8 +54,9 @@ bindsym $mod+m exec --no-startup-id amixer -q -D pulse sset Master toggle
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# fzf launcher
+bindsym $mod+d exec --no-startup-id termite -t 'fzf' -e 'i3-dmenu-desktop --dmenu=fzf'
+for_window [title="fzf"] floating enable
 
 # copy selection to clipboard
 bindsym $mod+Print exec --no-startup-id maim --hidecursor --select | xclip -selection clipboard -t image/png
