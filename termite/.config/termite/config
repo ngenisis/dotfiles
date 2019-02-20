@@ -1,7 +1,7 @@
 [options]
 allow_bold = true
 clickable_url = true
-font = hack 9
+font = Hack 9
 scrollback_lines = -1
 scroll_on_keystroke = true
 search_wrap = true
