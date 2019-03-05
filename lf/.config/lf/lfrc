@@ -23,10 +23,15 @@ set incsearch
 # Common locations
 map gd cd ~/Documents
 map gD cd ~/Downloads
+map gp cd ~/Pictures
 map gw cd ~/Workspace
 map g/ cd /
+map ge cd /etc
+map gm cd /mnt
+map gu cd /usr
 map g. cd ~/Workspace/dotfiles
-map gA cd ~/Workspace/AUR
+map gP cd ~/Workspace/PKGBUILD
+map gA cd ~/Workspace/PKGBUILD/AUR
 
 # Draw boxes
 set drawbox
