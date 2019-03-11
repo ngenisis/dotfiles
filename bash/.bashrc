@@ -4,8 +4,13 @@ case $- in
       *) return;;
 esac
 
-# Load additional configuration files
-for config in $HOME/.config/bash/*.{sh,bash} ; do
+# Source additional sh configs
+for config in $HOME/.config/sh/*.sh ; do
+	source $config
+done
+
+# Source additional bash configs
+for config in $HOME/.config/bash/*.bash ; do
 	source $config
 done
 
