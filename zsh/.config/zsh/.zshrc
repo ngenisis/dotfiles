@@ -10,7 +10,7 @@ bindkey -v
 zstyle :compinstall filename '/home/ngenisis/.zshrc'
 
 autoload -Uz compinit
-compinit
+compinit -d "${HOME}/.local/share/zsh/dumpfile"
 
 # Source additional sh configs
 for config in $HOME/.config/sh/*.sh ; do
