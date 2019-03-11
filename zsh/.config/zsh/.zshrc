@@ -8,3 +8,8 @@ zstyle :compinstall filename '/home/ngenisis/.zshrc'
 
 autoload -Uz compinit
 compinit
+
+# Source additional sh configs
+for config in $HOME/.config/sh/*.sh ; do
+	source $config
+done
