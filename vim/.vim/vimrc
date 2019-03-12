@@ -116,9 +116,10 @@ call plug#end()
 	nnoremap	<leader>b	:Buffers<Enter>
 
 " Use blinking pipe cursor in insert mode and blinking block otherwise
-	silent execute "!echo -en \<esc>[1 q"
-	autocmd InsertEnter * silent execute "!echo -en \<esc>[5 q"
-	autocmd InsertLeave * silent execute "!echo -en \<esc>[1 q"
+	autocmd VimEnter	* silent execute "! echo -ne '\e[1 q'"
+	autocmd InsertLeave	* silent execute "! echo -ne '\e[1 q'"
+	autocmd VimLeave	* silent execute "! echo -ne '\e[5 q'"
+	autocmd InsertEnter	* silent execute "! echo -ne '\e[5 q'"
 
 " Syntastic settings
 	let g:syntastic_mode_map = {"mode": "passive"}
