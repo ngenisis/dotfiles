@@ -30,6 +30,16 @@ if [ -x /usr/bin/fzf ] ; then
 	[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 fi
 
+# Change cursor depending on vi mode
+zle-line-init zle-keymap-select () {
+	case ${KEYMAP} in
+		vicmd)		echo -ne '\e[1 q' ;;
+		viins|main)	echo -ne '\e[5 q' ;;
+	esac
+}
+zle -N zle-keymap-select
+zle -N zle-line-init
+
 # Set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
