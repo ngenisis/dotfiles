@@ -1,74 +1,15 @@
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
 # Source additional sh configs
 for config in $HOME/.config/sh/*.sh ; do
 	source $config
 done
 
-# Source additional bash configs
-for config in $HOME/.config/bash/*.bash ; do
-	source $config
-done
-
-# Use Vim
-if [ -x /usr/bin/vim ] ; then
-	export EDITOR=/usr/bin/vim
-else
-	export EDITOR=/usr/bin/vi
-fi
-set -o vi
-
-# Use termite
-if [ -x /usr/bin/termite ] ; then
-	export TERMINAL=/usr/bin/termite
-fi
-
-# Use Firefox
-if [ -x /usr/bin/firefox ] ; then
-	export BROWSER=/usr/bin/firefox
-fi
-
-# don't put duplicate lines or lines starting with space in the history.
+# History settings
 HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# Infinite history.
 HISTSIZE= HISTFILESIZE=
+setopt -s histappend
 
-# Disable less history
-export LESSHISTFILE=/dev/null
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-shopt -s globstar
-
-# If set, a command name that is the name of a directory is executed
-# as if it were the argument to the cd command. This option is only used by interactive shells.
-shopt -s autocd
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# Use ripgrep with fzf
-if [ -x /usr/bin/fzf ] ; then
-
-	[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
-	[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
-
-	if [ -x /usr/bin/rg ] ; then
-		export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*"'
-	fi
-fi
+# Additional options
+shopt -s checkwinsize globstar autocd
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -81,17 +22,60 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Display "command not found" hook when running an unrecognized command
-# Must first install the pkgfile package and update its database with pkgfile -u
-# Enable pkgfile-update.timer for automatic updates
-if [ -f /usr/share/doc/pkgfile/command-not-found.bash ] ; then
-	. /usr/share/doc/pkgfile/command-not-found.bash
+# Set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+else
+	color_prompt=
 fi
 
-# Use qt5ct for Qt5 settings
-if [ -x /usr/bin/qt5ct ] ; then
-	export QT_QPA_PLATFORMTHEME="qt5ct"
-fi
+# Configure git prompt
+GIT_PS1_SHOWDIRTYSTATE=yes
+GIT_PS1_SHOWSTASHSTATE=yes
+GIT_PS1_SHOWUNTRACKEDFILES=yes
+GIT_PS1_SHOWUPSTREAM=verbose
+GIT_PS1_HIDE_IF_PWD_IGNORED=yes
 
-# HiDPI support for Qt apps
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export PROMPT_COMMAND=__prompt_command
+
+function __prompt_command() {
+	local EXIT=$?
+	local RED='\[\033[01;31m\]'
+	local GREEN='\[\033[01;32m\]'
+	local BLUE='\[\033[01;34m\]'
+	local MAGENTA='\[\033[01;35m\]'
+	local NONE='\[\033[00m\]'
+	local EXIT_PRE=
+
+	if [ "$color_prompt" = yes ]; then
+		PS1="$GREEN\u@\h$NONE:$BLUE\w$MAGENTA"
+		EXIT_PRE="$RED[$EXIT] "
+	else
+		PS1="\u@\h:\w"
+		EXIT_PRE="[$EXIT] "
+	fi
+
+	if [ $EXIT != 0 ] ; then
+		PS1="$EXIT_PRE$PS1"
+	fi
+
+	__git_ps1 "$PS1" "$NONE\n\$ "
+
+	return $EXIT
+}
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
