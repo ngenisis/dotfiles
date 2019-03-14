@@ -52,8 +52,6 @@ Dependencies:
 + [`git`](https://git-scm.com/)
 + [`vim` or `gvim`](https://github.com/vim/vim)
 
-It is probably best to just use my `.gitconfig` as a starting point for your own configs unless you intend to impersonate me.
-
 ## [`xorg`](https://www.x.org/wiki/)
 
 Dependencies:
