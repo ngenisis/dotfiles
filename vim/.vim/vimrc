@@ -45,6 +45,9 @@ call plug#begin()
 	Plug 'vim-syntastic/syntastic'
 call plug#end()
 
+" Change viminfo location
+	set viminfo+=n~/.vim/viminfo
+
 " Set background to dark
 	set background=dark
 
