@@ -24,8 +24,4 @@ elif [ -x /usr/bin/apt ] ; then
 	alias p='sudo apt'
 fi
 
-if [ -x /usr/bin/mutt ] ; then
-	alias m=mutt
-fi
-
 alias e=$EDITOR
