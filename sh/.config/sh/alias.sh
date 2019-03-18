@@ -14,14 +14,6 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias o='xdg-open'
-
-# Package manager alias
-if [ -x /usr/bin/pacman ] ; then
-	alias p='sudo pacman --color always'
-elif [ -x /usr/bin/dnf ] ; then
-	alias p='sudo dnf'
-elif [ -x /usr/bin/apt ] ; then
-	alias p='sudo apt'
-fi
-
+alias p='sudo pacman --color always'
+alias pp='pacman --color always'
 alias e=$EDITOR
