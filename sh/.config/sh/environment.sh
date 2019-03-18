@@ -1,21 +1,7 @@
-# Use Vim
-if [ -x /usr/bin/vim ] ; then
-	export EDITOR=/usr/bin/vim
-	export VISUAL=/usr/bin/vim
-else
-	export EDITOR=/usr/bin/vi
-	export VISUAL=/usr/bin/vi
-fi
-
-# Use termite
-if [ -x /usr/bin/termite ] ; then
-	export TERMINAL=/usr/bin/termite
-fi
-
-# Use Firefox
-if [ -x /usr/bin/firefox ] ; then
-	export BROWSER=/usr/bin/firefox
-fi
+export EDITOR=vim
+export VISUAL=vim
+export TERMINAL=termite
+export BROWSER=firefox
 
 # Disable less history
 export LESSHISTFILE=/dev/null
