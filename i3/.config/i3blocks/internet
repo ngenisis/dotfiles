@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+TYPE=$(nmcli -t -f TYPE connection show --active)
+NAME=$(nmcli -t -f NAME connection show --active)
+
+case ${TYPE} in
+	ethernet)
+		ICON=" "
+		;;
+	*wireless)
+		ICON=" "
+		;;
+esac
+
+echo "${ICON} ${NAME}"
+echo "${ICON} ${NAME}"
+echo ""

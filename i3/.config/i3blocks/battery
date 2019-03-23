@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+
+battery="/sys/class/power_supply/BAT0"
+
+_status=$(cat "${battery}/status")
+capacity=$(cat "${battery}/capacity")
+
+case ${_status} in
+	Discharging)
+		if [ ${capacity} -lt 5 ] ; then
+			exit 33
+		elif [ ${capacity} -lt 10 ] ; then
+			icon=" "
+			color="#FF0000"
+		elif [ ${capacity} -lt 25 ] ; then
+			icon=" "
+			color="#FFAE00"
+		elif [ ${capacity} -lt 50 ] ; then
+			icon=" "
+			color="#FFF600"
+		elif [ ${capacity} -lt 75 ] ; then
+			icon=" "
+			color="#A8FF00"
+		else
+			icon=" "
+		fi
+		;;
+	Charging)
+		icon=""
+		;;
+esac
+
+echo "${icon} ${capacity}%"
+echo "${icon} ${capacity}%"
+echo "${color}"
+
+exit 0
