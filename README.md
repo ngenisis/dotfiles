@@ -6,7 +6,7 @@ Each application's dotfiles are kept in a folder of the same name. Each applicat
 make <application name>
 ```
 
-To use my default configuration, just run `make`. To use all my dotfiles, run `make all`.
+This will handle dependencies between my dotfiles. To use my default configuration, just run `make`. To use all my dotfiles, run `make all`.
 
 ## Dependencies
 
