@@ -29,7 +29,7 @@ termite: config
 vim: config
 	stow -v -R vim
 
-xorg: config
+xorg: i3 config
 	stow -v -R xorg
 
 zsh: config sh
