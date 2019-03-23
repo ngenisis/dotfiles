@@ -2,7 +2,7 @@ default: config git i3 lf mutt sh termite vim xorg zsh
 
 all: config bash git i3 lf mutt readline sh termite vim xorg zsh
 
-bash: config sh
+bash: config sh readline
 	stow -v -R bash
 
 git: config
