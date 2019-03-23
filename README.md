@@ -10,10 +10,12 @@ To use my default configuration, just run `make`. To use all my dotfiles, run `m
 
 ## Dependencies
 
-+ bash and zsh require my sh dotfiles
++ `bash` and `zsh` require my `sh` dotfiles
 
-+ sh requires openssh and xorg-xinit for login
++ `sh` requires `openssh` and `xorg-xinit` for login
 
-+ xorg requires xorg-xinit and my i3 dotfiles
++ `xorg` requires `xorg-xinit` and my `i3` dotfiles
 
-+ i3 requires compton for transparency, feh for setting the background image, otf-font-awesome for block icons, pulsemixer for the volume block, and networkmanager for the internet block
++ `i3` requires compton for transparency, `feh` for setting the background image, `otf-font-awesome` for block icons, `pulsemixer` for the volume block, and `networkmanager` for the internet block
+
++ `termite` requires `ttf-hack` for the font
