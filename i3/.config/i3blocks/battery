@@ -2,6 +2,8 @@
 
 battery="/sys/class/power_supply/BAT0"
 
+[ -e ${battery} ] || exit 33
+
 _status=$(cat "${battery}/status")
 capacity=$(cat "${battery}/capacity")
 
