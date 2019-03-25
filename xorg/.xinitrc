@@ -8,7 +8,7 @@ elif [ -n "`xdpyinfo | grep 4480x1440`" ] ; then
 	xrandr --output HDMI-1 --primary --auto --output DP-2 --auto --left-of HDMI-1
 fi
 
-setxkbmap -option "caps:swapescape"
+setxkbmap -option "caps:escape"
 xset dpms 0 0 0
 numlockx &
 exec i3
