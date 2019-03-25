@@ -9,6 +9,7 @@ elif [ -n "`xdpyinfo | grep 4480x1440`" ] ; then
 fi
 
 setxkbmap -option "caps:swapescape"
+xset dpms 0 0 0
 numlockx &
 exec i3
 
