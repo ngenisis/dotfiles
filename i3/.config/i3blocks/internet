@@ -4,7 +4,7 @@ TYPE=$(nmcli -t -f TYPE connection show --active)
 NAME=$(nmcli -t -f NAME connection show --active)
 
 case ${TYPE} in
-	*ethernet)
+	*ethernet*)
 		ICON=" "
 		;;
 	*wireless)
