@@ -3,6 +3,8 @@
 TYPE=$(nmcli -t -f TYPE connection show --active)
 NAME=$(nmcli -t -f NAME connection show --active)
 
+[ -z ${TYPE} ] && exit 33
+
 case ${TYPE} in
 	*ethernet*)
 		ICON=" "
