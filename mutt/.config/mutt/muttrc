@@ -52,5 +52,5 @@
 	color underline brightgreen default
 
 # Other configuration files
-	source $HOME/.mutt/accounts/work
-	source $HOME/.mutt/keybinds
+	source $HOME/.config/mutt/accounts/work
+	source $HOME/.config/mutt/keybinds
