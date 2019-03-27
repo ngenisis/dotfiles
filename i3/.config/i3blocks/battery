@@ -27,7 +27,7 @@ case ${_status} in
 			icon=" "
 		fi
 		;;
-	Charging)
+	Full|Charging)
 		icon=""
 		;;
 esac
