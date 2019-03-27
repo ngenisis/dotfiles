@@ -15,5 +15,6 @@ interval=10
 interval=30
 
 [time]
+label=
 command=date "+%A %e %b %l:%M %P"
 interval=60
