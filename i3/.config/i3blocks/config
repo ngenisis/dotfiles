@@ -6,7 +6,6 @@ markup=none
 
 [volume]
 label=
-command=echo `pulsemixer --get-volume | cut -d " " -f1`%
 interval=once
 
 [internet]

@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+echo `pulsemixer --get-volume | cut -d " " -f1`%
+
+case $BLOCK_BUTTON  in
+	1)
+		$TERMINAL -e pulsemixer
+		;;
+esac
+
+exit 0
