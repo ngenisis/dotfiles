@@ -17,3 +17,11 @@ esac
 echo "${ICON} ${NAME}"
 echo "${ICON} ${NAME}"
 echo ""
+
+case $BLOCK_BUTTON in
+	1)
+		$TERMINAL -e nmtui
+		;;
+esac
+
+exit 0
