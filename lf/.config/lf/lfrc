@@ -29,6 +29,9 @@ map g/ cd /
 map ge cd /etc
 map gm cd /mnt
 map gu cd /usr
+map go cd /opt
+map gl cd /usr/lib
+map gb cd /usr/bin
 map g. cd ~/Workspace/dotfiles
 map gP cd ~/Workspace/PKGBUILD
 map gA cd ~/Workspace/PKGBUILD/AUR
