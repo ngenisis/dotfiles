@@ -13,6 +13,9 @@ exec_always --no-startup-id xinput set-prop 'ALP0012:00 044E:120C' 'libinput Tap
 exec_always --no-startup-id xinput set-prop 'AlpsPS/2 ALPS DualPoint TouchPad' 'libinput Tapping Enabled' 1
 exec_always --no-startup-id xinput set-prop 'AlpsPS/2 ALPS GlidePoint' 'libinput Tapping Enabled' 1
 
+# Automatically detect screen resolution
+exec_always --no-startup-id autorandr --change
+
 # Autohide mouse
 exec_always --no-startup-id unclutter
 
