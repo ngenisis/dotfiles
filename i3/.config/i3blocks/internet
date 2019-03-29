@@ -3,9 +3,12 @@
 TYPE=$(nmcli -t -f TYPE connection show --active)
 NAME=$(nmcli -t -f NAME connection show --active)
 
-[ -z ${TYPE} ] && exit 33
+[ -z "${TYPE}" ] && exit 33
 
-case ${TYPE} in
+case "${TYPE}" in
+	vpn*)
+		ICON=" "
+		;;
 	*ethernet*)
 		ICON=" "
 		;;
