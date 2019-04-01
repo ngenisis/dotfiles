@@ -92,6 +92,8 @@ call plug#end()
 
 " Change commentstring for mma files
 	autocmd FileType mma setlocal commentstring=\(*%s*\)
+	let g:mma_candy = 1
+	inoremap	$$	\[Formal]<Esc>i
 
 " Set text width to 80 in emails
 	autocmd FileType mail set textwidth=80
