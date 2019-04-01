@@ -5,6 +5,6 @@ fi
 setxkbmap -option "caps:escape"
 xset dpms 0 0 0
 numlockx &
-exec i3
+autorandr --change && exec i3
 
 # vim: set filetype=sh :

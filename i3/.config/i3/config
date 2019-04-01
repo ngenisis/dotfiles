@@ -13,8 +13,8 @@ exec_always --no-startup-id xinput set-prop 'ALP0012:00 044E:120C' 'libinput Tap
 exec_always --no-startup-id xinput set-prop 'AlpsPS/2 ALPS DualPoint TouchPad' 'libinput Tapping Enabled' 1
 exec_always --no-startup-id xinput set-prop 'AlpsPS/2 ALPS GlidePoint' 'libinput Tapping Enabled' 1
 
-# Set screen resolutions and background image
-exec_always --no-startup-id autorandr --change && feh --bg-scale --no-fehbg "$HOME/Pictures/wallpaper.jpg"
+# Set background image
+exec_always --no-startup-id feh --bg-scale --no-fehbg "$HOME/Pictures/wallpaper.jpg"
 
 # Autohide mouse
 exec_always --no-startup-id unclutter
@@ -146,7 +146,7 @@ bindsym $mod+equal scratchpad show
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec --no-startup-id autorandr --change ; restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # lock screen
