@@ -13,3 +13,4 @@ alias o='xdg-open'
 alias p='sudo pacman --color always'
 alias pp='pacman --color always'
 alias e=$EDITOR
+alias clipboard='xclip -selection clipboard'
