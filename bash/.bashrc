@@ -22,6 +22,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Report current directory to VTE
+if [[ $TERM == xterm-termite ]]; then
+	. /etc/profile.d/vte.sh
+	__vte_prompt_command
+fi
+
 # Set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
