@@ -7,6 +7,9 @@ set $mod Mod4
 # Disable system beep
 exec_always --no-startup-id xset b off
 
+# Map Caps lock to escape
+exec_always --no-startup-id setxkbmap -option "caps:escape"
+
 # Enable tapping on TouchPad
 exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
 exec_always --no-startup-id xinput set-prop 'ALP0012:00 044E:120C' 'libinput Tapping Enabled' 1
