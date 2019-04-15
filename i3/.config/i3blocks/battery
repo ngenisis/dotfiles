@@ -19,10 +19,8 @@ case ${_status} in
 			color="#FFAE00"
 		elif [ ${capacity} -lt 50 ] ; then
 			icon=" "
-			color="#FFF600"
 		elif [ ${capacity} -lt 75 ] ; then
 			icon=" "
-			color="#A8FF00"
 		else
 			icon=" "
 		fi
