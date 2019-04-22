@@ -6,42 +6,24 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
-
-" A Git wrapper so awesome, it should be illegal
 	Plug 'tpope/vim-fugitive'
-" enable repeating supported plugin maps with .
 	Plug 'tpope/vim-repeat'
-" comment stuff out
 	Plug 'tpope/vim-commentary'
-" quoting/parenthesizing made simple
 	Plug 'tpope/vim-surround'
-" Pairs of handy bracket mappings
 	Plug 'tpope/vim-unimpaired'
-" Defaults everyone can agree on
 	Plug 'tpope/vim-sensible'
-" Helpers for UNIX
 	Plug 'tpope/vim-eunuch'
-" Better whitespace highlighting for Vim
+	Plug 'justinmk/vim-sneak'
 	Plug 'ntpeters/vim-better-whitespace'
-" lean & mean status/tabline for vim that's light as air
 	Plug 'vim-airline/vim-airline'
-" Mathematica syntax highlighting (and more) for vim
 	Plug 'rsmenon/vim-mathematica', { 'for': 'mma' }
-" A command-line fuzzy finder
 	Plug 'junegunn/fzf'
-" fzf heart vim
 	Plug 'junegunn/fzf.vim'
-" Create your own text objects
 	Plug 'kana/vim-textobj-user'
-" Text objects for indented blocks of lines
 	Plug 'kana/vim-textobj-indent'
-" Text objects for entire buffer
 	Plug 'kana/vim-textobj-entire'
-" Text objects for the current line
 	Plug 'kana/vim-textobj-line'
-" Vim text objects for comments
 	Plug 'glts/vim-textobj-comment'
-" Syntastic
 	Plug 'vim-syntastic/syntastic'
 call plug#end()
 
