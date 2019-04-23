@@ -1,30 +1,8 @@
-set nocompatible
-
-" Download vim-plug if not present
-if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-endif
-
-call plug#begin()
-	Plug 'tpope/vim-fugitive'
-	Plug 'tpope/vim-repeat'
-	Plug 'tpope/vim-commentary'
-	Plug 'tpope/vim-surround'
-	Plug 'tpope/vim-unimpaired'
-	Plug 'tpope/vim-sensible'
-	Plug 'tpope/vim-eunuch'
-	Plug 'justinmk/vim-sneak'
-	Plug 'ntpeters/vim-better-whitespace'
-	Plug 'vim-airline/vim-airline'
-	Plug 'rsmenon/vim-mathematica', { 'for': 'mma' }
-	Plug 'junegunn/fzf'
-	Plug 'junegunn/fzf.vim'
-	Plug 'kana/vim-textobj-user'
-	Plug 'kana/vim-textobj-indent'
-	Plug 'kana/vim-textobj-entire'
-	Plug 'kana/vim-textobj-line'
-	Plug 'glts/vim-textobj-comment'
-call plug#end()
+" Manage plugins with pathogen
+	runtime bundle/vim-pathogen/autoload/pathogen.vim
+	execute pathogen#infect()
+	syntax on
+	filetype plugin indent on
 
 " Change viminfo location
 	set viminfo+=n~/.vim/viminfo
