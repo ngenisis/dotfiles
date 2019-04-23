@@ -24,7 +24,6 @@ call plug#begin()
 	Plug 'kana/vim-textobj-entire'
 	Plug 'kana/vim-textobj-line'
 	Plug 'glts/vim-textobj-comment'
-	Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 " Change viminfo location
@@ -109,12 +108,3 @@ call plug#end()
 	autocmd WinEnter	* silent execute "! echo -ne '\e[1 q'"
 	autocmd VimLeave	* silent execute "! echo -ne '\e[5 q'"
 	autocmd InsertEnter	* silent execute "! echo -ne '\e[5 q'"
-
-" Syntastic settings
-	let g:syntastic_mode_map = {"mode": "passive"}
-	let g:syntastic_always_populate_loc_list = 1
-	let g:syntastic_auto_loc_list = 1
-	let g:syntastic_check_on_wq = 0
-	let g:syntastic_quiet_messages = { "regex":	".*HTML5.*"	}
-	nnoremap	<Leader>s	:SyntasticCheck<Enter>
-	nnoremap	<Leader>S	:SyntasticToggleMode<Enter>
