@@ -34,7 +34,6 @@ map gl cd /usr/lib
 map gb cd /usr/bin
 map g. cd ~/Workspace/dotfiles
 map gP cd ~/Workspace/PKGBUILD
-map gA cd ~/Workspace/PKGBUILD/AUR
 
 # Draw boxes
 set drawbox
