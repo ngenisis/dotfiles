@@ -1,6 +1,6 @@
-default: config git i3 lf mutt sh termite vim xorg zsh
+default: config git i3 lf mutt sh task termite vim xorg zsh
 
-all: config bash git i3 lf mutt readline sh termite vim xorg zsh
+all: config bash git i3 lf mutt readline sh task termite vim xorg zsh
 
 bash: config sh readline
 	stow -v -R bash
@@ -22,6 +22,9 @@ readline: config
 
 sh: config
 	stow -v -R sh
+
+task: config
+	stow -v -R task
 
 termite: config
 	stow -v -R termite

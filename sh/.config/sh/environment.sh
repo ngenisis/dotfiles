@@ -19,6 +19,10 @@ if [ -x /usr/bin/rg ] ; then
 	export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*"'
 fi
 
+# Taskwarrior settings
+export TASKRC="${HOME}/.config/task/taskrc"
+export TASKDATA="${HOME}/.local/share/task"
+
 # Colors for less (i.e. man pages)
 # See man terminfo
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 1)
