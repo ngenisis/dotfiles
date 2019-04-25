@@ -31,7 +31,11 @@ bind index,pager	R	group-reply
 bind index,pager	f	forward-message
 bind index,pager	o	change-folder
 bind index			zo	collapse-thread
+bind index			za	collapse-thread
 bind index			zc	collapse-thread
+bind index			zO	collapse-all
+bind index			zA	collapse-all
+bind index			zC	collapse-all
 bind index			s	sync-mailbox
 bind index			S	save-message
 
