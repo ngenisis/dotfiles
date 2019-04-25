@@ -31,6 +31,18 @@
 	auto_view text/html
 # delete messages marked for deletion when closing or synchronizing a mailbox
 	set delete=yes
+# group messages by threads
+	set sort=threads
+# sort threads by date of last message received
+	set sort_aux=last-date-received
+# <status> <date> <sender> <thread length> <subject>
+	set index_format="%Z %[%d %b] %-15.15F %2M %s"
+# Collapse all threads when entering a folder
+	folder-hook . 'push <collapse-all>'
+# Do not collapse threads with unread messages
+	set collapse_unread=no
+# Uncollapse threads when new messages are received
+	set uncollapse_new=yes
 
 # Color
 	color hdrdefault magenta default
