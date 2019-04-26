@@ -45,23 +45,28 @@
 	set uncollapse_new=yes
 
 # Color
-	color hdrdefault magenta default
-	color quoted brightblue default
-	color signature red default
-	color indicator brightgreen blue
-	color error brightred default
-	color status black white
-	color tree magenta default      # the thread tree in the index menu
-	color tilde magenta default
-	color message brightcyan default
-	color markers brightcyan default
-	color attachment brightmagenta default
-	color search default green      # how to highlight search patterns in the pager
-
-	color header brightmagenta default ^(From|Subject|To|Date|Cc):
-	color body red default "(ftp|http|https)://[^ ]+"   # point out URLs
-	color body red default [-a-z_0-9.+]+@[-a-z_0-9.]+    # e-mail addresses
-	color underline brightgreen default
+	# Information
+		color attachment brightmagenta default
+		color hdrdefault brightmagenta default
+		color signature brightmagenta default
+		color status brightmagenta default
+		color tree brightmagenta default
+	# Warnings
+		color error brightred default
+		color message brightred default
+	# Bright blue
+		color quoted brightblue default
+		color body brightblue default "(ftp|http|https)://[^ ]+"
+		color body brightblue default "[-a-z_0-9.+]+@[-a-z_0-9.]+"
+	# Selections
+		color indicator black brightblue
+		color search black brightblue
+		color underline black brightblue
+	# Identifiers
+		color header brightgreen default "^(From|Subject|To|Date|Cc):"
+	# Message status
+		color index brightred default ~D
+		color index brightgreen default ~N
 
 # Other configuration files
 	source $HOME/.config/mutt/accounts/work
