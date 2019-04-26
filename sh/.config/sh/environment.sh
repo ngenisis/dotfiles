@@ -14,10 +14,11 @@ fi
 # HiDPI support for Qt apps
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
-# Use ripgrep with fzf
-if [ -x /usr/bin/rg ] ; then
-	export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*"'
-fi
+# Use ripgrep as default fzf command
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*"'
+
+# Use . as fzf completion trigger
+export FZF_COMPLETION_TRIGGER='.'
 
 # Taskwarrior settings
 export TASKRC="${HOME}/.config/task/taskrc"
