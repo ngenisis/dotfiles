@@ -3,6 +3,7 @@ bind index			j	next-entry
 bind pager			j	next-line
 bind index			k	previous-entry
 bind pager			k	previous-line
+bind index,pager	g	noop
 bind index			gg	first-entry
 bind pager			gg	top
 bind index			G	last-entry
