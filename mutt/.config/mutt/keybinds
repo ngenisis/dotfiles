@@ -48,3 +48,10 @@ bind index			v	tag-entry
 bind index			\;	tag-prefix
 bind index			:	enter-command
 bind index			$	shell-escape
+
+# Macros
+macro index <F1> "<enter-command>set sidebar_visible=yes<enter><enter-command>macro index j <sidebar-next><enter><enter-command>macro index k <sidebar-prev><enter>"
+
+macro index <F2> "<enter-command>set sidebar_visible=no<enter><enter-command>macro index j <next-entry><enter><enter-command>macro index k <previous-entry><enter>"
+
+macro index <F3> "<sidebar-open>"
