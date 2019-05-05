@@ -16,6 +16,7 @@ lf: config
 
 mutt: config
 	stow -v -R mutt
+	systemctl --user enable --now mbsync.timer
 
 readline: config
 	stow -v -R readline
