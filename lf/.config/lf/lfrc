@@ -25,6 +25,7 @@ map gd cd ~/Documents
 map gD cd ~/Downloads
 map gp cd ~/Pictures
 map gw cd ~/Workspace
+map gc cd ~/.config
 map g/ cd /
 map ge cd /etc
 map gm cd /mnt
