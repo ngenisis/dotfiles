@@ -69,5 +69,6 @@
 		color index brightgreen default ~N
 
 # Other configuration files
-	source $HOME/.config/mutt/accounts/work
+	set spoolfile = "+Personal/INBOX"
+	source "$HOME/.config/mutt/accounts/personal"
 	source $HOME/.config/mutt/keybinds
