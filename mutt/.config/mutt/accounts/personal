@@ -1,0 +1,16 @@
+set from				= "ngenisis@ngenisis.org"
+set smtp_url			= "smtps://ngenisis@smtp.mailfence.com"
+
+# Folders
+set spoolfile			= "+Personal/INBOX"
+set record				= "+Personal/Sent Items"
+set postponed			= "+Personal/Drafts"
+set trash				= "+Personal/Trash"
+set message_cachedir	= "~/.cache/mutt"
+mailboxes \
+	"~/Mail/Personal/INBOX"\
+	"~/Mail/Personal/Sent Items"\
+	"~/Mail/Personal/Drafts"\
+	"~/Mail/Personal/Trash"
+
+# vim: set ft=muttrc:
