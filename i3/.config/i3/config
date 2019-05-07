@@ -58,17 +58,14 @@
 # kill focused window
 	bindsym $mod+Shift+q kill
 
-# copy selection to clipboard
-	bindsym $mod+Print exec --no-startup-id maim --hidecursor --select | xclip -selection clipboard -t image/png
-
-# copy screen to clipboard
-	bindsym $mod+Control+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-
-# copy selection to file
-	bindsym $mod+Shift+Print exec --no-startup-id maim --hidecursor --select ~/Pictures/Screenshots/$(date +%s).png
-
-# copy screen to file
-	bindsym $mod+Control+Shift+Print exec --no-startup-id maim ~/Pictures/Screenshots/$(date +%s).png
+# Screenshot bindings
+# Mod + s is the base screenshot command and takes a screenshot of the whole screen
+# Mod + Control + s takes a screenshot of a selection (Control = selection)
+# Mod + Shift + s saves the screenshot to a file ([S]hift = [S]ave)
+	bindsym $mod+s exec --no-startup-id maim | xclip -selection clipboard -t image/png
+	bindsym $mod+Control+s exec --no-startup-id maim --hidecursor --select | xclip -selection clipboard -t image/png
+	bindsym $mod+Shift+s exec --no-startup-id maim ~/Pictures/Screenshots/$(date +%s).png
+	bindsym $mod+Shift+Control+s exec --no-startup-id maim --hidecursor --select ~/Pictures/Screenshots/$(date +%s).png
 
 # change focus
 	bindsym $mod+h focus left
