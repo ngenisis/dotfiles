@@ -45,15 +45,12 @@
 	for_window [title="nmtui"] floating enable
 
 # Open pulsemixer
-	bindsym $mod+s exec --no-startup-id $TERMINAL -e 'pulsemixer'
+	bindsym $mod+m exec --no-startup-id $TERMINAL -e 'pulsemixer'
 	for_window [title="pulsemixer"] floating enable
 
 # Open fzf launcher
 	bindsym $mod+d exec --no-startup-id termite -e 'i3-dmenu-desktop --dmenu=fzf'
 	for_window [title="i3-dmenu-desktop"] floating enable
-
-# toggle mute
-	bindsym $mod+m exec --no-startup-id amixer -q -D pulse sset Master toggle
 
 # kill focused window
 	bindsym $mod+Shift+q kill
