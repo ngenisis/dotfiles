@@ -4,6 +4,7 @@ fi
 
 setxkbmap -option "caps:escape"
 xset dpms 0 0 0
+xset s off -dpms
 numlockx &
 autorandr --change && exec i3
 
