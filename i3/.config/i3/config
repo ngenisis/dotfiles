@@ -61,8 +61,8 @@
 # Mod + Shift + s saves the screenshot to a file ([S]hift = [S]ave)
 	bindsym $mod+s exec --no-startup-id maim | xclip -selection clipboard -t image/png
 	bindsym $mod+Control+s exec --no-startup-id maim --hidecursor --select | xclip -selection clipboard -t image/png
-	bindsym $mod+Shift+s exec --no-startup-id maim ~/Pictures/Screenshots/$(date +%s).png
-	bindsym $mod+Shift+Control+s exec --no-startup-id maim --hidecursor --select ~/Pictures/Screenshots/$(date +%s).png
+	bindsym $mod+Shift+s exec --no-startup-id maim ~/Pictures/Screenshots/$(date +%F-%H-%M-%S).png
+	bindsym $mod+Shift+Control+s exec --no-startup-id maim --hidecursor --select ~/Pictures/Screenshots/$(date +%F-%H-%M-%S).png
 
 # change focus
 	bindsym $mod+h focus left
