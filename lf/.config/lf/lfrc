@@ -28,6 +28,7 @@ map gw cd ~/Workspace
 map gc cd ~/.config
 map g/ cd /
 map ge cd /etc
+map gB cd /boot
 map gm cd /mnt
 map gu cd /usr
 map go cd /opt
