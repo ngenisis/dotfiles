@@ -41,7 +41,7 @@
 	bindsym $mod+Shift+Return exec --no-startup-id $BROWSER
 
 # Open nmtui
-	bindsym $mod+n exec --no-startup-id $TERMINAL -e nmtui
+	bindsym $mod+n exec --no-startup-id $TERMINAL -e nmtui-connect
 	for_window [title="nmtui"] floating enable
 
 # Open pulsemixer
