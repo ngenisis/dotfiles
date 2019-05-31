@@ -73,14 +73,11 @@
 " Replace all mapping
 	nnoremap	<Leader>r	:%s//g<Left><Left>
 
-" Replacement for fzf's Helptags (conflicts with pathogen's Helptags)
-	command! -bar -bang FZFHelptags call fzf#vim#helptags(<bang>0)
-
 " fzf mappings
 	nnoremap	<Leader>f	:Files<Enter>
 	nnoremap	<Leader>l	:Lines<Enter>
 	nnoremap	<leader>b	:Buffers<Enter>
-	nnoremap	<leader>h	:FZFHelptags<Enter>
+	nnoremap	<leader>h	:Helptags<Enter>
 
 " Use blinking pipe cursor in insert mode and blinking block otherwise
 	let &t_SI = "\e[5 q"
