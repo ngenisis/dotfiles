@@ -5,7 +5,7 @@
 " Change viminfo location
 	set viminfo+=n~/.vim/viminfo
 
-" Set background to dark
+" Use colors that look good on a dark background
 	set background=dark
 
 " Enable line wrapping
