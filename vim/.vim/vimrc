@@ -2,6 +2,32 @@
 	syntax on
 	filetype plugin indent on
 
+" Backspace
+	set backspace=indent,eol,start
+
+" Timeout
+	set ttimeout
+	set ttimeoutlen=100
+
+" Incremental search
+	set incsearch
+
+" Enhanced command mode tab completion
+	set wildmenu
+
+" Scrolloff
+	set scrolloff=1
+	set sidescrolloff=5
+
+" Comments
+	set formatoptions+=j formatoptions-=cro
+
+" Automatically reead files changed outside of Vim
+	set autoread
+
+" Extended matching with %
+	packadd matchit
+
 " Change viminfo location
 	set viminfo+=n~/.vim/viminfo
 
@@ -31,9 +57,6 @@
 
 " Split to the bottom and the right
 	set splitbelow splitright
-
-" Disable automatic comments on newlines
-	autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Update diff when a buffer is written
 	autocmd BufWritePost * if &diff == 1 | diffupdate | endif

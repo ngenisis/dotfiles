@@ -28,11 +28,6 @@
 	url = https://github.com/tpope/vim-unimpaired.git
 	branch = master
 	ignore = all
-[submodule "vim/.vim/bundle/vim-sensible"]
-	path = vim/.vim/pack/plugins/start/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
-	branch = master
-	ignore = all
 [submodule "vim/.vim/bundle/vim-eunuch"]
 	path = vim/.vim/pack/plugins/start/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
