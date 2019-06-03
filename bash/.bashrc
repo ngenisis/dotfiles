@@ -23,7 +23,7 @@ if ! shopt -oq posix; then
 fi
 
 # Report current directory to VTE
-if [[ $TERM == xterm-termite ]]; then
+if [[ $TERM == xterm-termite ]] && [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
 	. /etc/profile.d/vte.sh
 	__vte_prompt_command
 fi
