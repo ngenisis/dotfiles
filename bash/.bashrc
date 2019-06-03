@@ -6,7 +6,7 @@ done
 # History settings
 HISTCONTROL=ignoreboth
 HISTSIZE= HISTFILESIZE=
-setopt -s histappend
+shopt -s histappend
 
 # Additional options
 shopt -s checkwinsize globstar autocd
