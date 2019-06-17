@@ -34,23 +34,24 @@
 # Use Mouse+$mod to drag floating windows to their wanted position
 	floating_modifier $mod
 
+# Open windows with "floating" window class as floating
+	for_window [class="floating"] floating enable
+
 # Open terminal
-	bindsym $mod+Return exec $TERMINAL
+	bindsym $mod+Return         exec --no-startup-id termite
+	bindsym $mod+Control+Return exec --no-startup-id termite --class=floating
 
 # Open browser
 	bindsym $mod+Shift+Return exec --no-startup-id $BROWSER
 
 # Open nmtui
-	bindsym $mod+n exec --no-startup-id $TERMINAL -e nmtui-connect
-	for_window [title="nmtui"] floating enable
+	bindsym $mod+n exec --no-startup-id termite -e nmtui-connect --class=floating
 
 # Open pulsemixer
-	bindsym $mod+m exec --no-startup-id $TERMINAL -e 'pulsemixer'
-	for_window [title="pulsemixer"] floating enable
+	bindsym $mod+m exec --no-startup-id termite -e 'pulsemixer' --class=floating
 
 # Open fzf launcher
-	bindsym $mod+d exec --no-startup-id termite -e 'i3-dmenu-desktop --dmenu=fzf'
-	for_window [title="i3-dmenu-desktop"] floating enable
+	bindsym $mod+d exec --no-startup-id termite -e 'i3-dmenu-desktop --dmenu=fzf' --class=floating
 
 # kill focused window
 	bindsym $mod+Shift+q kill
