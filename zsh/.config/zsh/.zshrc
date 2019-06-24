@@ -13,7 +13,6 @@ setopt appendhistory histignoredups histignorespace
 setopt autocd extendedglob nomatch globstarshort
 unsetopt beep
 bindkey -v
-zstyle :compinstall filename '/home/ngenisis/.zshrc'
 
 autoload -Uz compinit
 compinit -d "${HOME}/.local/share/zsh/dumpfile"
