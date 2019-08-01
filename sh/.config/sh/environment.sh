@@ -6,11 +6,6 @@ export BROWSER=firefox
 # Disable less history
 export LESSHISTFILE=/dev/null
 
-# Use qt5ct for Qt5 settings
-if [ -x /usr/bin/qt5ct ] ; then
-	export QT_QPA_PLATFORMTHEME="qt5ct"
-fi
-
 # HiDPI support for Qt apps
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
