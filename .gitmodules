@@ -88,3 +88,8 @@
 	url = https://github.com/glts/vim-textobj-comment
 	branch = master
 	ignore = all
+[submodule "vim/.vim/pack/plugins/start/ale"]
+	path = vim/.vim/pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale.git
+	branch = master
+	ignore = all
