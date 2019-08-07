@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+ICON=" "
+DATE=`date "+%A %e %b %l:%M %P"`
+
+echo "${ICON} ${DATE}"
+echo "${ICON} ${DATE}"
+echo "${COLOR}"
+
+exit 0

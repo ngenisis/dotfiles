@@ -13,7 +13,5 @@ interval=10
 [battery]
 interval=30
 
-[time]
-label=
-command=date "+%A %e %b %l:%M %P"
+[date]
 interval=60
