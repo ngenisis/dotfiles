@@ -24,6 +24,7 @@ set incsearch
 map gd cd ~/Documents
 map gD cd ~/Downloads
 map gp cd ~/Pictures
+map gs cd ~/Pictures/Screenshots
 map gw cd ~/Workspace
 map gc cd ~/.config
 map g/ cd /
