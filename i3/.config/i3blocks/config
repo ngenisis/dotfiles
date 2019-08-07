@@ -5,7 +5,6 @@ separator_block_width=15
 markup=none
 
 [volume]
-label=
 interval=1
 
 [internet]

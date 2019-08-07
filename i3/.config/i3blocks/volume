@@ -1,10 +1,24 @@
 #!/usr/bin/env sh
 
-echo `pulsemixer --get-volume | cut -d " " -f1`%
+VOLUME=`pulsemixer --get-volume | cut -d " " -f1`%
+MUTED=`pulsemixer --get-mute`
+
+case $MUTED in
+	0)
+		ICON=" "
+		;;
+	1)
+		ICON=" "
+		;;
+esac
+
+echo "${ICON} ${VOLUME}"
+echo "${ICON} ${VOLUME}"
+echo "${COLOR}"
 
 case $BLOCK_BUTTON  in
 	1)
-		$TERMINAL -e pulsemixer
+		termite -e pulsemixer --class=floating
 		;;
 esac
 
