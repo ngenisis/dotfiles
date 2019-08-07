@@ -3,8 +3,6 @@
 TYPE=$(nmcli -t -f TYPE connection show --active)
 NAME=$(nmcli -t -f NAME connection show --active)
 
-[ -z "${TYPE}" ] && exit 33
-
 case "${TYPE}" in
 	vpn*)
 		ICON=" "
@@ -15,13 +13,20 @@ case "${TYPE}" in
 	*wireless)
 		ICON=" "
 		;;
+	*)
+		ICON=" "
+		NAME="No connection"
+		COLOR="#FF0000"
+		;;
 esac
 
 echo "${ICON} ${NAME}"
+echo "${ICON} ${NAME}"
+echo "${COLOR}"
 
 case $BLOCK_BUTTON in
 	1)
-		$TERMINAL -e nmtui
+		termite -e nmtui-connect --class=floating
 		;;
 esac
 
