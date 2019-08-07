@@ -1,37 +1,37 @@
 #!/usr/bin/env sh
 
-battery="/sys/class/power_supply/BAT0"
+BATTERY="/sys/class/power_supply/BAT0"
 
-[ -e ${battery} ] || exit 33
+[ -e ${BATTERY} ] || exit 33
 
-_status=$(cat "${battery}/status")
-capacity=$(cat "${battery}/capacity")
+STATUS=$(cat "${BATTERY}/status")
+CAPACITY=$(cat "${BATTERY}/capacity")
 
-case ${_status} in
+case ${STATUS} in
 	Discharging)
-		if [ ${capacity} -lt 5 ] ; then
+		if [ ${CAPACITY} -lt 5 ] ; then
 			exit 33
-		elif [ ${capacity} -lt 10 ] ; then
-			icon=" "
-			color="#FF0000"
-		elif [ ${capacity} -lt 25 ] ; then
-			icon=" "
-			color="#FFAE00"
-		elif [ ${capacity} -lt 50 ] ; then
-			icon=" "
-		elif [ ${capacity} -lt 75 ] ; then
-			icon=" "
+		elif [ ${CAPACITY} -lt 10 ] ; then
+			ICON=" "
+			COLOR="#FF0000"
+		elif [ ${CAPACITY} -lt 25 ] ; then
+			ICON=" "
+			COLOR="#FFAE00"
+		elif [ ${CAPACITY} -lt 50 ] ; then
+			ICON=" "
+		elif [ ${CAPACITY} -lt 75 ] ; then
+			ICON=" "
 		else
-			icon=" "
+			ICON=" "
 		fi
 		;;
 	Full|Charging)
-		icon=""
+		ICON=""
 		;;
 esac
 
-echo "${icon} ${capacity}%"
-echo "${icon} ${capacity}%"
-echo "${color}"
+echo "${ICON} ${CAPACITY}%"
+echo "${ICON} ${CAPACITY}%"
+echo "${COLOR}"
 
 exit 0
