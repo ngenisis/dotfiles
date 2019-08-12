@@ -1,3 +1,5 @@
+xrandr --auto
+
 if [ -n "`xdpyinfo | grep '.*x2160'`" ] ; then
 	export GDK_SCALE=2
 fi
