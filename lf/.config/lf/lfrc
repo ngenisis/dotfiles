@@ -52,8 +52,8 @@ map x $$f
 map X !$f
 
 # dedicated keys for file opener actions
-map o &mimeopen $fs
-map O $mimeopen --ask $fs
+map o &mimeopen $fx
+map O $mimeopen --ask $fx
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
