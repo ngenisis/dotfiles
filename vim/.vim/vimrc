@@ -2,6 +2,9 @@
 	syntax on
 	filetype plugin indent on
 
+" Hide buffers when abandoned
+	set hidden
+
 " Backspace
 	set backspace=indent,eol,start
 
