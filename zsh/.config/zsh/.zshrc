@@ -1,6 +1,6 @@
 # Source additional sh configs
-for config in $HOME/.config/sh/*.sh ; do
-	source $config
+for config in "${HOME}"/.config/sh/*.sh ; do
+	source "${config}"
 done
 
 # History settings
@@ -28,13 +28,13 @@ zle -N zle-keymap-select
 zle -N zle-line-init
 
 # Report current directory to VTE
-if [[ $TERM == xterm-termite ]]; then
+if [[ ${TERM} == xterm-termite ]]; then
 	. /etc/profile.d/vte.sh
 	__vte_osc7
 fi
 
 # Set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
+case "${TERM}" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
@@ -58,20 +58,20 @@ precmd () {
 	local EXIT=$?
 	local EXIT_PRE=
 
-	if [ "$color_prompt" = yes ]; then
+	if [ "${color_prompt}" = yes ]; then
 		PS1="%F{green}%n@%M%f%b:%B%F{blue}%~%F{magenta}"
-		EXIT_PRE="%F{red}[$EXIT] "
+		EXIT_PRE="%F{red}[${EXIT}] "
 	else
 		PS1="%n@%M:%~"
-		EXIT_PRE="[$EXIT] "
+		EXIT_PRE="[${EXIT}] "
 	fi
 
-	if [ $EXIT != 0 ] ; then
-		PS1="$EXIT_PRE$PS1"
+	if [ ${EXIT} != 0 ] ; then
+		PS1="${EXIT_PRE}${PS1}"
 	fi
 
-	__git_ps1 "%B$PS1" "%f%b
+	__git_ps1 "%B${PS1}" "%f%b
 %(!.#.$) "
 
-	return $EXIT
+	return ${EXIT}
 }

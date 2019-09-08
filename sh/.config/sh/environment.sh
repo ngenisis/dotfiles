@@ -5,12 +5,12 @@ export TERMINAL=termite
 export BROWSER=firefox
 
 # XDG Base Directory
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
 
 # Go path
-export GOPATH="$HOME/Workspace/go"
+export GOPATH="${HOME}/Workspace/go"
 
 # Disable less history
 export LESSHISTFILE=/dev/null

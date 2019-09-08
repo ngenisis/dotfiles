@@ -5,6 +5,6 @@ source "${HOME}/.config/sh/environment.sh"
 eval "$(ssh-agent)"
 ssh-add
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+if [[ ! ${DISPLAY} && ${XDG_VTNR} -eq 1 ]]; then
 	exec startx
 fi

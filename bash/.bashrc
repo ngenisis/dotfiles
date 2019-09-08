@@ -1,6 +1,6 @@
 # Source additional sh configs
-for config in $HOME/.config/sh/*.sh ; do
-	source $config
+for config in "${HOME}"/.config/sh/*.sh ; do
+	source "${config}"
 done
 
 # History settings
@@ -16,20 +16,20 @@ shopt -s checkwinsize globstar autocd
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
+    source /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+    source /etc/bash_completion
   fi
 fi
 
 # Report current directory to VTE
-if [[ $TERM == xterm-termite ]] && [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
-	. /etc/profile.d/vte.sh
+if [[ ${TERM} == xterm-termite ]] && [ -z "${SSH_CLIENT}" ] && [ -z "${SSH_TTY}" ]; then
+	source /etc/profile.d/vte.sh
 	__vte_prompt_command
 fi
 
 # Set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
+case "${TERM}" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
@@ -60,27 +60,27 @@ function __prompt_command() {
 	local NONE='\[\033[00m\]'
 	local EXIT_PRE=
 
-	if [ "$color_prompt" = yes ]; then
-		PS1="$GREEN\u@\h$NONE:$BLUE\w$MAGENTA"
-		EXIT_PRE="$RED[$EXIT] "
+	if [ "${color_prompt}" = yes ]; then
+		PS1="${GREEN}\u@\h${NONE}:${BLUE}\w${MAGENTA}"
+		EXIT_PRE="${RED}[${EXIT}] "
 	else
 		PS1="\u@\h:\w"
-		EXIT_PRE="[$EXIT] "
+		EXIT_PRE="[${EXIT}] "
 	fi
 
-	if [ $EXIT != 0 ] ; then
-		PS1="$EXIT_PRE$PS1"
+	if [ ${EXIT} != 0 ] ; then
+		PS1="${EXIT_PRE}${PS1}"
 	fi
 
-	__git_ps1 "$PS1" "$NONE\n\$ "
+	__git_ps1 "${PS1}" "${NONE}\n\$ "
 
-	return $EXIT
+	return ${EXIT}
 }
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
+case "${TERM}" in
 xterm*|rxvt*)
-    PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;\u@\h: \w\a\]${PS1}"
     ;;
 *)
     ;;
