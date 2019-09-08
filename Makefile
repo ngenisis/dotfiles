@@ -3,44 +3,44 @@ default: config git i3 lf mutt sh task termite vim xdg xorg zsh
 all: config bash git i3 lf mutt readline sh task termite vim xdg xorg zsh
 
 bash: config sh readline
-	stow -v -R bash
+	stow -R bash
 
 git: config
-	stow -v -R git
+	stow -R git
 
 i3: config
-	stow -v -R i3
+	stow -R i3
 
 lf: config
-	stow -v -R lf
+	stow -R lf
 
 mutt: config
-	stow -v -R mutt
+	stow -R mutt
 	systemctl --user enable --now mbsync.timer
 
 readline: config
-	stow -v -R readline
+	stow -R readline
 
 sh: config
-	stow -v -R sh
+	stow -R sh
 
 task: config
-	stow -v -R task
+	stow -R task
 
 termite: config
-	stow -v -R termite
+	stow -R termite
 
 vim: config
-	stow -v -R vim
+	stow -R vim
 
 xdg: config
-	stow -v -R xdg
+	stow -R xdg
 
 xorg: i3 config
-	stow -v -R xorg
+	stow -R xorg
 
 zsh: config sh
-	stow -v -R zsh
+	stow -R zsh
 
 config: .stowrc
 
