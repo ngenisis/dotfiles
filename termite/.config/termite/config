@@ -8,7 +8,6 @@ search_wrap = true
 size_hints = false
 
 [colors]
-
 foreground			= #b2b2b2
 foreground_bold		= #ffffff
 foregroun_dim		= #656565
@@ -45,16 +44,5 @@ color14 = #00aaff
 # White
 color7  = #b2b2b2
 color15 = #ffffff
-
-[hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
 
 # vim: ft=dosini cms=#%s
