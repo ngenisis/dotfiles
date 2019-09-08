@@ -1,95 +1,90 @@
-[submodule "vim/.vim/pack/vim-fugitive"]
-	path = vim/.vim/pack/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
+[submodule "ale"]
+	path = vim/.vim/pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale.git
 	branch = master
 	ignore = all
-[submodule "vim/.vim/bundle/vim-fugitive"]
-	path = vim/.vim/pack/plugins/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-	branch = master
-	ignore = all
-[submodule "vim/.vim/bundle/vim-repeat"]
-	path = vim/.vim/pack/plugins/start/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
-	branch = master
-	ignore = all
-[submodule "vim/.vim/bundle/vim-commentary"]
-	path = vim/.vim/pack/plugins/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-	branch = master
-	ignore = all
-[submodule "vim/.vim/bundle/vim-surround"]
-	path = vim/.vim/pack/plugins/start/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-	branch = master
-	ignore = all
-[submodule "vim/.vim/bundle/vim-unimpaired"]
-	path = vim/.vim/pack/plugins/start/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
-	branch = master
-	ignore = all
-[submodule "vim/.vim/bundle/vim-eunuch"]
-	path = vim/.vim/pack/plugins/start/vim-eunuch
-	url = https://github.com/tpope/vim-eunuch.git
-	branch = master
-	ignore = all
-[submodule "vim/.vim/bundle/vim-sneak"]
-	path = vim/.vim/pack/plugins/start/vim-sneak
-	url = https://github.com/justinmk/vim-sneak.git
-	branch = master
-	ignore = all
-[submodule "vim/.vim/bundle/vim-better-whitespace"]
-	path = vim/.vim/pack/plugins/start/vim-better-whitespace
-	url = https://github.com/ntpeters/vim-better-whitespace
-	branch = master
-	ignore = all
-[submodule "vim/.vim/bundle/vim-airline"]
-	path = vim/.vim/pack/plugins/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-	branch = master
-	ignore = all
-[submodule "vim/.vim/bundle/vim-mathematica"]
-	path = vim/.vim/pack/plugins/start/vim-mathematica
-	url = https://github.com/rsmenon/vim-mathematica
-	branch = master
-	ignore = all
-[submodule "vim/.vim/bundle/fzf"]
+[submodule "fzf"]
 	path = vim/.vim/pack/plugins/start/fzf
 	url = https://github.com/junegunn/fzf
 	branch = master
 	ignore = all
-[submodule "vim/.vim/bundle/fzf.vim"]
+[submodule "fzf.vim"]
 	path = vim/.vim/pack/plugins/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
 	branch = master
 	ignore = all
-[submodule "vim/.vim/bundle/vim-textobj-user"]
-	path = vim/.vim/pack/plugins/start/vim-textobj-user
-	url = https://github.com/kana/vim-textobj-user
+[submodule "vim-airline"]
+	path = vim/.vim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
 	branch = master
 	ignore = all
-[submodule "vim/.vim/bundle/vim-textobj-indent"]
-	path = vim/.vim/pack/plugins/start/vim-textobj-indent
-	url = https://github.com/kana/vim-textobj-indent
+[submodule "vim-better-whitepsace"]
+	path = vim/.vim/pack/plugins/start/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace
 	branch = master
 	ignore = all
-[submodule "vim/.vim/bundle/vim-textobj-entire"]
-	path = vim/.vim/pack/plugins/start/vim-textobj-entire
-	url = https://github.com/kana/vim-textobj-entire
+[submodule "vim-commentary"]
+	path = vim/.vim/pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
 	branch = master
 	ignore = all
-[submodule "vim/.vim/bundle/vim-textobj-line"]
-	path = vim/.vim/pack/plugins/start/vim-textobj-line
-	url = https://github.com/kana/vim-textobj-line
+[submodule "vim-eunuch"]
+	path = vim/.vim/pack/plugins/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
 	branch = master
 	ignore = all
-[submodule "vim/.vim/bundle/vim-textobj-comment"]
+[submodule "vim-fugitive"]
+	path = vim/.vim/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+	branch = master
+	ignore = all
+[submodule "vim-mathematica"]
+	path = vim/.vim/pack/plugins/start/vim-mathematica
+	url = https://github.com/rsmenon/vim-mathematica
+	branch = master
+	ignore = all
+[submodule "vim-repeat"]
+	path = vim/.vim/pack/plugins/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+	branch = master
+	ignore = all
+[submodule "vim-sneak"]
+	path = vim/.vim/pack/plugins/start/vim-sneak
+	url = https://github.com/justinmk/vim-sneak.git
+	branch = master
+	ignore = all
+[submodule "vim-surround"]
+	path = vim/.vim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+	branch = master
+	ignore = all
+[submodule "vim-textobj-comment"]
 	path = vim/.vim/pack/plugins/start/vim-textobj-comment
 	url = https://github.com/glts/vim-textobj-comment
 	branch = master
 	ignore = all
-[submodule "vim/.vim/pack/plugins/start/ale"]
-	path = vim/.vim/pack/plugins/start/ale
-	url = https://github.com/dense-analysis/ale.git
+[submodule "vim-textobj-entire"]
+	path = vim/.vim/pack/plugins/start/vim-textobj-entire
+	url = https://github.com/kana/vim-textobj-entire
+	branch = master
+	ignore = all
+[submodule "vim-textobj-indent"]
+	path = vim/.vim/pack/plugins/start/vim-textobj-indent
+	url = https://github.com/kana/vim-textobj-indent
+	branch = master
+	ignore = all
+[submodule "vim-textobj-line"]
+	path = vim/.vim/pack/plugins/start/vim-textobj-line
+	url = https://github.com/kana/vim-textobj-line
+	branch = master
+	ignore = all
+[submodule "vim-textobj-user"]
+	path = vim/.vim/pack/plugins/start/vim-textobj-user
+	url = https://github.com/kana/vim-textobj-user
+	branch = master
+	ignore = all
+[submodule "vim-unimpaired"]
+	path = vim/.vim/pack/plugins/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
 	branch = master
 	ignore = all
