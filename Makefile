@@ -1,4 +1,4 @@
-default: config git i3 lf mutt sh task termite vim xdg xorg zsh
+default: config git i3 lf mutt sh task termite vim xorg zsh
 
 all: config bash git i3 lf mutt readline sh task termite vim xdg xorg zsh
 
