@@ -7,3 +7,7 @@ make <application name>
 ```
 
 This will handle dependencies between my dotfiles. To use my default configuration, just run `make`. To use all my dotfiles, run `make all`.
+
+## zsh
+
+`ZDOTDIR` must be set to `~/.config/zsh`, e.g. in /etc/zsh/zshenv
