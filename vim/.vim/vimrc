@@ -79,9 +79,6 @@
 	autocmd FileType mma inoremap <buffer> $$$ \[FormalCapital]<Esc>i
 	let g:mma_candy = 1
 
-" Set text width to 80 in emails
-	autocmd FileType mail set textwidth=80
-
 " vim_better_whitespace settings
 	let g:strip_whitelines_at_eof=1
 	let g:show_spaces_that_precede_tabs=1
