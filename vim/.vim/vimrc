@@ -90,12 +90,6 @@
 	let mapleader = " "
 	nnoremap <Space> <Nop>
 
-" System clipboard mappings
-	nnoremap	<Leader>y	"+y
-	nnoremap	<Leader>p	"+p
-	nnoremap	<Leader>Y	"*y
-	nnoremap	<Leader>P	"*p
-
 " Replace all mapping
 	nnoremap	<Leader>r	:%s//g<Left><Left>
 
