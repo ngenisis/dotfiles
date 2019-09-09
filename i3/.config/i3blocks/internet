@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-TYPE=$(nmcli -t -f TYPE connection show --active)
-NAME=$(nmcli -t -f NAME connection show --active)
+TYPE=$(nmcli -t -f TYPE connection show --active | head -n 1)
+NAME=$(nmcli -t -f NAME connection show --active | head -n 1)
 
 case "${TYPE}" in
 	vpn*)
