@@ -9,8 +9,9 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 
-# Go path
-export GOPATH="${HOME}/Workspace/go"
+#  Package manager paths
+export GOPATH="${HOME}/.local/share/go"
+export CARGO_HOME="${HOME}/.local/share/cargo"
 
 # Disable less history
 export LESSHISTFILE=/dev/null
