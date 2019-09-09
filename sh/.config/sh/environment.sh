@@ -9,9 +9,13 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 
-#  Package manager paths
-export GOPATH="${HOME}/.local/share/go"
+# Unclutter the home directory
 export CARGO_HOME="${HOME}/.local/share/cargo"
+export GNUPGHOME="${HOME}/.local/share/gnupg"
+export GOPATH="${HOME}/.local/share/go"
+export PASSWORD_STORE_DIR="${HOME}/.local/share/password-store"
+export TASKRC="${HOME}/.config/task/taskrc"
+export TASKDATA="${HOME}/.local/share/task"
 
 # Disable less history
 export LESSHISTFILE=/dev/null
@@ -21,10 +25,6 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 # Use ripgrep as default fzf command
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --glob "!.git/*"'
-
-# Taskwarrior settings
-export TASKRC="${HOME}/.config/task/taskrc"
-export TASKDATA="${HOME}/.local/share/task"
 
 # Colors for less (i.e. man pages)
 # See man terminfo
