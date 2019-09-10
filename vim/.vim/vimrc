@@ -48,11 +48,10 @@
 
 " Indentation
 	set autoindent smartindent
-
-" Set tab and shift width to 4
 	set tabstop=4
 	set softtabstop=4
 	set shiftwidth=4
+	set noexpandtab
 
 " Ignore case in lowercase searches
 	set ignorecase
