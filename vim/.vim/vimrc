@@ -60,6 +60,10 @@
 " Split to the bottom and the right
 	set splitbelow splitright
 
+" Temporary fix for relative line number being underlined
+" https://github.com/vim/vim/issues/5017
+	set cursorlineopt=line
+
 " Update diff when a buffer is written
 	autocmd BufWritePost * if &diff == 1 | diffupdate | endif
 
