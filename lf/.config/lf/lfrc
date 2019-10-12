@@ -36,6 +36,7 @@ map go cd /opt
 map gl cd /usr/lib
 map gb cd /usr/bin
 map gv cd /var
+map gV cd ~/Videos
 map g. cd ~/Workspace/dotfiles
 map gP cd ~/Workspace/PKGBUILD
 
