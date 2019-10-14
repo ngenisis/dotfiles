@@ -1,0 +1,71 @@
+#!/usr/bin/env sh
+
+maildir="${HOME}/Mail"
+muttdir="${XDG_CONFIG_HOME:-${HOME}/.config}/mutt"
+accountsdir="${muttdir}/accounts"
+mkdir -p "${accountsdir}"
+mbsyncrc="${muttdir}/mbsyncrc"
+hooksfile="${muttdir}/hooks"
+
+printf "Label:\n"
+read label
+printf "Display name:\n"
+read name
+printf "Email:\n"
+read email
+printf "Login:\n"
+read login
+printf "IMAP server:\n"
+read imapserver
+printf "IMAP port:\n"
+read imapport
+printf "SMTP server:\n"
+read smtpserver
+printf "SMTP port:\n"
+read smtpport
+
+accountfile="${accountsdir}/${label}"
+echo "# ${label}
+
+set from		= \"${name} <${email}>\"
+set smtp_url	= \"smtps://${smtpserver}:${smtpport}\"
+set spoolfile	= \"+${label}/INBOX\"
+set record		= \"+${label}/Sent\"
+set postponed	= \"+${label}/Drafts\"
+set trash		= \"+${label}/Trash\"
+mailboxes \\
+	\"${maildir}/${label}/INBOX\"\\
+	\"${maildir}/${label}/Sent\"\\
+	\"${maildir}/${label}/Drafts\"\\
+	\"${maildir}/${label}/Trash\"
+" > "${accountfile}"
+
+echo "# ${label}
+
+IMAPAccount		${label}
+Host			${imapserver}
+Port			${imapport}
+User			${login}
+PassCmd			\"pass ${email}\"
+SSLType			IMAPS
+CertificateFile	/etc/ssl/certs/ca-certificates.crt
+
+IMAPStore		${label}-remote
+Account			${label}
+
+MaildirStore	${label}-local
+# The trailing \"/\" is important
+Path			${maildir}/${label}/
+Inbox			${maildir}/${label}/INBOX
+Subfolders		Verbatim
+
+Channel			${label}
+Master			:${label}-remote:
+Slave			:${label}-local:
+Create			Both
+Expunge			Both
+Patterns		*
+SyncState		*
+" > "${mbsyncrc}"
+
+echo "folder-hook \"${label}/*\" source \"${accountfile}\"" >> "${hooksfile}"
