@@ -43,6 +43,8 @@
 	set collapse_unread=no
 # Uncollapse threads when new messages are received
 	set uncollapse_new=yes
+# Set cache location
+	set message_cachedir="~/.cache/mutt"
 
 # Color
 	# Information
