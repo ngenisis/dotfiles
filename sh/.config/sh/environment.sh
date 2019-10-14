@@ -11,9 +11,7 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 
 # Unclutter the home directory
 export CARGO_HOME="${HOME}/.local/share/cargo"
-export GNUPGHOME="${HOME}/.local/share/gnupg"
 export GOPATH="${HOME}/.local/share/go"
-export PASSWORD_STORE_DIR="${HOME}/.local/share/password-store"
 export TASKRC="${HOME}/.config/task/taskrc"
 export TASKDATA="${HOME}/.local/share/task"
 
