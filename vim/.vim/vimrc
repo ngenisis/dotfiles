@@ -53,6 +53,9 @@
 	set shiftwidth=4
 	set noexpandtab
 
+" Text width
+	set textwidth=80
+
 " Ignore case in lowercase searches
 	set ignorecase
 	set smartcase
