@@ -29,7 +29,7 @@
 	gaps inner 5
 
 # Start compositor
-	exec_always --no-startup-id compton -f
+	exec_always --no-startup-id picom -f
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 	floating_modifier $mod
