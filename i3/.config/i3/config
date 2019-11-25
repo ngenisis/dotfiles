@@ -53,6 +53,9 @@
 # Open fzf launcher
 	bindsym $mod+d exec --no-startup-id termite -e 'i3-dmenu-desktop --dmenu=fzf' --class=floating
 
+# Open Thunar
+	bindsym $mod+Shift+f exec --no-startup-id thunar
+
 # kill focused window
 	bindsym $mod+Shift+q kill
 
