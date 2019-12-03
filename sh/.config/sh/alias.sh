@@ -15,3 +15,5 @@ alias pp='pacman --color always'
 alias s='systemctl'
 alias ss='systemctl --user'
 alias clipboard='xclip -selection clipboard'
+# Potential security risk
+alias weather='curl wttr.in'
