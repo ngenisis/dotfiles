@@ -82,7 +82,7 @@
 	nnoremap <Space> <Nop>
 
 " Replace all mapping
-	nnoremap	<Leader>r	:%s//g<Left><Left>
+	nnoremap	<Leader>r	:%s/\v/g<Left><Left>
 
 " fzf mappings
 	nnoremap	<Leader>f	:Files<Enter>
