@@ -17,7 +17,7 @@
 	exec_always --no-startup-id xinput set-prop 'AlpsPS/2 ALPS GlidePoint' 'libinput Tapping Enabled' 1
 
 # Set background image
-	exec_always --no-startup-id feh --bg-scale --no-fehbg "$HOME/Pictures/wallpaper.jpg"
+	exec_always --no-startup-id feh --bg-scale --no-fehbg "$WALLPAPER"
 
 # Autohide mouse
 	exec_always --no-startup-id unclutter
