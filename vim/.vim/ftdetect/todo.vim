@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile todo.txt set filetype=todo
+autocmd BufRead,BufNewFile ~/TODO/*.txt set filetype=todo
