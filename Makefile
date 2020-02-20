@@ -1,6 +1,6 @@
-default: config git gtk i3 lf mutt sh termite vim xorg zsh
+default: config git gtk i3 lf sh termite vim xorg zsh
 
-all: config bash git gtk i3 isync lf mutt readline sh termite vim xdg xorg zsh
+all: config bash git gtk i3 isync lf readline sh termite vim xdg xorg zsh
 
 bash: config sh readline
 	stow -R bash
@@ -19,10 +19,6 @@ isync: config
 
 lf: config
 	stow -R lf
-
-mutt: config
-	stow -R mutt
-	systemctl --user enable --now mbsync.timer
 
 readline: config
 	stow -R readline
