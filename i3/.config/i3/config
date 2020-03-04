@@ -57,7 +57,7 @@
 	bindsym $mod+Shift+f exec --no-startup-id thunar
 
 # Open Emacs
-	bindsym $mod+e exec --no-startup-id emacs
+	bindsym $mod+e exec --no-startup-id emacsclient -nc
 
 # kill focused window
 	bindsym $mod+Shift+q kill
