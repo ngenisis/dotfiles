@@ -6,8 +6,9 @@
 		export GDK_SCALE=2
 	fi
 
-# Map caps lock to additional escape
-	setxkbmap -option "caps:escape"
+# Map Caps Lock to Esc when pressed, Ctrl when held
+	setxkbmap -option 'caps:ctrl_modifier'
+	xcape -e 'Caps_Lock=Escape'
 
 # Disable middle click
 	xmodmap -e "pointer = 1 0"
