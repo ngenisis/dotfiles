@@ -1,9 +1,12 @@
-default: config git gtk i3 lf sh termite vim xorg zsh
+default: config emacs git gtk i3 lf sh termite vim xorg zsh
 
-all: config bash git gtk i3 isync lf readline sh termite vim xdg xorg zsh
+all: config bash emacs git gtk i3 isync lf readline sh termite vim xdg xorg zsh
 
 bash: config sh readline
 	stow -R bash
+
+emacs: config
+	stow -R emacs
 
 git: config
 	stow -R git
