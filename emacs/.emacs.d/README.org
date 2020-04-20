@@ -152,7 +152,7 @@
 			 mu4e-compose-dont-reply-to-self t
 			 mu4e-use-fancy-chars t
 			 mu4e-headers-date-format "%e %b"
-			 mu4e-split-view 'vertical
+			 mu4e-split-view nil
 			 mu4e-view-show-addresses t
 			 mu4e-headers-fields '((:date . 7)
 							  (:from . 22)
