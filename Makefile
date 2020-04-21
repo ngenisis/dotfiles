@@ -6,6 +6,7 @@ bash: config sh readline
 	stow -R bash
 
 emacs: config
+	[ -d ~/.emacs.d ] || mkdir ~/.emacs.d
 	stow -R emacs
 
 git: config
@@ -33,6 +34,7 @@ termite: config
 	stow -R termite
 
 vim: config
+	[ -d ~/.vim ] || mkdir ~/.vim
 	stow -R vim
 
 xdg: config
