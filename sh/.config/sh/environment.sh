@@ -15,8 +15,6 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 # Unclutter the home directory
 export CARGO_HOME="${HOME}/.local/share/cargo"
 export GOPATH="${HOME}/.local/share/go"
-export TASKRC="${HOME}/.config/task/taskrc"
-export TASKDATA="${HOME}/.local/share/task"
 
 # Disable less history
 export LESSHISTFILE=/dev/null
