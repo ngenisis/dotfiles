@@ -60,10 +60,11 @@
    (setq echo-keystrokes .1)
  #+END_SRC
 
-** Tab
+** Text
 
  #+BEGIN_SRC emacs-lisp
-   (setq-default tab-width 4)
+   (setq-default tab-width 4
+				 word-wrap t)
  #+END_SRC
 
 ** prog-mode
