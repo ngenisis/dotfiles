@@ -1,5 +1,11 @@
 _sh=$(basename $SHELL)
 
+# Add ~/.local/bin to PATH if exists
+
+if [ -d ~/.local/bin ] ; then
+	PATH=~/.local/bin:${PATH}
+fi
+
 # Enable fzf key bindings and completions
 if [ -x /usr/bin/fzf ] ; then
 	[ -f /usr/share/fzf/key-bindings.${_sh} ] && source /usr/share/fzf/key-bindings.${_sh}
