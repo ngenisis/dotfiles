@@ -7,7 +7,7 @@
  #+BEGIN_SRC emacs-lisp
    (require 'package)
    (add-to-list 'package-archives
-				'("melpa-stable" . "https://stable.melpa.org/packages/")
+				'("melpa" . "https://melpa.org/packages/")
 				t)
    (package-initialize)
    (setq package-selected-packages
