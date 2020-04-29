@@ -192,6 +192,25 @@
 		   smtpmail-stream-type 'ssl)
    #+END_SRC
 
+** [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters-mode]]
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package rainbow-delimiters
+	   :ensure t
+	   :config
+	   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+   #+END_SRC
+   
+** [[https://github.com/Fuco1/smartparens][smartparens]]
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package smartparens
+	   :ensure t
+	   :config
+	   (require 'smartparens-config)
+	   (add-hook 'prog-mode-hook #'smartparens-mode))
+   #+END_SRC
+   
 * Keybindings
 ** [[https://github.com/emacs-evil/evil][evil]]
 
