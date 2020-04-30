@@ -138,10 +138,13 @@
 ** Dired
 
  #+BEGIN_SRC emacs-lisp
-   (setq dired-listing-switches "-al --group-directories-first"
+   (use-package dired
+	 :config
+	 (setq dired-listing-switches "-al --group-directories-first"
 		 dired-isearch-filenames 'dwim
 		 delete-by-moving-to-trash 't
-		 dired-recursive-copies 't)
+		 dired-recursive-copies 't
+		 dired-dwim-target 't))
  #+END_SRC
 
 ** [[https://github.com/djcb/mu][mu4e]]
@@ -265,3 +268,4 @@
  #+END_SRC
 * TODO
 - Disable autofill while typing a link in org-mode
+- Check out dired 'subdir' commands
