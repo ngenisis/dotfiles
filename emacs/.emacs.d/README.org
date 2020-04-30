@@ -65,7 +65,7 @@
  #+BEGIN_SRC emacs-lisp
    (setq-default tab-width 4
 				 word-wrap t
-				 show-trailing-whitepsace t)
+				 show-trailing-whitespace t)
  #+END_SRC
 
 ** prog-mode
