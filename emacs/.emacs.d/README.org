@@ -75,6 +75,12 @@
 												show-trailing-whitespace t)))
    #+END_SRC
 
+** Automatically follow symlinks to version controlled files
+
+   #+BEGIN_SRC emacs-lisp
+	 (setq vc-follow-symlinks t)
+   #+END_SRC
+   
 * Features
 ** Color theme
 *** [[https://github.com/purcell/color-theme-sanityinc-tomorrow][Sanity, Inc. "Tomorrow"]]
