@@ -275,3 +275,10 @@
 * TODO
 - Disable autofill while typing a link in org-mode
 - Check out dired 'subdir' commands
+- Open mail Org links in frame containing current mu4e-headers buffer
+- Get a completion framework, see if it supports read-file-name
+- Keybinds for common locations in dired
+- Address directories and marked files being the same color in Dired
+- Bind tab to dired-hude-subdir in dired-mode-map <normal-state>
+- Key bind to toggle show dotfiles in Dired
+- Start dired in dired-hide-details-mode
