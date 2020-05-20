@@ -229,7 +229,6 @@
 	 :init
 	 (setq evil-want-integration t
 		   evil-want-keybinding nil
-		   evil-want-C-u-scroll t
 		   evil-search-module evil-search)
 	 :config
 	 (evil-mode 1))
