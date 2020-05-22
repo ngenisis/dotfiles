@@ -14,7 +14,7 @@
 	path = vim
 [url "https://aur.archlinux.org/"]
 	insteadOf = "aur:"
-[pager]
-	log = /usr/share/git/diff-highlight/diff-highlight | less -R
-	show = /usr/share/git/diff-highlight/diff-highlight | less -R
-	diff = /usr/share/git/diff-highlight/diff-highlight | less -R
+; [pager]
+; 	log = /usr/share/git/diff-highlight/diff-highlight | less -R
+; 	show = /usr/share/git/diff-highlight/diff-highlight | less -R
+; 	diff = /usr/share/git/diff-highlight/diff-highlight | less -R
