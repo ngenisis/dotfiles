@@ -27,6 +27,7 @@
 		   ido-vertical-mode
 		   magit
 		   mu4e-alert
+		   nix-mode
 		   org-bullets
 		   rainbow-delimiters
 		   smartparens
@@ -403,6 +404,14 @@
 	   (add-hook 'prog-mode-hook #'smartparens-mode)
 	   :config
 	   (require 'smartparens-config))
+   #+END_SRC
+
+** nix-mode
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package nix-mode
+	   :ensure t
+	   :mode "\\.nix\\'")
    #+END_SRC
 
 ** [[https://melpa.org/#/sudo-edit][sudo-edit]]
