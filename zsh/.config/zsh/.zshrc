@@ -28,10 +28,10 @@ zle -N zle-keymap-select
 zle -N zle-line-init
 
 # Report current directory to VTE
-if [[ ${TERM} == xterm-termite ]]; then
-	. /etc/profile.d/vte.sh
-	__vte_osc7
-fi
+# if [[ ${TERM} == xterm-termite ]]; then
+# 	. /etc/profile.d/vte.sh
+# 	__vte_osc7
+# fi
 
 # Set a fancy prompt (non-color, unless we know we "want" color)
 case "${TERM}" in
