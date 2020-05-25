@@ -170,10 +170,10 @@
  #+BEGIN_SRC emacs-lisp
    (use-package helpful
 	 :ensure t
-	 :init
-	 (global-set-key (kbd "C-h f") #'helpful-callable)
-	 (global-set-key (kbd "C-h v") #'helpful-variable)
-	 (global-set-key (kbd "C-h k") #'helpful-key))
+	 :general
+	 "C-h f" #'helpful-callable
+	 "C-h v" #'helpful-variable
+	 "C-h k" #'helpful-key)
  #+END_SRC
  
 ** [[https://magit.vc/manual/][magit]]
@@ -181,8 +181,8 @@
  #+BEGIN_SRC emacs-lisp
    (use-package magit
 	 :ensure t
-	 :init
-	 (global-set-key (kbd "C-x g") 'magit-status))
+	 :general
+	 "C-x g" #'magit-status)
  #+END_SRC
 
 ** [[https://github.com/djcb/mu][mu4e]]
