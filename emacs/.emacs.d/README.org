@@ -18,13 +18,14 @@
 		   evil-org
 		   general
 		   helpful
+		   ido-completing-read+
+		   ido-vertical-mode
 		   magit
-		   sudo-edit
-		   use-package
 		   org-bullets
 		   rainbow-delimiters-mode
 		   smartparens
-		   sudo-edit))
+		   sudo-edit
+		   use-package))
  #+END_SRC
 
 ** [[https://github.com/jwiegley/use-package][use-package]]
@@ -121,13 +122,6 @@
 	 (evil-mode 1))
  #+END_SRC
 
-** [[https://github.com/emacs-evil/evil-magit][evil-magit]]
-   
-   #+BEGIN_SRC emacs-lisp
-	 (use-package evil-magit
-	   :ensure t)
-   #+END_SRC
-
 ** [[https://github.com/emacs-evil/evil-collection][evil-collection]]
 
    #+BEGIN_SRC emacs-lisp
@@ -136,6 +130,13 @@
 	   :ensure t
 	   :config
 	   (evil-collection-init))
+   #+END_SRC
+
+** [[https://github.com/emacs-evil/evil-magit][evil-magit]]
+   
+   #+BEGIN_SRC emacs-lisp
+	 (use-package evil-magit
+	   :ensure t)
    #+END_SRC
 
 ** [[https://github.com/Somelauw/evil-org-mode][evil-org]]
@@ -176,6 +177,33 @@
 	 "C-h k" #'helpful-key)
  #+END_SRC
  
+** ido
+   
+   #+BEGIN_SRC emacs-lisp
+	 (use-package ido
+	   :config
+	   (ido-mode t))
+   #+END_SRC
+
+** [[https://github.com/DarwinAwardWinner/ido-completing-read-plus][ido-completing-read+]]
+   
+   #+BEGIN_SRC emacs-lisp
+	 (use-package ido-completing-read+
+	   :ensure t
+	   :config
+	   (ido-ubiquitous-mode 1))
+   #+END_SRC
+
+** [[https://github.com/creichert/ido-vertical-mode.el][ido-vertical-mode]]
+   
+   #+BEGIN_SRC emacs-lisp
+	 (use-package ido-vertical-mode
+	   :ensure t
+	   :after ido
+	   :config
+	   (ido-vertical-mode 1))
+   #+END_SRC
+
 ** [[https://magit.vc/manual/][magit]]
 
  #+BEGIN_SRC emacs-lisp
@@ -290,8 +318,6 @@
  #+END_SRC
 
 * TODO
-- Disable autofill while typing a link in org-mode
-- Check out dired 'subdir' commands
 - Open mail Org links in frame containing current mu4e-headers buffer
 - Get a completion framework, see if it supports read-file-name
 - Keybinds for common locations in dired
