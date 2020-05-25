@@ -132,6 +132,12 @@
 		(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 	#+END_SRC
 
+*** Catching invisible edits
+
+	#+BEGIN_SRC emacs-lisp
+	  (setq org-catch-invisble-edits 'smart)
+	#+END_SRC
+
 ** [[https://melpa.org/#/sudo-edit][sudo-edit]]
 
    Activate with `M-x sudo-edit`
@@ -279,6 +285,8 @@
 - Get a completion framework, see if it supports read-file-name
 - Keybinds for common locations in dired
 - Address directories and marked files being the same color in Dired
-- Bind tab to dired-hude-subdir in dired-mode-map <normal-state>
+- Bind tab to dired-hide-subdir in dired-mode-map <normal-state>
 - Key bind to toggle show dotfiles in Dired
 - Start dired in dired-hide-details-mode
+- Set keybinds as described in [[info:org#Activation][info:org#Activation]]
+-
