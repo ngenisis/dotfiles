@@ -19,7 +19,10 @@
 		   magit
 		   sudo-edit
 		   use-package
-		   org-bullets))
+		   org-bullets
+		   rainbow-delimiters-mode
+		   smartparens
+		   sudo-edit))
  #+END_SRC
 
 ** [[https://github.com/jwiegley/use-package][use-package]]
@@ -81,73 +84,17 @@
 	 (setq vc-follow-symlinks t)
    #+END_SRC
    
-* Features
-** Color theme
-*** [[https://github.com/purcell/color-theme-sanityinc-tomorrow][Sanity, Inc. "Tomorrow"]]
-
-  #+BEGIN_SRC emacs-lisp
-	(use-package color-theme-sanityinc-tomorrow
-	  :ensure t
-	  :config
-	  (load-theme 'sanityinc-tomorrow-bright t))
-  #+END_SRC
-
-** [[https://github.com/kawabata/wolfram-mode][wolfram-mode]]
+* Packages
+** [[https://github.com/purcell/color-theme-sanityinc-tomorrow][color-theme-sanityinc-tomorrow]]
 
  #+BEGIN_SRC emacs-lisp
-   (add-to-list 'load-path "~/.emacs.d/wolfram-mode/")
-   (autoload 'wolfram-mode "wolfram-mode" nil t)
-   (autoload 'run-wolfram "wolfram-mode" nil t)
-   (setq wolfram-program "/opt/Mathematica/12.1/Executables/MathKernel")
-   (add-to-list 'auto-mode-alist '("\.m$" . wolfram-mode))
-   (add-to-list 'auto-mode-alist '("\.wl$" . wolfram-mode))
-   (setq wolfram-path "~/.Mathematica/Applications")
+   (use-package color-theme-sanityinc-tomorrow
+	 :ensure t
+	 :config
+	 (load-theme 'sanityinc-tomorrow-bright t))
  #+END_SRC
 
-** [[https://orgmode.org/][Org]]
-*** Line break automatically
-
-	#+BEGIN_SRC emacs-lisp
-	  (add-hook 'org-mode-hook 'auto-fill-mode)
-	#+END_SRC
-
-*** Jump to beginning/end of headerlines and items rather than lines
-
-	#+BEGIN_SRC emacs-lisp
-	  (setq org-special-ctrl-a/e t)
-	#+END_SRC
-
-*** Stay in visual state after promotion
-
-	#+BEGIN_SRC emacs-lisp
-	  (setq evil-org-retain-visual-state-on-shift t)
-	#+END_SRC
-
-*** Show [[https://github.com/sabof/org-bullets][org-mode bullets]] as UTF-8 characters
-
-	#+BEGIN_SRC emacs-lisp
-	  (use-package org-bullets
-		:ensure t
-		:config
-		(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-	#+END_SRC
-
-*** Catching invisible edits
-
-	#+BEGIN_SRC emacs-lisp
-	  (setq org-catch-invisble-edits 'smart)
-	#+END_SRC
-
-** [[https://melpa.org/#/sudo-edit][sudo-edit]]
-
-   Activate with `M-x sudo-edit`
-
- #+BEGIN_SRC emacs-lisp
-   (use-package sudo-edit
-	 :ensure t)
- #+END_SRC
-
-** Dired
+** dired
 
  #+BEGIN_SRC emacs-lisp
    (use-package dired
@@ -157,6 +104,69 @@
 		 delete-by-moving-to-trash 't
 		 dired-recursive-copies 't
 		 dired-dwim-target 't))
+ #+END_SRC
+
+** [[https://github.com/emacs-evil/evil][evil]]
+
+ #+BEGIN_SRC emacs-lisp
+   (use-package evil
+	 :ensure t
+	 :init
+	 (setq evil-want-integration t
+		   evil-want-keybinding nil
+		   evil-search-module 'evil-search)
+	 :config
+	 (evil-mode 1))
+ #+END_SRC
+
+** [[https://github.com/emacs-evil/evil-collection][evil-collection]]
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package evil-collection
+	   :after evil
+	   :ensure t
+	   :config
+	   (evil-collection-init))
+   #+END_SRC
+
+** [[https://github.com/Somelauw/evil-org-mode][evil-org]]
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package evil-org
+	   :after org
+	   :ensure t
+	   :init
+	   (add-hook 'org-mode-hook 'evil-org-mode)
+	   :config
+	   (add-hook 'evil-org-mode-hook
+				 (lambda ()
+				   (evil-org-set-key-theme)))
+	   (setq evil-org-retain-visual-state-on-shift t))
+
+	 (use-package evil-org-agenda
+	   :after evil-org
+	   :config
+	   (evil-org-agenda-set-keys))
+   #+END_SRC
+
+** [[https://github.com/Wilfred/helpful][helpful]]
+
+ #+BEGIN_SRC emacs-lisp
+   (use-package helpful
+	 :ensure t
+	 :init
+	 (global-set-key (kbd "C-h f") #'helpful-callable)
+	 (global-set-key (kbd "C-h v") #'helpful-variable)
+	 (global-set-key (kbd "C-h k") #'helpful-key))
+ #+END_SRC
+ 
+** [[https://magit.vc/manual/][magit]]
+
+ #+BEGIN_SRC emacs-lisp
+   (use-package magit
+	 :ensure t
+	 :init
+	 (global-set-key (kbd "C-x g") 'magit-status))
  #+END_SRC
 
 ** [[https://github.com/djcb/mu][mu4e]]
@@ -175,18 +185,13 @@
 			 mu4e-view-show-addresses t
 			 mu4e-headers-fields '((:date . 7)
 							  (:from . 22)
-							  (:thread-subject))))
+							  (:thread-subject)))
+	   (let ((mail-file "~/.emacs.d/mail.el"))
+		 (if (file-readable-p mail-file)
+			 (load-file mail-file))))
    #+END_SRC
 
-   Load settings from ~/.emacs.d/mail.el:
-
-   #+BEGIN_SRC emacs-lisp
-	 (let ((mail-file "~/.emacs.d/mail.el"))
-	   (if (file-readable-p mail-file)
-		   (load-file mail-file)))
-   #+END_SRC
-
-   Example:
+   Example mail.el:
 
    #+BEGIN_SRC emacs-lisp :tangle no
 	 ;; Identity
@@ -207,12 +212,32 @@
 		   smtpmail-stream-type 'ssl)
    #+END_SRC
 
+** [[https://orgmode.org/][org]]
+   
+   #+BEGIN_SRC emacs-lisp
+	 (use-package org
+	   :config
+	   (add-hook 'org-mode-hook 'auto-fill-mode)
+	   (setq org-special-ctrl-a/e t ; jump to beginning/end of headerlines and items rather than lines
+			 org-catch-invisible-edits 'smart))
+   #+END_SRC
+
+** [[https://github.com/sabof/org-bullets][org-bullets]]
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package org-bullets
+	   :after org
+	   :ensure t
+	   :init
+	   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+   #+END_SRC
+
 ** [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters-mode]]
 
    #+BEGIN_SRC emacs-lisp
 	 (use-package rainbow-delimiters
 	   :ensure t
-	   :config
+	   :init
 	   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
    #+END_SRC
    
@@ -221,63 +246,33 @@
    #+BEGIN_SRC emacs-lisp
 	 (use-package smartparens
 	   :ensure t
+	   :init
+	   (add-hook 'prog-mode-hook #'smartparens-mode)
 	   :config
-	   (require 'smartparens-config)
-	   (add-hook 'prog-mode-hook #'smartparens-mode))
+	   (require 'smartparens-config))
    #+END_SRC
    
-* Keybindings
-** [[https://github.com/emacs-evil/evil][evil]]
+** [[https://melpa.org/#/sudo-edit][sudo-edit]]
+
+   Activate with `M-x sudo-edit`
 
  #+BEGIN_SRC emacs-lisp
-   (use-package evil
-	 :ensure t
-	 :init
-	 (setq evil-want-integration t
-		   evil-want-keybinding nil
-		   evil-search-module evil-search)
-	 :config
-	 (evil-mode 1))
+   (use-package sudo-edit
+	 :ensure t)
  #+END_SRC
 
-** [[https://github.com/emacs-evil/evil-collection][evil-collection]]
-
-   #+BEGIN_SRC emacs-lisp
-	 (use-package evil-collection
-	   :after evil
-	   :ensure t
-	   :config
-	   (evil-collection-init))
-   #+END_SRC
-
-** [[https://github.com/Somelauw/evil-org-mode][org-evil]]
-
-   #+BEGIN_SRC emacs-lisp
-	 (use-package evil-org
-	   :after org
-	   :ensure t
-	   :config
-	   (add-hook 'org-mode-hook 'evil-org-mode)
-	   (add-hook 'evil-org-mode-hook
-				 (lambda ()
-				   (evil-org-set-key-theme)))
-	   (require 'evil-org-agenda)
-	   (evil-org-agenda-set-keys))
-   #+END_SRC
-
-** [[https://magit.vc/manual/][magit]]
+** [[https://github.com/kawabata/wolfram-mode][wolfram-mode]]
 
  #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "C-x g") 'magit-status)
+   (add-to-list 'load-path "~/.emacs.d/wolfram-mode/")
+   (autoload 'wolfram-mode "wolfram-mode" nil t)
+   (autoload 'run-wolfram "wolfram-mode" nil t)
+   (setq wolfram-program "/opt/Mathematica/12.1/Executables/MathKernel")
+   (add-to-list 'auto-mode-alist '("\.m$" . wolfram-mode))
+   (add-to-list 'auto-mode-alist '("\.wl$" . wolfram-mode))
+   (setq wolfram-path "~/.Mathematica/Applications")
  #+END_SRC
 
-** [[https://github.com/Wilfred/helpful][helpful]]
-
- #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "C-h f") #'helpful-callable)
-   (global-set-key (kbd "C-h v") #'helpful-variable)
-   (global-set-key (kbd "C-h k") #'helpful-key)
- #+END_SRC
 * TODO
 - Disable autofill while typing a link in org-mode
 - Check out dired 'subdir' commands
@@ -289,4 +284,3 @@
 - Key bind to toggle show dotfiles in Dired
 - Start dired in dired-hide-details-mode
 - Set keybinds as described in [[info:org#Activation][info:org#Activation]]
--
