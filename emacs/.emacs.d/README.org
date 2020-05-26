@@ -116,6 +116,14 @@
 		 dired-dwim-target 't))
  #+END_SRC
 
+** eshell
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package eshell
+	   :general
+	   ("C-x e" #'eshell))
+   #+END_SRC
+
 ** [[https://github.com/emacs-evil/evil][evil]]
 
  #+BEGIN_SRC emacs-lisp
