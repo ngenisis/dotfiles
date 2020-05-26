@@ -22,7 +22,7 @@
 		   ido-vertical-mode
 		   magit
 		   org-bullets
-		   rainbow-delimiters-mode
+		   rainbow-delimiters
 		   smartparens
 		   sudo-edit
 		   use-package))
@@ -276,7 +276,7 @@
 	   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
    #+END_SRC
 
-** [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters-mode]]
+** [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters]]
 
    #+BEGIN_SRC emacs-lisp
 	 (use-package rainbow-delimiters
