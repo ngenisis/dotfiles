@@ -35,6 +35,13 @@
 	 (require 'use-package))
  #+END_SRC
 
+** [[https://github.com/noctuid/general.el][general]]
+   
+   #+BEGIN_SRC emacs-lisp
+	 (use-package general
+	   :ensure t)
+   #+END_SRC
+
 * Basic settings
 ** Disable startup screen
 
@@ -157,13 +164,6 @@
 	   :after evil-org
 	   :config
 	   (evil-org-agenda-set-keys))
-   #+END_SRC
-
-** [[https://github.com/noctuid/general.el][general]]
-   
-   #+BEGIN_SRC emacs-lisp
-	 (use-package general
-	   :ensure t)
    #+END_SRC
 
 ** [[https://github.com/Wilfred/helpful][helpful]]
