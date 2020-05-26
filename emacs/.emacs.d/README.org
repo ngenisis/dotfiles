@@ -227,6 +227,8 @@
 			 mu4e-headers-date-format "%e %b"
 			 mu4e-split-view nil
 			 mu4e-view-show-addresses t
+			 ;; Always show the text part
+			 mu4e-view-html-plaintext-ratio-heuristic most-positive-fixnum
 			 mu4e-headers-fields '((:date . 7)
 							  (:from . 22)
 							  (:thread-subject)))
