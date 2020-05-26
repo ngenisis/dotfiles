@@ -172,9 +172,9 @@
    (use-package helpful
 	 :ensure t
 	 :general
-	 "C-h f" #'helpful-callable
-	 "C-h v" #'helpful-variable
-	 "C-h k" #'helpful-key)
+	 ("C-h f" #'helpful-callable)
+	 ("C-h v" #'helpful-variable)
+	 ("C-h k" #'helpful-key))
  #+END_SRC
  
 ** ido
@@ -210,7 +210,7 @@
    (use-package magit
 	 :ensure t
 	 :general
-	 "C-x g" #'magit-status)
+	 ("C-x g" #'magit-status))
  #+END_SRC
 
 ** [[https://github.com/djcb/mu][mu4e]]
