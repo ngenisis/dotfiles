@@ -134,7 +134,8 @@
 		   evil-want-keybinding nil
 		   evil-search-module 'evil-search)
 	 :config
-	 (evil-mode 1))
+	 (evil-mode 1)
+	 (add-hook 'with-editor-mode-hook #'evil-insert-state))
  #+END_SRC
 
 ** [[https://github.com/emacs-evil/evil-collection][evil-collection]]
