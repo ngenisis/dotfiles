@@ -271,6 +271,11 @@
    
    #+BEGIN_SRC emacs-lisp
 	 (use-package org
+	   :general
+	   ("C-c l" #'org-store-link)
+	   ("C-c a" #'org-agenda)
+	   ("C-c c" #'org-capture)
+	   ("C-c b" #'org-switchb)
 	   :config
 	   (add-hook 'org-mode-hook 'auto-fill-mode)
 	   (setq org-special-ctrl-a/e t ; jump to beginning/end of headerlines and items rather than lines
@@ -336,4 +341,3 @@
 - Bind tab to dired-hide-subdir in dired-mode-map <normal-state>
 - Key bind to toggle show dotfiles in Dired
 - Start dired in dired-hide-details-mode
-- Set keybinds as described in [[info:org#Activation][info:org#Activation]]
