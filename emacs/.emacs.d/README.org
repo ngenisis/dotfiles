@@ -12,6 +12,8 @@
    (package-initialize)
    (setq package-selected-packages
 		 '(color-theme-sanityinc-tomorrow
+		   dired-collapse
+		   dired-ranger
 		   evil
 		   evil-collection
 		   evil-magit
@@ -108,13 +110,36 @@
 
  #+BEGIN_SRC emacs-lisp
    (use-package dired
+	 :general
+	 ('normal dired-mode-map
+			  "TAB" #'dired-hide-subdir)
 	 :config
 	 (setq dired-listing-switches "-al --group-directories-first"
 		 dired-isearch-filenames 'dwim
 		 delete-by-moving-to-trash 't
 		 dired-recursive-copies 't
-		 dired-dwim-target 't))
+		 dired-dwim-target 't)
+	 (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode 1))))
  #+END_SRC
+
+** [[https://github.com/Fuco1/dired-hacks][dired-hacks]]
+   
+   #+BEGIN_SRC emacs-lisp
+	 (use-package dired-collapse
+	   :ensure t
+	   :config
+	   (add-hook 'dired-mode-hook #'dired-collapse-mode))
+   #+END_SRC
+   
+   #+BEGIN_SRC emacs-lisp
+	 (use-package dired-ranger
+	   :ensure t
+	   :general
+	   ('normal dired-mode-map
+				"y" #'dired-ranger-copy
+				"p" #'dired-ranger-paste
+				"M-p" #'dired-ranger-move))
+   #+END_SRC
 
 ** eshell
 
@@ -335,9 +360,6 @@
 
 * TODO
 - Open mail Org links in frame containing current mu4e-headers buffer
-- Get a completion framework, see if it supports read-file-name
-- Keybinds for common locations in dired
-- Address directories and marked files being the same color in Dired
-- Bind tab to dired-hide-subdir in dired-mode-map <normal-state>
-- Key bind to toggle show dotfiles in Dired
-- Start dired in dired-hide-details-mode
+- Keybinds for common locations in dired (bookmarks, Bookmarks+?)
+- Key bind to toggle show dotfiles in Dired (dired-filter from dired-hacks)
+- dired-subtree?
