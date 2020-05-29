@@ -256,6 +256,7 @@
 			 mu4e-get-mail-command "mbsync -Va"
 			 mu4e-change-filenames-when-moving t
 			 mu4e-update-interval 30
+			 mu4e-hide-index-messages t
 			 mu4e-compose-dont-reply-to-self t
 			 mu4e-use-fancy-chars t
 			 mu4e-headers-date-format "%e %b"
@@ -363,3 +364,4 @@
 - Keybinds for common locations in dired (bookmarks, Bookmarks+?)
 - Key bind to toggle show dotfiles in Dired (dired-filter from dired-hacks)
 - dired-subtree?
+- Disable highlighting after searching with /
