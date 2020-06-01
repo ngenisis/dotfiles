@@ -27,7 +27,8 @@
 		   rainbow-delimiters
 		   smartparens
 		   sudo-edit
-		   use-package))
+		   use-package
+		   vterm))
  #+END_SRC
 
 ** [[https://github.com/jwiegley/use-package][use-package]]
@@ -347,6 +348,17 @@
 	 :ensure t)
  #+END_SRC
 
+** [[https://github.com/akermu/emacs-libvterm][vterm]]
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package vterm
+	   :ensure t
+	   :general
+	   ("C-x t" #'vterm))
+   #+END_SRC
+
+*** TODO [[https://github.com/akermu/emacs-libvterm#shell-side-configuration][Shell-side configuration]]
+
 ** [[https://github.com/kawabata/wolfram-mode][wolfram-mode]]
 
  #+BEGIN_SRC emacs-lisp
@@ -365,3 +377,5 @@
 - Key bind to toggle show dotfiles in Dired (dired-filter from dired-hacks)
 - dired-subtree?
 - Disable highlighting after searching with /
+- magit-status (C-x g) should default to pwd if in vterm
+- Equivalent of git/diff-highlight for Magit diff
