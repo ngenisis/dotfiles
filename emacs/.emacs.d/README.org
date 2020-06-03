@@ -23,6 +23,7 @@
 		   ido-completing-read+
 		   ido-vertical-mode
 		   magit
+		   mu4e-alert
 		   org-bullets
 		   rainbow-delimiters
 		   smartparens
@@ -252,6 +253,8 @@
 
    #+BEGIN_SRC emacs-lisp
 	 (use-package mu4e
+	   :general
+	   ("C-x m" #'mu4e) ; shadows default compose-mail key binding
 	   :config
 	   (setq mail-user-agent 'mu4e-user-agent
 			 mu4e-get-mail-command "mbsync -Va"
@@ -293,6 +296,17 @@
 		   smtpmail-smtp-service 465
 		   smtpmail-stream-type 'ssl)
    #+END_SRC
+
+** [[https://github.com/iqbalansari/mu4e-alert][mu4e-alert]]
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package mu4e-alert
+	   :ensure t
+	   :config
+	   (add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display))
+   #+END_SRC
+
+*** TODO Enable [[https://github.com/iqbalansari/mu4e-alert#desktop-notifications-for-unread-emails][desktop notifications]]
 
 ** [[https://orgmode.org/][org]]
    
@@ -387,3 +401,13 @@
   emacs server. The window manager's emacs keybinding should restart
   the emacs server if it isn't already active.
 - WAIT keyword for org
+- Don't move cursor when promoting or demoting in org mode
+- Show org link at point in modeline
+- mu4e-mark-execute-all should mu4e~headers-jump-to-maildir
+  afterwards? Background: I'll have an archived thread, then I'll
+  receive more mail on that thread and they'll show up in my
+  inbox. When I archive the new messages, I want the entire thread to
+  no longer show up in my current headers view. Currently I will get
+  broken portions of the thread still showing up even though those
+  messages aren't in my inbox. My workaround currently is to rejump
+  back to INBOX manually which is annoying.
