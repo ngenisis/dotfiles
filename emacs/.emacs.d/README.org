@@ -256,13 +256,19 @@
 	   (ido-vertical-mode 1))
    #+END_SRC
 
+*** TODO Disable trailing whitespace
 ** [[https://magit.vc/manual/][magit]]
 
  #+BEGIN_SRC emacs-lisp
    (use-package magit
 	 :ensure t
 	 :general
-	 ("C-x g" #'magit-status))
+	 ("C-x g" #'magit-status)
+	 :config
+	 (setq magit-diff-refine-hunk 'all
+		   magit-diff-paint-whitespace 't
+		   magit-diff-paint-whitespace-lines 'both
+		   magit-diff-highlight-trailing 't))
  #+END_SRC
 
 *** TODO Equivalent of git/diff-highlight for Magit diff
