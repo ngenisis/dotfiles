@@ -18,3 +18,9 @@ fi
 if [ -f /usr/share/doc/pkgfile/command-not-found.${_sh} ] ; then
 	. /usr/share/doc/pkgfile/command-not-found.${_sh}
 fi
+
+# Shell side-configuration for vterm:
+# https://github.com/akermu/emacs-libvterm#shell-side-configuration
+function vterm_printf(){
+	printf "\e]%s\e\\" "$1"
+}

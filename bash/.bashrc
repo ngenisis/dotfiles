@@ -51,6 +51,12 @@ GIT_PS1_HIDE_IF_PWD_IGNORED=yes
 
 export PROMPT_COMMAND=__prompt_command
 
+# Support for directory and prompt tracking in vterm
+# https://github.com/akermu/emacs-libvterm#directory-tracking-and-prompt-tracking
+vterm_prompt_end(){
+    vterm_printf "51;A$(whoami)@$(hostname):$(pwd)"
+}
+
 function __prompt_command() {
 	local EXIT=$?
 	local RED='\[\033[01;31m\]'
@@ -72,7 +78,7 @@ function __prompt_command() {
 		PS1="${EXIT_PRE}${PS1}"
 	fi
 
-	__git_ps1 "${PS1}" "${NONE}\n\$ "
+	__git_ps1 "${PS1}" "${NONE}\n\$ $(vterm_prompt_end)"
 
 	return ${EXIT}
 }

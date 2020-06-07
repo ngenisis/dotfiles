@@ -374,8 +374,6 @@
 	   ("C-x t" #'vterm))
    #+END_SRC
 
-*** TODO [[https://github.com/akermu/emacs-libvterm#shell-side-configuration][Shell-side configuration]]
-
 ** [[https://github.com/kawabata/wolfram-mode][wolfram-mode]]
 
  #+BEGIN_SRC emacs-lisp
@@ -394,7 +392,6 @@
 - Key bind to toggle show dotfiles in Dired (dired-filter from dired-hacks)
 - dired-subtree?
 - Disable highlighting after searching with /
-- magit-status (C-x g) should default to pwd if in vterm
 - Equivalent of git/diff-highlight for Magit diff
 - Report bug in [[info:org#Motion][info:org#Motion]], should be
   org-forward-heading-same-level, not org-forward-same-level

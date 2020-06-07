@@ -54,6 +54,12 @@ GIT_PS1_SHOWUNTRACKEDFILES=yes
 GIT_PS1_SHOWUPSTREAM=verbose
 GIT_PS1_HIDE_IF_PWD_IGNORED=yes
 
+# Support for directory and prompt tracking in vterm
+# https://github.com/akermu/emacs-libvterm#directory-tracking-and-prompt-tracking
+vterm_prompt_end() {
+	vterm_printf "51;A$(whoami)@$(hostname):$(pwd)";
+}
+
 precmd () {
 	local EXIT=$?
 	local EXIT_PRE=
@@ -71,7 +77,7 @@ precmd () {
 	fi
 
 	__git_ps1 "%B${PS1}" "%f%b
-%(!.#.$) "
+%(!.#.$) $(vterm_prompt_end)"
 
 	return ${EXIT}
 }
