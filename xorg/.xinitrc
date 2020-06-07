@@ -17,10 +17,16 @@
 	xset dpms 0 0 0
 	xset s off -dpms
 
+# Notification server
+	dunst &
+
 # Enable numlock
 	numlockx &
 
-# Load default display configuration and start i3
-	autorandr --change && exec i3
+# Load default display configuration
+	autorandr --change
+
+# Start i3
+	exec i3
 
 # vim: set filetype=sh :
