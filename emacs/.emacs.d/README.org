@@ -40,7 +40,7 @@
  #+END_SRC
 
 ** [[https://github.com/noctuid/general.el][general]]
-   
+
    #+BEGIN_SRC emacs-lisp
 	 (use-package general
 	   :ensure t)
@@ -97,7 +97,7 @@
    #+BEGIN_SRC emacs-lisp
 	 (setq vc-follow-symlinks t)
    #+END_SRC
-   
+
 * Packages
 ** [[https://github.com/purcell/color-theme-sanityinc-tomorrow][color-theme-sanityinc-tomorrow]]
 
@@ -117,22 +117,24 @@
 			  "TAB" #'dired-hide-subdir)
 	 :config
 	 (setq dired-listing-switches "-al --group-directories-first"
-		 dired-isearch-filenames 'dwim
-		 delete-by-moving-to-trash 't
-		 dired-recursive-copies 't
-		 dired-dwim-target 't)
+		   dired-isearch-filenames 'dwim
+		   delete-by-moving-to-trash 't
+		   dired-recursive-copies 't
+		   dired-dwim-target 't)
 	 (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode 1))))
  #+END_SRC
 
+*** TODO Keybinds for common locations (bookmarks, Bookmarks+?)
+
 ** [[https://github.com/Fuco1/dired-hacks][dired-hacks]]
-   
+
    #+BEGIN_SRC emacs-lisp
 	 (use-package dired-collapse
 	   :ensure t
 	   :config
 	   (add-hook 'dired-mode-hook #'dired-collapse-mode))
    #+END_SRC
-   
+
    #+BEGIN_SRC emacs-lisp
 	 (use-package dired-ranger
 	   :ensure t
@@ -142,6 +144,9 @@
 				"p" #'dired-ranger-paste
 				"M-p" #'dired-ranger-move))
    #+END_SRC
+
+*** TODO Keybind to toggle dotfiles (dired-filter?)
+*** TODO Try dired-subtree
 
 ** eshell
 
@@ -176,7 +181,7 @@
    #+END_SRC
 
 ** [[https://github.com/emacs-evil/evil-magit][evil-magit]]
-   
+
    #+BEGIN_SRC emacs-lisp
 	 (use-package evil-magit
 	   :ensure t)
@@ -212,17 +217,18 @@
 	 ("C-h v" #'helpful-variable)
 	 ("C-h k" #'helpful-key))
  #+END_SRC
- 
+
 ** ido
-   
+
    #+BEGIN_SRC emacs-lisp
 	 (use-package ido
 	   :config
-	   (ido-mode t))
+	   (ido-mode t)
+	   (ido-everywhere t))
    #+END_SRC
 
 ** [[https://github.com/DarwinAwardWinner/ido-completing-read-plus][ido-completing-read+]]
-   
+
    #+BEGIN_SRC emacs-lisp
 	 (use-package ido-completing-read+
 	   :ensure t
@@ -231,7 +237,7 @@
    #+END_SRC
 
 ** [[https://github.com/creichert/ido-vertical-mode.el][ido-vertical-mode]]
-   
+
    #+BEGIN_SRC emacs-lisp
 	 (use-package ido-vertical-mode
 	   :ensure t
@@ -249,6 +255,7 @@
 	 ("C-x g" #'magit-status))
  #+END_SRC
 
+*** TODO Equivalent of git/diff-highlight for Magit diff
 ** [[https://github.com/djcb/mu][mu4e]]
 
    #+BEGIN_SRC emacs-lisp
@@ -297,6 +304,15 @@
 		   smtpmail-stream-type 'ssl)
    #+END_SRC
 
+*** TODO Open mail Org links in frame containing current mu4e-headers buffer
+*** TODO mu4e-mark-execute-all should mu4e~headers-jump-to-maildir afterwards?
+	Background: I'll have an archived thread, then I'll
+	receive more mail on that thread and they'll show up in my
+	inbox. When I archive the new messages, I want the entire thread to
+	no longer show up in my current headers view. Currently I will get
+	broken portions of the thread still showing up even though those
+	messages aren't in my inbox. My workaround currently is to rejump
+	back to INBOX manually which is annoying.
 ** [[https://github.com/iqbalansari/mu4e-alert][mu4e-alert]]
 
    #+BEGIN_SRC emacs-lisp
@@ -311,7 +327,7 @@
 *** TODO [[https://github.com/iqbalansari/mu4e-alert#customizing-the-desktop-notifications][Customize the desktop notifications]]
 
 ** [[https://orgmode.org/][org]]
-   
+
    #+BEGIN_SRC emacs-lisp
 	 (use-package org
 	   :general
@@ -326,6 +342,9 @@
 			 org-goto-interface 'outline-path-completion))
    #+END_SRC
 
+*** TODO WAIT keyword for org
+*** TODO Don't move cursor when promoting or demoting in org mode
+*** TODO Show org link at point in modeline
 ** [[https://github.com/sabof/org-bullets][org-bullets]]
 
    #+BEGIN_SRC emacs-lisp
@@ -344,7 +363,7 @@
 	   :init
 	   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
    #+END_SRC
-   
+
 ** [[https://github.com/Fuco1/smartparens][smartparens]]
 
    #+BEGIN_SRC emacs-lisp
@@ -355,7 +374,7 @@
 	   :config
 	   (require 'smartparens-config))
    #+END_SRC
-   
+
 ** [[https://melpa.org/#/sudo-edit][sudo-edit]]
 
    Activate with `M-x sudo-edit`
@@ -387,26 +406,10 @@
  #+END_SRC
 
 * TODO
-- Open mail Org links in frame containing current mu4e-headers buffer
-- Keybinds for common locations in dired (bookmarks, Bookmarks+?)
-- Key bind to toggle show dotfiles in Dired (dired-filter from dired-hacks)
-- dired-subtree?
 - Disable highlighting after searching with /
-- Equivalent of git/diff-highlight for Magit diff
 - Report bug in [[info:org#Motion][info:org#Motion]], should be
   org-forward-heading-same-level, not org-forward-same-level
 - Safe shutdown keybinding: delete all buffers containing files and
   running process, prompting whether to save etc, then killing the
   emacs server. The window manager's emacs keybinding should restart
   the emacs server if it isn't already active.
-- WAIT keyword for org
-- Don't move cursor when promoting or demoting in org mode
-- Show org link at point in modeline
-- mu4e-mark-execute-all should mu4e~headers-jump-to-maildir
-  afterwards? Background: I'll have an archived thread, then I'll
-  receive more mail on that thread and they'll show up in my
-  inbox. When I archive the new messages, I want the entire thread to
-  no longer show up in my current headers view. Currently I will get
-  broken portions of the thread still showing up even though those
-  messages aren't in my inbox. My workaround currently is to rejump
-  back to INBOX manually which is annoying.
