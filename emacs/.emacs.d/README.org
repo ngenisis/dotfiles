@@ -11,7 +11,8 @@
 				t)
    (package-initialize)
    (setq package-selected-packages
-		 '(color-theme-sanityinc-tomorrow
+		 '(alect-themes
+		   color-theme-sanityinc-tomorrow
 		   dired-collapse
 		   dired-ranger
 		   evil
@@ -99,9 +100,18 @@
    #+END_SRC
 
 * Packages
+** [[https://github.com/alezost/alect-themes][alect-themes]]
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package alect-themes
+	   :ensure t
+	   :config
+	   (load-theme 'alect-black t))
+   #+END_SRC
+
 ** [[https://github.com/purcell/color-theme-sanityinc-tomorrow][color-theme-sanityinc-tomorrow]]
 
- #+BEGIN_SRC emacs-lisp
+ #+BEGIN_SRC emacs-lisp :tangle no
    (use-package color-theme-sanityinc-tomorrow
 	 :ensure t
 	 :config
