@@ -303,10 +303,12 @@
 	 (use-package mu4e-alert
 	   :ensure t
 	   :config
+	   (mu4e-alert-set-default-style 'notifications)
+	   (add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
 	   (add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display))
    #+END_SRC
 
-*** TODO Enable [[https://github.com/iqbalansari/mu4e-alert#desktop-notifications-for-unread-emails][desktop notifications]]
+*** TODO [[https://github.com/iqbalansari/mu4e-alert#customizing-the-desktop-notifications][Customize the desktop notifications]]
 
 ** [[https://orgmode.org/][org]]
    
