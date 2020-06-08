@@ -14,7 +14,9 @@
 		 '(alect-themes
 		   color-theme-sanityinc-tomorrow
 		   dired-collapse
+		   dired-filter
 		   dired-ranger
+		   dired-subtree
 		   evil
 		   evil-collection
 		   evil-magit
@@ -150,6 +152,13 @@
    #+END_SRC
 
    #+BEGIN_SRC emacs-lisp
+	 (use-package dired-filter
+	   :ensure t
+	   :config
+	   (add-hook 'dired-mode-hook #'dired-filter-by-dot-files))
+   #+END_SRC
+
+   #+BEGIN_SRC emacs-lisp
 	 (use-package dired-ranger
 	   :ensure t
 	   :general
@@ -159,7 +168,11 @@
 				"M-p" #'dired-ranger-move))
    #+END_SRC
 
-*** TODO Keybind to toggle dotfiles (dired-filter?)
+   #+BEGIN_SRC emacs-lisp
+	 (use-package dired-subtree
+	   :ensure t)
+   #+END_SRC
+
 *** TODO Try dired-subtree
 
 ** eshell
