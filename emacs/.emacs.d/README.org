@@ -173,8 +173,7 @@
 	 :ensure t
 	 :init
 	 (setq evil-want-integration t
-		   evil-want-keybinding nil
-		   evil-search-module 'evil-search)
+		   evil-want-keybinding nil)
 	 :config
 	 (evil-mode 1)
 	 (add-hook 'with-editor-mode-hook #'evil-insert-state))
@@ -422,7 +421,6 @@
  #+END_SRC
 
 * TODO
-- Disable highlighting after searching with /
 - Report bug in [[info:org#Motion][info:org#Motion]], should be
   org-forward-heading-same-level, not org-forward-same-level
 - Safe shutdown keybinding: delete all buffers containing files and
