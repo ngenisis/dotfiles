@@ -93,6 +93,8 @@
 	 (add-hook hook (lambda () (setq-local show-trailing-whitespace nil))))
  #+END_SRC
 
+*** TODO Figure out why trailing whitespace is being shown in vterm
+
 ** prog-mode
 
    #+BEGIN_SRC emacs-lisp
@@ -195,6 +197,8 @@
 	 (evil-mode 1)
 	 (add-hook 'with-editor-mode-hook #'evil-insert-state))
  #+END_SRC
+
+*** TODO Begin in normal state for commit amend
 
 ** [[https://github.com/emacs-evil/evil-collection][evil-collection]]
 
@@ -365,16 +369,27 @@
 	   ("C-c a" #'org-agenda)
 	   ("C-c c" #'org-capture)
 	   ("C-c b" #'org-switchb)
+	   ; These shadow evil-paste-pop-next and evil-paste-pop
+	   ('normal org-mode-map "C-n" #'org-next-link)
+	   ('normal org-mode-map "C-p" #'org-previous-link)
 	   :config
+
 	   (add-hook 'org-mode-hook 'auto-fill-mode)
-	   (setq org-special-ctrl-a/e t ; jump to beginning/end of headerlines and items rather than lines
+			 ; jump to beginning/end of headerlines and items rather than lines
+	   (setq org-special-ctrl-a/e t
+			 ; improve editing folded text
 			 org-catch-invisible-edits 'smart
-			 org-goto-interface 'outline-path-completion))
+			 ; use outline path completion for C-c C-j
+			 org-goto-interface 'outline-path-completion
+			 ; don't split the line on M-RET
+			 org-M-RET-may-split-line '((default . nil))))
    #+END_SRC
 
 *** TODO WAIT keyword for org
-*** TODO Don't move cursor when promoting or demoting in org mode
+*** TODO Don't move cursor to beginning of line when promoting or demoting in org mode
+	Affects TAB on empty headline as well as explicitly using org-do-promote
 *** TODO Show org link at point in modeline
+
 ** [[https://github.com/sabof/org-bullets][org-bullets]]
 
    #+BEGIN_SRC emacs-lisp
@@ -436,9 +451,12 @@
  #+END_SRC
 
 * TODO
-- Report bug in [[info:org#Motion][info:org#Motion]], should be
+- [[info:org#Feedback][Report]] bug in [[info:org#Motion][info:org#Motion]], should be
   org-forward-heading-same-level, not org-forward-same-level
 - Safe shutdown keybinding: delete all buffers containing files and
   running process, prompting whether to save etc, then killing the
   emacs server. The window manager's emacs keybinding should restart
   the emacs server if it isn't already active.
+- Is it feasible to have search in org mode that only searches
+  currently visible text?
+- Read about transient-mark-mode
