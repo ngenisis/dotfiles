@@ -25,6 +25,7 @@
 		   helpful
 		   ido-completing-read+
 		   ido-vertical-mode
+		   ledger-mode
 		   magit
 		   mu4e-alert
 		   org-bullets
@@ -274,6 +275,15 @@
 	   :after ido
 	   :config
 	   (ido-vertical-mode 1))
+   #+END_SRC
+
+** [[https://github.com/ledger/ledger-mode][ledger-mode]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package ledger-mode
+       :ensure t
+       :init
+       (setq ledger-post-amount-alignment-column 80))
    #+END_SRC
 
 ** [[https://magit.vc/manual/][magit]]
