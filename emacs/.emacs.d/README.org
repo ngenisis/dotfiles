@@ -90,11 +90,10 @@
 
    (dolist (hook '(special-mode-hook
 				   term-mode-hook
+				   vterm-mode-hook
 				   minibuffer-setup-hook))
 	 (add-hook hook (lambda () (setq-local show-trailing-whitespace nil))))
  #+END_SRC
-
-*** TODO Figure out why trailing whitespace is being shown in vterm
 
 ** prog-mode
 
@@ -462,3 +461,4 @@
   currently visible text?
 - Read about transient-mark-mode
 - `C-x t` should open a terminal at point in dired
+- Look into multi-libvterm and projectile
