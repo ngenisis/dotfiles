@@ -32,7 +32,8 @@
 		   smartparens
 		   sudo-edit
 		   use-package
-		   vterm))
+		   vterm
+		   wolfram-mode))
  #+END_SRC
 
 ** [[https://github.com/jwiegley/use-package][use-package]]
@@ -441,13 +442,13 @@
 ** [[https://github.com/kawabata/wolfram-mode][wolfram-mode]]
 
  #+BEGIN_SRC emacs-lisp
-   (add-to-list 'load-path "~/.emacs.d/wolfram-mode/")
-   (autoload 'wolfram-mode "wolfram-mode" nil t)
-   (autoload 'run-wolfram "wolfram-mode" nil t)
-   (setq wolfram-program "/opt/Mathematica/12.1/Executables/MathKernel")
-   (add-to-list 'auto-mode-alist '("\.m$" . wolfram-mode))
-   (add-to-list 'auto-mode-alist '("\.wl$" . wolfram-mode))
-   (setq wolfram-path "~/.Mathematica/Applications")
+   (use-package wolfram-mode
+	 :ensure t
+	 :config
+	 (setq wolfram-program "/opt/Mathematica/12.1.1/Executables/MathKernel"
+		   wolfram-path "~/.Mathematica/Applications")
+	 (add-to-list 'auto-mode-alist '("\.m$" . wolfram-mode))
+	 (add-to-list 'auto-mode-alist '("\.wl$" . wolfram-mode)))
  #+END_SRC
 
 * TODO
@@ -460,3 +461,4 @@
 - Is it feasible to have search in org mode that only searches
   currently visible text?
 - Read about transient-mark-mode
+- `C-x t` should open a terminal at point in dired
