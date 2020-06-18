@@ -108,6 +108,19 @@
 	 (setq vc-follow-symlinks t)
    #+END_SRC
 
+** Display column numbers in mode line
+
+   #+BEGIN_SRC emacs-lisp
+	 (column-number-mode t)
+   #+END_SRC
+
+** Display buffers in separate frames
+
+
+   #+BEGIN_SRC emacs-lisp
+	 (setq pop-up-frames t)
+   #+END_SRC
+
 * Packages
 ** [[https://github.com/alezost/alect-themes][alect-themes]]
 
@@ -191,6 +204,8 @@
  #+BEGIN_SRC emacs-lisp
    (use-package evil
 	 :ensure t
+	 :general
+	 ('normal "gc" #'comment-or-uncomment-region)
 	 :init
 	 (setq evil-want-integration t
 		   evil-want-keybinding nil)
@@ -399,7 +414,7 @@
 *** TODO Don't move cursor to beginning of line when promoting or demoting in org mode
 	Affects TAB on empty headline as well as explicitly using org-do-promote
 *** TODO Show org link at point in modeline
-
+*** [[http://doc.norang.ca/org-mode.html]]
 ** [[https://github.com/sabof/org-bullets][org-bullets]]
 
    #+BEGIN_SRC emacs-lisp
