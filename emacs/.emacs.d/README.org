@@ -189,8 +189,6 @@
 	   :ensure t)
    #+END_SRC
 
-*** TODO Try dired-subtree
-
 ** eshell
 
    #+BEGIN_SRC emacs-lisp
@@ -297,10 +295,13 @@
    #+BEGIN_SRC emacs-lisp
      (use-package ledger-mode
        :ensure t
-       :init
-       (setq ledger-post-amount-alignment-column 80))
+       :config
+       (setq ledger-post-amount-alignment-column 80)
+       ; Must set tab-width to default for indentation to work correctly
+       (setq-local tab-width 8))
    #+END_SRC
 
+*** TODO Report the tab-witdh issue?
 ** [[https://magit.vc/manual/][magit]]
 
  #+BEGIN_SRC emacs-lisp
