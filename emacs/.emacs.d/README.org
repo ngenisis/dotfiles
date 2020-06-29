@@ -83,18 +83,30 @@
    (setq echo-keystrokes .1)
  #+END_SRC
 
+** Trailing whitespace
+
+   Show trailing whitespace by default:
+
+   #+BEGIN_SRC emacs-lisp
+	 (setq-default show-trailing-whitespace t)
+   #+END_SRC
+
+   Disable this in certain modes:
+
+   #+BEGIN_SRC emacs-lisp
+	 (dolist (hook '(special-mode-hook
+					 term-mode-hook
+					 vterm-mode-hook
+					 minibuffer-setup-hook
+					 calendar-mode-hook))
+	   (add-hook hook (lambda () (setq-local show-trailing-whitespace nil))))
+   #+END_SRC
+
 ** Text
 
  #+BEGIN_SRC emacs-lisp
    (setq-default tab-width 4
-				 word-wrap t
-				 show-trailing-whitespace t)
-
-   (dolist (hook '(special-mode-hook
-				   term-mode-hook
-				   vterm-mode-hook
-				   minibuffer-setup-hook))
-	 (add-hook hook (lambda () (setq-local show-trailing-whitespace nil))))
+				 word-wrap t)
  #+END_SRC
 
 ** prog-mode
@@ -372,6 +384,7 @@
 	broken portions of the thread still showing up even though those
 	messages aren't in my inbox. My workaround currently is to rejump
 	back to INBOX manually which is annoying.
+*** TODO Keybinds that act on whole threads
 ** [[https://github.com/iqbalansari/mu4e-alert][mu4e-alert]]
 
    #+BEGIN_SRC emacs-lisp
