@@ -385,6 +385,7 @@
 	messages aren't in my inbox. My workaround currently is to rejump
 	back to INBOX manually which is annoying.
 *** TODO Keybinds that act on whole threads
+*** TODO Report bug where a message to myself with no subject will thread with previous message in headers view
 ** [[https://github.com/iqbalansari/mu4e-alert][mu4e-alert]]
 
    #+BEGIN_SRC emacs-lisp
@@ -495,6 +496,7 @@
 	 (setq wolfram-program "/opt/Mathematica/12.1.1/Executables/MathKernel"
 		   wolfram-path "~/.Mathematica/Applications")
 	 (add-to-list 'auto-mode-alist '("\.m$" . wolfram-mode))
+	 (add-to-list 'auto-mode-alist '("\.mt$" . wolfram-mode))
 	 (add-to-list 'auto-mode-alist '("\.wl$" . wolfram-mode)))
  #+END_SRC
 
