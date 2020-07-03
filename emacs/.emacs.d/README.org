@@ -49,7 +49,12 @@
 
    #+BEGIN_SRC emacs-lisp
 	 (use-package general
-	   :ensure t)
+	   :ensure t
+	   :config
+	   (general-def
+		 general-override-mode-map :prefix "M-SPC"
+		 "c" (general-simulate-key "C-c")
+		 "w" (general-simulate-key "C-w")))
    #+END_SRC
 
 * Basic settings
@@ -205,7 +210,8 @@
    #+BEGIN_SRC emacs-lisp
 	 (use-package eshell
 	   :general
-	   ("C-x e" #'eshell))
+	   (general-override-mode-map :prefix "M-SPC"
+								  "e" #'eshell))
    #+END_SRC
 
 ** [[https://github.com/emacs-evil/evil][evil]]
@@ -268,15 +274,20 @@
    (use-package helpful
 	 :ensure t
 	 :general
-	 ("C-h f" #'helpful-callable)
-	 ("C-h v" #'helpful-variable)
-	 ("C-h k" #'helpful-key))
+	 (general-override-mode-map :prefix "M-SPC"
+								"h f" #'helpful-callable
+								"h v" #'helpful-variable
+								"h k" #'helpful-key))
  #+END_SRC
 
 ** ido
 
    #+BEGIN_SRC emacs-lisp
 	 (use-package ido
+	   :general
+	   (general-override-mode-map :prefix "M-SPC"
+								  "f" #'ido-find-file
+								  "d" #'ido-dired)
 	   :config
 	   (ido-mode t)
 	   (ido-everywhere t))
@@ -322,7 +333,8 @@
    (use-package magit
 	 :ensure t
 	 :general
-	 ("C-x g" #'magit-status)
+	 (general-override-mode-map :prefix "M-SPC"
+								"g" #'magit-status)
 	 :config
 	 (setq magit-diff-refine-hunk 'all
 		   magit-diff-paint-whitespace 't
@@ -335,7 +347,8 @@
    #+BEGIN_SRC emacs-lisp
 	 (use-package mu4e
 	   :general
-	   ("C-x m" #'mu4e) ; shadows default compose-mail key binding
+	   (general-override-mode-map :prefix "M-SPC"
+								  "m" #'mu4e)
 	   :config
 	   (setq mail-user-agent 'mu4e-user-agent
 			 mu4e-get-mail-command "mbsync -Va"
@@ -407,15 +420,17 @@
    #+BEGIN_SRC emacs-lisp
 	 (use-package org
 	   :general
-	   ("C-c l" #'org-store-link)
-	   ("C-c a" #'org-agenda)
-	   ("C-c c" #'org-capture)
-	   ("C-c b" #'org-switchb)
+	   (general-override-mode-map :prefix "M-SPC"
+								  "l" #'org-store-link
+								  "L" #'org-insert-link
+								  "a" #'org-agenda
+								  "C" #'org-capture
+								  "b" #'org-switchb)
 	   ; These shadow evil-paste-pop-next and evil-paste-pop
-	   ('normal org-mode-map "C-n" #'org-next-link)
-	   ('normal org-mode-map "C-p" #'org-previous-link)
+	   ('normal org-mode-map
+				"C-n" #'org-next-link
+				"C-p" #'org-previous-link)
 	   :config
-
 	   (add-hook 'org-mode-hook 'auto-fill-mode)
 			 ; jump to beginning/end of headerlines and items rather than lines
 	   (setq org-special-ctrl-a/e t
@@ -485,8 +500,10 @@
 	   :after vterm
 	   :ensure t
 	   :general
-	   ("C-x t" #'vterm-toggle)
-	   (vterm-mode-map
+	   (general-override-mode-map :prefix "M-SPC"
+								  "t" #'vterm-toggle
+								  "T" #'vterm)
+	   ('insert-state vterm-mode-map
 		"C-<return>" #'vterm-toggle-insert-cd))
    #+END_SRC
 
