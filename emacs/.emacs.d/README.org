@@ -28,6 +28,7 @@
 		   ledger-mode
 		   magit
 		   mu4e-alert
+		   nix-mode
 		   org-bullets
 		   rainbow-delimiters
 		   smartparens
@@ -414,6 +415,13 @@
    #+END_SRC
 
 *** TODO [[https://github.com/iqbalansari/mu4e-alert#customizing-the-desktop-notifications][Customize the desktop notifications]]
+** [[https://github.com/NixOS/nix-mode][nix-mode]]
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package nix-mode
+	   :ensure t
+	   :mode "\\.nix\\'")
+   #+END_SRC
 
 ** [[https://orgmode.org/][org]]
 
