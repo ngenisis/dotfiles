@@ -304,12 +304,15 @@
 ** [[https://github.com/ledger/ledger-mode][ledger-mode]]
 
    #+BEGIN_SRC emacs-lisp
-     (use-package ledger-mode
-       :ensure t
-       :config
-       (setq ledger-post-amount-alignment-column 80)
-       ; Must set tab-width to default for indentation to work correctly
-       (add-hook 'ledger-mode-hook #'(lambda () (setq-local tab-width 8))))
+	 (use-package ledger-mode
+	   :ensure t
+	   :general
+	   ('normal ledger-reconcile-mode-map
+				"TAB" #'ledger-reconcile-toggle)
+	   :config
+	   (setq ledger-post-amount-alignment-column 80)
+	   ; Must set tab-width to default for indentation to work correctly
+	   (add-hook 'ledger-mode-hook #'(lambda () (setq-local tab-width 8))))
    #+END_SRC
 
 *** TODO Report the tab-witdh issue?
