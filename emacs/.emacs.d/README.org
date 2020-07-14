@@ -50,12 +50,7 @@
 
    #+BEGIN_SRC emacs-lisp
 	 (use-package general
-	   :ensure t
-	   :config
-	   (general-def
-		 general-override-mode-map :prefix "M-SPC"
-		 "c" (general-simulate-key "C-c")
-		 "w" (general-simulate-key "C-w")))
+	   :ensure t)
    #+END_SRC
 
 * Basic settings
@@ -211,8 +206,8 @@
    #+BEGIN_SRC emacs-lisp
 	 (use-package eshell
 	   :general
-	   (general-override-mode-map :prefix "M-SPC"
-								  "e" #'eshell))
+	   (general-override-mode-map :prefix "C-x"
+								  "M-e" #'eshell))
    #+END_SRC
 
 ** [[https://github.com/emacs-evil/evil][evil]]
@@ -222,6 +217,12 @@
 	 :ensure t
 	 :general
 	 ('normal "gc" #'comment-or-uncomment-region)
+	 ; These keys play nicer with god-mode
+	 (general-override-mode-map :prefix "C-w"
+								"C-h" #'evil-window-left
+								"C-j" #'evil-window-down
+								"C-k" #'evil-window-up
+								"C-l" #'evil-window-right)
 	 :init
 	 (setq evil-want-integration t
 		   evil-want-keybinding nil)
@@ -269,16 +270,26 @@
 	   (evil-org-agenda-set-keys))
    #+END_SRC
 
+** [[https://github.com/emacsorphanage/god-mode][god-mode]]
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package god-mode
+	   :ensure t
+	   :general
+	   ('normal general-override-mode-map "SPC"   #'god-execute-with-current-bindings)
+	   (        general-override-mode-map "M-SPC" #'god-execute-with-current-bindings))
+   #+END_SRC
+
 ** [[https://github.com/Wilfred/helpful][helpful]]
 
  #+BEGIN_SRC emacs-lisp
    (use-package helpful
 	 :ensure t
 	 :general
-	 (general-override-mode-map :prefix "M-SPC"
-								"h f" #'helpful-callable
-								"h v" #'helpful-variable
-								"h k" #'helpful-key))
+	 (general-override-mode-map :prefix "C-h"
+								"C-f" #'helpful-callable ; shadows view-emacs-FAQ
+								"C-v" #'helpful-variable
+								"C-k" #'helpful-key))
  #+END_SRC
 
 ** ido
@@ -286,9 +297,11 @@
    #+BEGIN_SRC emacs-lisp
 	 (use-package ido
 	   :general
-	   (general-override-mode-map :prefix "M-SPC"
-								  "f" #'ido-find-file
-								  "d" #'ido-dired)
+	   (general-override-mode-map :prefix "C-x"
+								  "C-f" #'ido-find-file      ; shadows find-file
+								  "d"   #'ido-dired          ; shadows dired
+								  "C-d" #'ido-dired          ; shadows ido-list-directory
+								  "C-b" #'ido-switch-buffer) ; shadows list-buffers
 	   :config
 	   (ido-mode t)
 	   (ido-everywhere t))
@@ -334,8 +347,9 @@
    (use-package magit
 	 :ensure t
 	 :general
-	 (general-override-mode-map :prefix "M-SPC"
-								"g" #'magit-status)
+	 (general-override-mode-map :prefix "C-x"
+								"g"   #'magit-status
+								"M-g" #'magit-dispatch)
 	 :config
 	 (setq magit-diff-refine-hunk 'all
 		   magit-diff-paint-whitespace 't
@@ -348,8 +362,8 @@
    #+BEGIN_SRC emacs-lisp
 	 (use-package mu4e
 	   :general
-	   (general-override-mode-map :prefix "M-SPC"
-								  "m" #'mu4e)
+	   (general-override-mode-map :prefix "C-x"
+								  "M-m" #'mu4e)
 	   :config
 	   (setq mail-user-agent 'mu4e-user-agent
 			 mu4e-get-mail-command "mbsync -Va"
@@ -428,16 +442,19 @@
    #+BEGIN_SRC emacs-lisp
 	 (use-package org
 	   :general
-	   (general-override-mode-map :prefix "M-SPC"
-								  "l" #'org-store-link
-								  "L" #'org-insert-link
-								  "a" #'org-agenda
-								  "C" #'org-capture
-								  "b" #'org-switchb)
+	   (general-override-mode-map :prefix "C-x M-o"
+								  "C-l"   #'org-store-link
+								  "C-S-l" #'org-insert-link
+								  "C-a"   #'org-agenda
+								  "C-c"   #'org-capture
+								  "C-b"   #'org-switchb)
 	   ; These shadow evil-paste-pop-next and evil-paste-pop
 	   ('normal org-mode-map
 				"C-n" #'org-next-link
 				"C-p" #'org-previous-link)
+	   ; These keys play nicer with god-mode
+	   (org-mode-map     "C-c C-'" #'org-edit-special)
+	   (org-src-mode-map "C-c C-'" #'org-edit-src-exit)
 	   :config
 	   (add-hook 'org-mode-hook 'auto-fill-mode)
 			 ; jump to beginning/end of headerlines and items rather than lines
@@ -508,9 +525,9 @@
 	   :after vterm
 	   :ensure t
 	   :general
-	   (general-override-mode-map :prefix "M-SPC"
-								  "t" #'vterm-toggle
-								  "T" #'vterm)
+	   (general-override-mode-map :prefix "C-x"
+								  "M-t" #'vterm-toggle
+								  "M-T" #'vterm)
 	   ('insert-state vterm-mode-map
 		"C-<return>" #'vterm-toggle-insert-cd))
    #+END_SRC
