@@ -277,8 +277,11 @@
 	 (use-package god-mode
 	   :ensure t
 	   :general
-	   ('normal general-override-mode-map "SPC"   #'god-execute-with-current-bindings)
-	   (        general-override-mode-map "M-SPC" #'god-execute-with-current-bindings))
+	   ('normal                   "SPC"   #'god-execute-with-current-bindings)
+	   (general-override-mode-map "M-SPC" #'god-execute-with-current-bindings)
+	   ; Explicitly bind SPC in magit-status-mode since it was getting
+	   ; bound to scroll-up-command in custom-mode-map
+	   ('normal magit-status-mode-map "SPC" #'god-execute-with-current-bindings))
    #+END_SRC
 
 ** [[https://github.com/Wilfred/helpful][helpful]]
