@@ -204,15 +204,6 @@
 	will collapse to foo/bar. If I TAB to toggle subtree, then foo/bar
 	disappears, and a subdirectory foo/bar/foo/bar is displayed. TAB
 	on it, I get "Read directory: no such file or directory..."
-** eshell
-
-   #+BEGIN_SRC emacs-lisp
-	 (use-package eshell
-	   :general
-	   (general-override-mode-map :prefix "C-x"
-								  "M-e" #'eshell))
-   #+END_SRC
-
 ** [[https://github.com/emacs-evil/evil][evil]]
 
  #+BEGIN_SRC emacs-lisp
