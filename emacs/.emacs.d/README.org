@@ -547,6 +547,16 @@
 	 (add-to-list 'auto-mode-alist '("\.wl$" . wolfram-mode)))
  #+END_SRC
 
+** xref
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package xref
+	   :general
+	   ('normal xref--xref-buffer-mode-map
+				"j" #'xref-next-line
+				"k" #'xref-prev-line))
+   #+END_SRC
+
 * TODO
 - [[info:org#Feedback][Report]] bug in [[info:org#Motion][info:org#Motion]], should be
   org-forward-heading-same-level, not org-forward-same-level
