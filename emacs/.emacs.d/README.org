@@ -344,9 +344,8 @@
    (use-package magit
 	 :ensure t
 	 :general
-	 (general-override-mode-map :prefix "C-x"
-								"g"   #'magit-status
-								"M-g" #'magit-dispatch)
+	 (general-override-mode-map "M-g" #'magit-status ; shadows move-to-column, goto-char, goto-line, next-error, previous-error
+								"M-d" #'magit-dispatch) ; shadows kill-word
 	 :config
 	 (setq magit-diff-refine-hunk 'all
 		   magit-diff-paint-whitespace 't
@@ -359,8 +358,7 @@
    #+BEGIN_SRC emacs-lisp
 	 (use-package mu4e
 	   :general
-	   (general-override-mode-map :prefix "C-x"
-								  "M-m" #'mu4e)
+	   (general-override-mode-map "M-m" #'mu4e) ; shadows back-to-indentation
 	   :config
 	   (setq mail-user-agent 'mu4e-user-agent
 			 mu4e-get-mail-command "mbsync -Va"
@@ -439,7 +437,7 @@
    #+BEGIN_SRC emacs-lisp
 	 (use-package org
 	   :general
-	   (general-override-mode-map :prefix "C-x M-o"
+	   (general-override-mode-map :prefix "M-o" ; shadows delete-blank-lines
 								  "C-l"   #'org-store-link
 								  "C-S-l" #'org-insert-link
 								  "C-a"   #'org-agenda
@@ -530,11 +528,10 @@
 	   :after vterm
 	   :ensure t
 	   :general
-	   (general-override-mode-map :prefix "C-x"
-								  "M-t" #'vterm-toggle
-								  "M-T" #'vterm)
+	   (general-override-mode-map "C-;" #'vterm-toggle
+								  "M-t" #'vterm)       ; shadows transpose-words
 	   ('insert-state vterm-mode-map
-		"C-<return>" #'vterm-toggle-insert-cd))
+		"<C-return>" #'vterm-toggle-insert-cd))
    #+END_SRC
 
 ** [[https://github.com/kawabata/wolfram-mode][wolfram-mode]]
