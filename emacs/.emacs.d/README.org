@@ -469,13 +469,21 @@
 			 ; use outline path completion for C-c C-j
 			 org-goto-interface 'outline-path-completion
 			 ; don't split the line on M-RET
-			 org-M-RET-may-split-line '((default . nil))))
+			 org-M-RET-may-split-line '((default . nil))
+			 ; Add WAIT keyword, configure fast access keys
+			 org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)"))
+			 ; Faces for TODO keywords
+			 org-todo-keyword-faces '(("TODO" . org-todo)
+									  ("WAIT" . "yellow")
+									  ("DONE" . org-done))))
    #+END_SRC
 
-*** TODO WAIT keyword for org
 *** TODO Don't move cursor to beginning of line when promoting or demoting in org mode
 	Affects TAB on empty headline as well as explicitly using org-do-promote
 *** TODO Show org link at point in modeline
+*** TODO [[info:org#Feedback][Report]] bug in [[info:org#Motion][info:org#Motion]]
+	should be org-forward-heading-same-level, not org-forward-same-level
+*** TODO search only currently visible text?
 *** [[http://doc.norang.ca/org-mode.html]]
 ** [[https://github.com/sabof/org-bullets][org-bullets]]
 
@@ -565,16 +573,3 @@
 				"j" #'xref-next-line
 				"k" #'xref-prev-line))
    #+END_SRC
-
-* TODO
-- [[info:org#Feedback][Report]] bug in [[info:org#Motion][info:org#Motion]], should be
-  org-forward-heading-same-level, not org-forward-same-level
-- Safe shutdown keybinding: delete all buffers containing files and
-  running process, prompting whether to save etc, then killing the
-  emacs server. The window manager's emacs keybinding should restart
-  the emacs server if it isn't already active.
-- Is it feasible to have search in org mode that only searches
-  currently visible text?
-- Read about transient-mark-mode
-- `C-x t` should open a terminal at point in dired
-- Look into multi-libvterm and projectile
