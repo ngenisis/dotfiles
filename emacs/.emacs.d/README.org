@@ -539,9 +539,8 @@
 	   :ensure t
 	   :general
 	   (general-override-mode-map "C-;" #'vterm-toggle
-								  "M-t" #'vterm)       ; shadows transpose-words
-	   ('insert-state vterm-mode-map
-		"<C-return>" #'vterm-toggle-insert-cd))
+								  "M-t" #'vterm) ; shadows transpose-words
+	   ('insert vterm-mode-map "<C-return>" #'vterm-toggle-insert-cd))
    #+END_SRC
 
 ** [[https://github.com/kawabata/wolfram-mode][wolfram-mode]]
