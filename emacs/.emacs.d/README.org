@@ -546,8 +546,12 @@
 	   :after vterm
 	   :ensure t
 	   :general
-	   (general-override-mode-map "C-;" #'vterm-toggle
-								  "M-t" #'vterm) ; shadows transpose-words
+	   ; Specify normal state to shadow pop-tag-mark
+	   ('(normal insert) general-override-mode-map :prefix "C-t" ; shadows pop-tag-mark
+								  "C-t" #'vterm-toggle
+								  "C-n" #'vterm
+								  "C-f" #'vterm-toggle-forward
+								  "C-b" #'vterm-toggle-backward)
 	   ('insert vterm-mode-map "<C-return>" #'vterm-toggle-insert-cd))
    #+END_SRC
 
