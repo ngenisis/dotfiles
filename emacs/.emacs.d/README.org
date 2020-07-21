@@ -141,6 +141,14 @@
 	   (load-theme 'alect-black t))
    #+END_SRC
 
+** calc
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package calc
+	   :general
+	   (general-override-mode-map "M-c" #'calc-dispatch)) ; shadows capitalize-word
+   #+END_SRC
+
 ** [[https://github.com/purcell/color-theme-sanityinc-tomorrow][color-theme-sanityinc-tomorrow]]
 
  #+BEGIN_SRC emacs-lisp :tangle no
