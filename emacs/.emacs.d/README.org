@@ -280,8 +280,11 @@
 	   :general
 	   ; Bind to SPC in normal state
 	   ('normal "SPC" #'god-execute-with-current-bindings)
-	   ('normal (special-mode-map ; shadows scroll-up-command
-				 dired-mode-map)  ; shadows dired-next-line
+	   ; These modes bind SPC in normal state (possibly from evil-collection),
+	   ; which will take precedence over the global binding
+	   ('normal (special-mode-map   ; shadows scroll-up-command
+				 mu4e-view-mode-map ; shadows mu4e-view-scroll-up-or-next
+				 dired-mode-map)    ; shadows dired-next-line
 				"SPC" #'god-execute-with-current-bindings)
 	   ; Bind to M-SPC in all states (Note: this may be shadowed by Evil keys)
 	   (general-override-mode-map "M-SPC" #'god-execute-with-current-bindings))
