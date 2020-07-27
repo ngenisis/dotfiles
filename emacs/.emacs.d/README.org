@@ -26,6 +26,7 @@
 		   ido-completing-read+
 		   ido-vertical-mode
 		   ledger-mode
+		   lsp-mode
 		   magit
 		   mu4e-alert
 		   nix-mode
@@ -350,7 +351,28 @@
 	   (add-hook 'ledger-mode-hook #'(lambda () (setq-local tab-width 8))))
    #+END_SRC
 
-*** TODO Report the tab-witdh issue?
+*** TODO Report the tab-width issue?
+** [[https://github.com/emacs-lsp/lsp-mode][lsp-mode]]
+
+   #+BEGIN_SRC emacs-lisp
+	 (use-package lsp-mode
+	   :ensure t
+	   :hook ((wolfram-mode . lsp))
+	   :commands lsp
+	   :init
+	   (setq lsp-keymap-prefix "C-l") ; shadows recenter-top-bottom
+	   :config
+	   (add-to-list 'lsp-language-id-configuration '(wolfram-mode . "wolfram"))
+	   (lsp-register-client
+		(make-lsp-client :new-connection
+						 (lsp-stdio-connection
+						  '("WolframKernel12.1.1"
+							"-noinit" "-noprompt" "-nopaclet" "-noicon" "-run"
+							"Needs[\"LSPServer`\"];LSPServer`StartServer[\"~/logs\"]"))
+						 :major-modes '(wolfram-mode)
+						 :server-id 'wolfram-lsp-server)))
+   #+END_SRC
+
 ** [[https://magit.vc/manual/][magit]]
 
  #+BEGIN_SRC emacs-lisp
