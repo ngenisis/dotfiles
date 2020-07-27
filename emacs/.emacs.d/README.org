@@ -562,7 +562,9 @@
 	 :ensure t
 	 :config
 	 (setq wolfram-program "/opt/Mathematica/12.1.1/Executables/MathKernel"
-		   wolfram-path "~/.Mathematica/Applications")
+		   wolfram-path "~/.Mathematica/Applications"
+		   wolfram-indent 4
+		   wolfram-mode-map (make-sparse-keymap))
 	 (add-to-list 'auto-mode-alist '("\.m$" . wolfram-mode))
 	 (add-to-list 'auto-mode-alist '("\.mt$" . wolfram-mode))
 	 (add-to-list 'auto-mode-alist '("\.wl$" . wolfram-mode)))
