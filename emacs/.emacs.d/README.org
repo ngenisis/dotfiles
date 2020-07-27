@@ -536,7 +536,9 @@
 
    #+BEGIN_SRC emacs-lisp
 	 (use-package vterm
-	   :ensure t)
+	   :ensure t
+	   :config
+	   (setq vterm-max-scrollback 10000))
    #+END_SRC
 
 ** [[https://github.com/jixiuf/vterm-toggle][vterm-toggle]]
